@@ -1,11 +1,15 @@
 .home {
-
     display: flex;
-
 
 }
 .profile-head{
 
     flex:1
+
+}
+.profile-image {
+
+    background-clip: content-box;
+
 
 }
