@@ -7,3 +7,5 @@
 - my must see repos.
 
 I will be using in my portfolio the magic of React, HTML, CSS and Node.
+
+(portfolio is under construction. I will share a link in the following week (31/08))
