@@ -15,6 +15,7 @@ const Home = props => {
     return <>
         <div className="home">
             <Profile/>
+          <hr/>
             <div className="videos">
                 <span> While you here why not get entertained a little?</span>
                 <iframe width="560" height="315" src={videoYT} frameBorder="0"
