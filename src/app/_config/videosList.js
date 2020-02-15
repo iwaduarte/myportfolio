@@ -1,11 +1,11 @@
 const VideosList = [
-    'video1',
-    'video1',
-    'video1',
-    'video1',
-    'video1',
-    'video1',
-    'video1',
+    'https://www.youtube.com/embed/iG9CE55wbtY',
+    'video2',
+    'video3',
+    'video4',
+    'video5',
+    'video6',
+    'video7',
 
 
 ];

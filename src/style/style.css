@@ -14,20 +14,3 @@ code {
 }
 
 
-img.logo {
-    max-height: 200px;
-
-}
-img.icon{
-    max-height: 15px;
-
-
-}
-
-.rounded {
-    border-radius: 50%;
-}
-.flex {
-    flex: 1
-
-}

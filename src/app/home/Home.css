@@ -1,16 +1,71 @@
 .home {
     display: flex;
+    justify-content: space-between;
 
 }
-.profile-head {
 
+.profile-head {
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
+
 
 }
-.profile-image {
 
+.profile-head a {
+    text-decoration: none;
+    color: inherit;
+
+}
+
+.color-orange {
+    color: #ffb105;
+}
+.profile-links {
+    margin: 0 0.05rem;
+}
+.profile-links:hover{
+transform: scale(1.2);
+}
+.profile-title:hover{
+    transform: scale(1.02);
+    /*font-size: 18px;*/
+}
+
+.profile-image {
     background-clip: content-box;
+    border: 3px solid #f1f1f1;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+
+
+    position: relative;
+
+}
+
+.profile-bio {
+    width: 22rem;
+
+}
+
+.logo {
+    position: absolute;
+    left: 30%;
+    transform: translateX(-30%);
+
+}
+
+img.logo {
+    max-height: 100px;
+}
+
+img.icon {
+    max-height: 28px;
+    margin-top: 2px; /*aligning image icons and svg icons  */
+
+
 
 
 }
