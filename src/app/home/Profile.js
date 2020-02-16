@@ -19,13 +19,13 @@ const Profile = props =>
                     </a>
                 </div>
                 <div className="flex-container">
-                    <a className={"profile-links"} href="https://github.com/iwaduarte"><GoMarkGithub color="black"
+                    <a className={"profile-links"} href="https://github.com/iwaduarte" target="blank"><GoMarkGithub color="black"
                                                                                                      size="32"/></a>
-                    <a className={"profile-links"} href="https://github.com/iwaduarte"><FaStackOverflow color="#F48024"
+                    <a className={"profile-links"} href="https://stackoverflow.com/users/7350853/iwaduarte" target="blank"><FaStackOverflow color="#F48024"
                                                                                                         size="32"/></a>
-                    <a className={"profile-links"} href="https://github.com/iwaduarte"><FaLinkedin color="#0077B5"
+                    <a className={"profile-links"} href="https://www.linkedin.com/in/iw%C3%A1-duarte-969a1a61/" target="blank"><FaLinkedin color="#0077B5"
                                                                                                    size="32"/></a>
-                    <a className={"profile-links"} href="https://www.freelancer.com/u/iwaduarte">
+                    <a className={"profile-links"} href="https://www.freelancer.com/u/iwaduarte" target="blank" >
                         <img className="icon inline-block" src={'/images/freelancer-icon.jpeg'}
                              alt={'Logo freelancer'}/>
 
@@ -40,6 +40,7 @@ const Profile = props =>
 
         </div>
         <div className="moreInfo">
+
             <h2>
                 Github Projects
             </h2>

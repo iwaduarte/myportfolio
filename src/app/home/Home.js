@@ -15,15 +15,19 @@ const Home = props => {
     return <>
         <div className="home">
             <Profile/>
-          <hr/>
+          <hr className="horizontal-rule"/>
             <div className="videos">
-                <span> While you here why not get entertained a little?</span>
+                <h2 class="color-red"> While you here why not get entertained a little?</h2>
                 <iframe width="560" height="315" src={videoYT} frameBorder="0"
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen/>
-                <button onClick={() => loadVideo('prev')}>Prev</button>
-                <button onClick={() => loadVideo('rand')}>Random</button>
-                <button onClick={() => loadVideo('next')}>Next</button>
+                        <div className="videos-buttons">
+                            <button onClick={() => loadVideo('prev')}>Prev</button>
+                            <button onClick={() => loadVideo('rand')}>Random</button>
+                            <button onClick={() => loadVideo('next')}>Next</button>
+
+                        </div>
+
             </div>
         </div>
     </>

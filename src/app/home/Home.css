@@ -1,6 +1,21 @@
+
+.color-orange {
+    color: #ffb105;
+}
+.color-red{
+    color: rgb(252, 82, 72)
+}
+
+hr.horizontal-rule {
+
+margin-inline-start: 10%;
+margin-inline-end: 10%;
+
+}
+
 .home {
     display: flex;
-    justify-content: space-between;
+    /*justify-content: space-around;*/
 
 }
 
@@ -18,16 +33,17 @@
 
 }
 
-.color-orange {
-    color: #ffb105;
-}
+
+
 .profile-links {
     margin: 0 0.05rem;
 }
-.profile-links:hover{
-transform: scale(1.2);
+
+.profile-links:hover {
+    transform: scale(1.2);
 }
-.profile-title:hover{
+
+.profile-title:hover {
     transform: scale(1.02);
     /*font-size: 18px;*/
 }
@@ -66,6 +82,19 @@ img.icon {
     margin-top: 2px; /*aligning image icons and svg icons  */
 
 
+}
 
+.videos {
+    display: flex;
+    flex-direction: column;
+}
+
+/*style videos buttons */
+.videos-buttons {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5%;
 
 }
