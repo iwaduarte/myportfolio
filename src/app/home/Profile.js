@@ -19,13 +19,16 @@ const Profile = props =>
                     </a>
                 </div>
                 <div className="flex-container">
-                    <a className={"profile-links"} href="https://github.com/iwaduarte" target="blank"><GoMarkGithub color="black"
-                                                                                                     size="32"/></a>
-                    <a className={"profile-links"} href="https://stackoverflow.com/users/7350853/iwaduarte" target="blank"><FaStackOverflow color="#F48024"
-                                                                                                        size="32"/></a>
-                    <a className={"profile-links"} href="https://www.linkedin.com/in/iw%C3%A1-duarte-969a1a61/" target="blank"><FaLinkedin color="#0077B5"
-                                                                                                   size="32"/></a>
-                    <a className={"profile-links"} href="https://www.freelancer.com/u/iwaduarte" target="blank" >
+                    <a className={"profile-links"} href="https://github.com/iwaduarte" target="blank"><GoMarkGithub
+                        color="black"
+                        size="32"/></a>
+                    <a className={"profile-links"} href="https://stackoverflow.com/users/7350853/iwaduarte"
+                       target="blank"><FaStackOverflow color="#F48024"
+                                                       size="32"/></a>
+                    <a className={"profile-links"} href="https://www.linkedin.com/in/iw%C3%A1-duarte-969a1a61/"
+                       target="blank"><FaLinkedin color="#0077B5"
+                                                  size="32"/></a>
+                    <a className={"profile-links"} href="https://www.freelancer.com/u/iwaduarte" target="blank">
                         <img className="icon inline-block" src={'/images/freelancer-icon.jpeg'}
                              alt={'Logo freelancer'}/>
 
@@ -39,12 +42,36 @@ const Profile = props =>
             </div>
 
         </div>
-        <div className="moreInfo">
+        <div className="more-info">
+
 
             <h2>
-                Github Projects
+                Github Projects:
             </h2>
-
+            <div className="github flex-container">
+                <p>1. Web application using api</p>
+                <p> 2. Bronchure site</p>
+                <p> 3. E-commerce site</p>
+                <p> 4. Personal Portfolio</p>
+                <p> 5. Simple game</p>
+                <p> 6. Build a movie search app using React (with hooks)</p>
+                <p> 7. Build a chat app </p>
+                <p> X. Build a beautiful weather app </p>
+                <p> X. Build a to-do app </p>
+                <p> X. Build a to-do app </p>
+                <p> X. Build an e-commerce shopping cart with Next.js </p>
+                <p> X. Build a full blown multi-language blog </p>
+                <p> X. Build a Social Media App </p>
+                <p> X. Build an E-Commerce App </p>
+                <p> X. Build an Entertainment App </p>
+                <p> X. Build a Messaging App </p>
+                <p> X. Customizable Rich-Text Editor </p>
+                <p> X. CPU Activity Monitor </p>
+                <p> X. Apple Music Clone </p>
+                <p> X. Calendar Application</p>
+                <p> X. Display and filter GitHub Repositories</p>
+                <p> X. develop your own authentication middleware node js</p>
+            </div>
 
             <h2> Languages: </h2>
             <p> - Javascript 8/10 </p>

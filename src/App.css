@@ -56,6 +56,11 @@
 .mt-0 {
     margin-top: 0;
 }
+.mx-2{
+    margin: auto 2rem;
+
+
+}
 
 .space-between {
     justify-content: space-between;

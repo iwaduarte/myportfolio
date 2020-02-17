@@ -2,14 +2,15 @@
 .color-orange {
     color: #ffb105;
 }
-.color-red{
+
+.color-red {
     color: rgb(252, 82, 72)
 }
 
 hr.horizontal-rule {
 
-margin-inline-start: 10%;
-margin-inline-end: 10%;
+    margin-inline-start: 10%;
+    margin-inline-end: 10%;
 
 }
 
@@ -32,7 +33,6 @@ margin-inline-end: 10%;
     color: inherit;
 
 }
-
 
 
 .profile-links {
@@ -87,6 +87,7 @@ img.icon {
 .videos {
     display: flex;
     flex-direction: column;
+
 }
 
 /*style videos buttons */
@@ -95,6 +96,32 @@ img.icon {
     align-content: center;
     align-items: center;
     justify-content: space-between;
-    margin-top: 5%;
+    margin-top: 2%;
+
+
+}
+
+.videos-button {
+    cursor: pointer;
+    font-size: 1.05rem;
+    padding: 1rem 2rem;
+    color: ghostwhite;
+    background-color: rgb(252, 82, 72);
+}
+
+.videos-button:hover {
+    background-color: ghostwhite;
+    color: rgb(252, 82, 72);
+}
+
+.github {
+    flex-wrap: wrap;
+    flex-grow: 1;
+
+}
+
+/*spacing children of flexbox container */
+.github > p {
+    margin-right: 0.6rem;
 
 }
