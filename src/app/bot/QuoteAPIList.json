@@ -5,7 +5,7 @@
     "fieldAuthor": "quoteAuthor"
   },
   {
-    "url": "http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en",
+    "url": "https://cors-anywhere.herokuapp.com/http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en",
     "fieldName": "quoteText",
     "fieldAuthor": "quoteAuthor"
   },

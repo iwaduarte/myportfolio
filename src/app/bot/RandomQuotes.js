@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from 'react';
-
 import quoteAPIList from "./QuoteAPIList.json"
 import axios from 'axios';
-
 
 const RandomQuotes = props => {
 
@@ -11,27 +9,31 @@ const RandomQuotes = props => {
         fieldAuthor: "author",
         quote: "No quote yet. Have patience young grasshopper",
         author: "No one",
-        isDefault: true
     });
 
-    const axiosConfig = {
-        headers: {'Access-Control-Allow-Origin': "*"},
-    }
+    const [refresh, setRefresh] = useState(false);
+
     useEffect(() => {
         const randomAPI = quoteAPIList[Math.floor(Math.random() * quoteAPIList.length)];
+        // const randomAPI = quoteAPIList[1];
         axios.get(randomAPI.url).then((res) => {
             console.log(res);
             const {fieldName, fieldAuthor} = randomAPI;
-            res.data = res.data.constructor === Array ? res.data[0]: res.data;
+            res.data = res.data.constructor === Array
+                ? res.data[0]
+                : typeof res.data === "string"
+                    ? JSON.parse(res.data.replace("'","u0027"))
+                    : res.data;
             const quote = {...res.data, fieldName, fieldAuthor};
             setQuote(quote);
         })
-    }, []);
+    }, [refresh]);
 
     return <div>
 
         <p>{quote[quote.fieldName]}</p>
         <p>{quote[quote.fieldAuthor]}</p>
+        <button onClick={()=>setRefresh(prevState => !prevState)}> Refresh</button>
 
     </div>
 
