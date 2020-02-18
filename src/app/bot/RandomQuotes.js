@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import quoteAPIList from "./QuoteAPIList.json"
 import axios from 'axios';
+
+import quoteAPIList from "./QuoteAPIList.json"
+import "./Bot.css"
 
 const RandomQuotes = props => {
 
@@ -22,17 +24,17 @@ const RandomQuotes = props => {
             res.data = res.data.constructor === Array
                 ? res.data[0]
                 : typeof res.data === "string"
-                    ? JSON.parse(res.data.replace("'","u0027"))
+                    ? JSON.parse(res.data.replace(/'/g,"u0027")) //replace all instances by using regex "g"
                     : res.data;
             const quote = {...res.data, fieldName, fieldAuthor};
             setQuote(quote);
         })
     }, [refresh]);
 
-    return <div>
+    return <div className="bot-header">
 
-        <p>{quote[quote.fieldName]}</p>
-        <p>{quote[quote.fieldAuthor]}</p>
+        <p className={"bot-quote"}><span>"</span>{quote[quote.fieldName]}<span>"</span></p>
+        <p className={"bot-author"}>{quote[quote.fieldAuthor]}</p>
         <button onClick={()=>setRefresh(prevState => !prevState)}> Refresh</button>
 
     </div>
