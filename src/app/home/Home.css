@@ -7,12 +7,7 @@
     color: rgb(252, 82, 72)
 }
 
-hr.horizontal-rule {
 
-    margin-inline-start: 10%;
-    margin-inline-end: 10%;
-
-}
 
 .home {
     display: flex;
