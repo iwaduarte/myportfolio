@@ -2,6 +2,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #5EA5D6;
+    padding: 1%;
 }
 
 .bot-quote {
@@ -26,7 +28,8 @@
 }
 
 .bot-footer {
-
+    background-color: #2D5566;
+    color: white;
     display: flex;
     justify-content: space-around;
     /*align-items: center;*/
@@ -40,4 +43,21 @@
     height: 20%;
     border-top: #282c34 solid 3px;
 
+}
+
+.bot-footer a {
+    text-decoration: none;
+    color: inherit;
+
+}
+.bot-footer a:hover{
+    color:#CFB35C;
+    transform: scale(1.2);
+}
+
+.countdown-line {
+    width: 500px;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
 }
