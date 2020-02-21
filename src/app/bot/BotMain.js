@@ -1,8 +1,12 @@
 import React, {useState, useEffect} from 'react';
+import {botProfile,botStatesEN} from '../_config/botStates'
 
 const BotMain = props => {
     const [seconds, setSeconds] = useState(15);
     const [widthStyle, setWidthStyle] = useState(500);
+    const [refreshBot, setRefreshBot] = useState(false);
+    let botCurrentState = botStatesEN.default;
+
     useEffect(() => {
         //Timer
         // "effect is just executing once"
@@ -15,18 +19,21 @@ const BotMain = props => {
                 return updatedSeconds;
             });
 
-            console.log(updatedSeconds);
+            if (!updatedSeconds) setRefreshBot(true);
+
+
+                console.log(updatedSeconds);
             // console.log(seconds);
 
         }, 1000);
         let timeout = {value: 50};
         const fnBarInterval = setInterval(() => {
         //fix magic numbers come up with proper calculus
-            console.log('seconds' + seconds);
-            console.log('updatedSeconds' + updatedSeconds);
-            console.log('widthStyle' + widthStyle);
+        //     console.log('seconds' + seconds);
+        //     console.log('updatedSeconds' + updatedSeconds);
+        //     console.log('widthStyle' + widthStyle);
             const updatedWidth = updatedSeconds * widthStyle / seconds;
-            console.log('updatedWidth' + updatedWidth);
+            // console.log('updatedWidth' + updatedWidth);
             setWidthStyle(prevState => prevState <= 0 ? widthStyle : prevState - 1.568);
             timeout.value -= 1;
 
@@ -45,6 +52,19 @@ const BotMain = props => {
     }, []);
 
     // another useEffect?
+    //
+useEffect(()=>{
+    if (refreshBot){
+        botCurrentState = botStatesEN[botCurrentState.timeout].question[0];
+        console.log(botCurrentState);
+        console.log('hey');
+        setRefreshBot(false);
+    }
+
+
+
+
+},[refreshBot])
 
     return <>
         <div className="container flex-container">
@@ -54,9 +74,11 @@ const BotMain = props => {
                 <hr className="countdown-line" style={{width: widthStyle}}/>
 
             </div>
-            <p> Hi </p>
-            <p> I'm Iwa's Assistant</p>
-            <p>you?</p>
+            {/*<p> Hi </p>*/}
+            {/*<p> I'm Iwa's Assistant</p>*/}
+            {/*<p>you?</p>*/}
+            {botCurrentState.question[0]}
+
         </div>
 
     </>;
