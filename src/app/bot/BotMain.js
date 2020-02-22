@@ -5,7 +5,8 @@ const BotMain = props => {
     const [seconds, setSeconds] = useState(15);
     const [widthStyle, setWidthStyle] = useState(500);
     const [refreshBot, setRefreshBot] = useState(false);
-    let botCurrentState = botStatesEN.default;
+
+    const [botState, setBotState] = useState(botStatesEN.default);
 
     useEffect(() => {
         //Timer
@@ -19,7 +20,7 @@ const BotMain = props => {
                 return updatedSeconds;
             });
 
-            if (!updatedSeconds) setRefreshBot(true);
+            if (!updatedSeconds) setBotState(prevState =>  botStatesEN[prevState.timeout[0]]);
 
 
                 console.log(updatedSeconds);
@@ -53,18 +54,18 @@ const BotMain = props => {
 
     // another useEffect?
     //
-useEffect(()=>{
-    if (refreshBot){
-        botCurrentState = botStatesEN[botCurrentState.timeout].question[0];
-        console.log(botCurrentState);
-        console.log('hey');
-        setRefreshBot(false);
-    }
-
-
-
-
-},[refreshBot])
+// useEffect(()=>{
+//     if (refreshBot){
+//         botCurrentState = botStatesEN[botCurrentState.timeout].question[0];
+//         console.log(botCurrentState);
+//         console.log('hey');
+//         setRefreshBot(false);
+//     }
+//
+//
+//
+//
+// },[refreshBot])
 
     return <>
         <div className="container flex-container">
@@ -77,7 +78,7 @@ useEffect(()=>{
             {/*<p> Hi </p>*/}
             {/*<p> I'm Iwa's Assistant</p>*/}
             {/*<p>you?</p>*/}
-            {botCurrentState.question[0]}
+            {botState.question[0]}
 
         </div>
 
