@@ -40,8 +40,8 @@
 
 .flex-items {
     flex-grow: 0; /* flex-grows nullifies justify-content because it has higher precedence and takes all available space*/
-        flex-shrink: 1;
-flex-basis: auto;
+    flex-shrink: 1;
+    flex-basis: auto;
 }
 
 .flex-container {
@@ -84,10 +84,23 @@ hr.horizontal-rule {
 .border-right {
     border-right: #282c34 3px solid;
 }
+
 .container {
 
     flex-direction: column;
     align-content: center;
     align-items: center;
     margin: 5% 5%;
+}
+
+.input-field {
+    margin-top: 0;
+    padding: 0;
+    border: none;
+    border-bottom: solid 2px orangered;
+    font-family: inherit;
+    text-align: center;
+}
+input-field:focus{
+    outline: none;
 }
