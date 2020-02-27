@@ -7,6 +7,7 @@ export const botProfile = {
 };
 export const botStatesEN = {
     // L1R0A0H3
+    // L - Level, R- Repeat, A - Anger - H - Happiness
     'default': {
         type: 'intro',
         timeout: ['L1R1A0H3'],
@@ -57,16 +58,11 @@ export const botStatesEN = {
         actions: [],
     },
     'L1R8A0H3': {
-        type: 'intro',
-        timeout: ['L1FINAL'],
+        type: 'final',
         question: [`Get lost`, 'L1FINAL'],
         actions: [],
-    },
-    'L1FINAL': {
-        type: 'final',
         redirect: [`https://www.zerotothree.org`, `somechildsh url`],
     },
-
 
     'L2R0A0H0': {
         type: "second",
