@@ -4,17 +4,22 @@
     align-items: center;
     background-color: #5EA5D6;
     padding: 1%;
+    height: 17vh;
+    overflow-y: hidden;
 }
 
 .bot-quote {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     font-weight: bold;
     font-family: 'Lacquer', sans-serif;
     margin: 0;
 }
 
 .bot-author {
-    margin-right: 20%;
+    position: absolute;
+    right: 0;
+    top: 12vh;
+    margin-right: 16%;
     margin-top: 0;
     /*font-family: 'Pacifico', cursive;*/
     font-family: 'Shadows Into Light', cursive;
@@ -28,20 +33,17 @@
 }
 
 .bot-footer {
-    background-color: #2D5566;
+    background-color: #e0471b;
     color: white;
     display: flex;
     justify-content: space-around;
     /*align-items: center;*/
-
-
     position: fixed;
     left: 0;
     bottom: 0;
-
     width: 100%; /* why is width necessary here? */
     height: 20%;
-    border-top: #282c34 solid 3px;
+    border-top: #e0471b solid 3px;
 
 }
 
@@ -50,8 +52,9 @@
     color: inherit;
 
 }
-.bot-footer a:hover{
-    color:#CFB35C;
+
+.bot-footer a:hover {
+    color: #CFB35C;
     transform: scale(1.2);
 }
 
@@ -60,4 +63,28 @@
     border-color: black;
     border-style: solid;
     border-width: 2px;
+}
+
+.bot-refresh {
+    position: absolute;
+    top: 16vh;
+    padding: 0;
+    background-color: transparent;
+    border:0;
+    color: white;
+    cursor: pointer;
+    font-size: 25px;
+}
+.bot-refresh:hover{
+    transform: scale(1.4);
+
+}
+.bot-footer hr {
+    margin: auto;
+    border: 1px solid white;
+    height: 40%;
+}
+.bot-question {
+
+    margin-top: 1rem;
 }
