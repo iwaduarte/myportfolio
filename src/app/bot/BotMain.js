@@ -1,11 +1,14 @@
 import React, {useState, useEffect} from 'react';
 //{ botProfile, botStatesEN }
 import {botStatesEN} from '../_config/botStates'
+import {FaCheck} from "react-icons/fa";
 
 const BotMain = props => {
     const DEFAULT_BAR_WIDTH = 500;
     const [seconds, setSeconds] = useState(15);
     const [barWidth, setWidthBar] = useState(DEFAULT_BAR_WIDTH);
+    const [stopApplication, setStopApplication] = useState(false);
+    let intervals = [];
     // const [refreshBot, setRefreshBot] = useState(false);
 
     const [botState, setBotState] = useState(botStatesEN.default);
@@ -13,10 +16,9 @@ const BotMain = props => {
     //Timer
     // "effect is just executing once"
     useEffect(() => {
-        const COUNT_DOWN_MILLISECONDS = 16000;
-        const HALF_MILLISECONDS = 500;
         const TIMEOUT = 50;
         const timeStart = Date.now();
+        const COUNT_DOWN_MILLISECONDS = 16000;
         const decrementBar = TIMEOUT * DEFAULT_BAR_WIDTH / COUNT_DOWN_MILLISECONDS;
         let emitUpdate = false;
         let count = 0;
@@ -30,12 +32,22 @@ const BotMain = props => {
             emitUpdate && setBotState(prevState => {
                 count++;
                 console.log('emitUpdate', emitUpdate, count);
-                return botStatesEN[prevState.timeout
+
+                const botState = botStatesEN[prevState.timeout
                     ? prevState.timeout[0]
-                    : 'default']
+                    : 'default'];
+
+                intervals = [...intervals, {
+                    'intervalId': fnTimeInterval,
+                    elapsedTime, //to use with setTimeout to re-instate questions
+                    'level': botState
+                }];
+                return botState
+
+
             });
 
-            setWidthBar(prevState => elapsedTime < HALF_MILLISECONDS
+            setWidthBar(prevState => emitUpdate
                 ? DEFAULT_BAR_WIDTH
                 : prevState - decrementBar);
 
@@ -64,32 +76,42 @@ const BotMain = props => {
         const handleKeys = (event) => {
             console.log('something pressed');
             if (event.keyCode === 83) {
-
-                console.log('stopping application for debugging purposes')
+                console.log('stopping application for debugging purposes');
+                setStopApplication(true);
+                intervals.forEach(intervalObj => clearInterval(intervalObj.intervalId))
 
             } else if (event.keyCode === 82) {
                 console.log('resuming application for debugging purposes')
+                setStopApplication(false);
             }
 
         };
         console.log('entered')
-        // document.addEventListener('keydown', handleKeys);
-        document.addEventListener('keyup', handleKeys)
+        document.addEventListener('keydown', handleKeys);
 
-
-        return document.removeEventListener("keydown", handleKeys);
+        return () => document.removeEventListener("keydown", handleKeys);
     }, []);
 
     return <>
         <div className="container flex-container">
-            <div>
-                {seconds} s
-                <hr className="countdown-line" style={{width: barWidth}}/>
-            </div>
-            <p className={"bot-question"}>
-                {botState.question[0]}
-            </p>
-            <input className={'input-field'} type="text"/>
+
+            {!stopApplication
+                ? <>
+                    <div>
+                        {seconds} s
+                        <hr className="countdown-line" style={{width: barWidth}}/>
+                    </div>
+                    <p className={"bot-question"}>
+                        {botState.question[0]}
+                    </p>
+                    <div>
+                        <input className={'input-field mx-1'} type="text"/>
+                        <FaCheck className={'icon icon-ok'}/>
+                    </div>
+                </>
+                : "stopped"
+
+            }
 
         </div>
 
