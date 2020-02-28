@@ -54,8 +54,8 @@
 }
 
 .bot-footer a:hover {
-    color: #CFB35C;
-    transform: scale(1.2);
+    color: #282c34bf;
+    transform: scale(1.3);
 }
 
 .countdown-line {

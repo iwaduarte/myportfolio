@@ -66,10 +66,10 @@
 
 .mx-2 {
     margin: auto 2rem;
-
-
 }
-
+.mx-1 {
+    margin: auto 1rem;
+}
 .space-between {
     justify-content: space-between;
 }
@@ -101,6 +101,14 @@ hr.horizontal-rule {
     font-family: inherit;
     text-align: center;
 }
-input-field:focus{
+.input-field:focus{
     outline: none;
+}
+.icon{
+    color: #1ff51f;
+    cursor:pointer;
+}
+.icon-ok:hover{
+
+    transform: scale(1.3);
 }
