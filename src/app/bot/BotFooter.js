@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-const footerStates = ["Stop, this is serious! We need talk.",
+const footerStates = ["🖐 Stop, this is serious! We need talk.",
     `Nice... 😠 Can we talk now?`,
     `❤ To access the portfolio one must interact with the bot. Otherwise you could try on LinkedIn or GitHub 🤙`];
 const iterator = footerStates[Symbol.iterator]();

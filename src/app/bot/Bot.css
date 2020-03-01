@@ -9,7 +9,7 @@
 }
 
 .bot-quote {
-    font-size: 1.15rem;
+    font-size: 1.6rem;
     font-weight: bold;
     font-family: 'Lacquer', sans-serif;
     margin: 0;
@@ -21,9 +21,10 @@
     top: 12vh;
     margin-right: 16%;
     margin-top: 0;
-    /*font-family: 'Pacifico', cursive;*/
     font-family: 'Shadows Into Light', cursive;
     align-self: flex-end;
+    font-size: 1.3rem;
+
 }
 
 .bot-quote > span {
@@ -44,7 +45,7 @@
     width: 100%; /* why is width necessary here? */
     height: 20%;
     border-top: #e0471b solid 3px;
-
+    font-size: 1.34rem;
 }
 
 .bot-footer a {
