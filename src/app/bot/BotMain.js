@@ -21,7 +21,6 @@ const BotMain = props => {
         const COUNT_DOWN_MILLISECONDS = 16000;
         const decrementBar = TIMEOUT * DEFAULT_BAR_WIDTH / COUNT_DOWN_MILLISECONDS;
         let emitUpdate = false;
-        let count = 0;
 
         const fnTimeInterval = setInterval(() => {
             const elapsedTime = (Date.now() - timeStart) % COUNT_DOWN_MILLISECONDS;
@@ -30,12 +29,8 @@ const BotMain = props => {
             setSeconds(displayTime);
             emitUpdate = elapsedTime + 50 >= COUNT_DOWN_MILLISECONDS && elapsedTime - 50 < COUNT_DOWN_MILLISECONDS;
             emitUpdate && setBotState(prevState => {
-                count++;
-                console.log('emitUpdate', emitUpdate, count);
 
-                const botState = botStatesEN[prevState.timeout
-                    ? prevState.timeout[0]
-                    : 'default'];
+                const botState = botStatesEN[prevState.timeout && prevState.timeout[0] || 'default'];
 
                 intervals = [...intervals, {
                     'intervalId': fnTimeInterval,
@@ -90,12 +85,27 @@ const BotMain = props => {
 
         return () => document.removeEventListener("keydown", handleKeys);
     }, []);
+//
 
-    function handleClick(e) {
+    const handleClick = (event, next) => {
 
-        botProfile.userName = "";
+        //action has been clicked and next object has been provided
+        if (next) {
+            return setBotState(botStatesEN[next]);
+        }
 
-    }
+       //username not provided or botProfile username not set;
+        if (!botProfile.userName && !username) {
+            return;
+        }
+        botProfile.userName = username;
+
+        // otherwise setBotState to the second element of the array.
+        // @Todo improve botState for level 1 to explicitly use the proper way of show the next object to be explored instead
+        // of using array positions that does not clearly  represent anything
+       return  setBotState(prevState => botStatesEN[(prevState.question[1]) || 'default']);
+
+    };
 
     function handleChange(event) {
 
@@ -122,7 +132,9 @@ const BotMain = props => {
                     </p>
                     <div>
                         {botState.actions.length
-                            ? botState.actions.map(action => <span>{action}</span>)
+                            ? botState.actions.map((action, index) =>
+                                <span onClick={event => handleClick(event, action.next)}
+                                      key={index}>{action.text}</span>)
                             : <>
                                 <input value={username} onChange={handleChange} className={'input-field mx-1'}
                                        type="text"/>
