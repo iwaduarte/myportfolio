@@ -60,7 +60,7 @@ const BotMain = props => {
     }, [DEFAULT_BAR_WIDTH]);
 
     // another useEffect?
-     // useEffect(()=>{
+    // useEffect(()=>{
     //     if (refreshBot){
     //         botCurrentState = botStatesEN[botCurrentState.timeout].question[0];
     //         console.log(botCurrentState);
@@ -107,11 +107,17 @@ const BotMain = props => {
 
             {!stopApplication
                 ? <>
+
+
                     <div>
                         {seconds} s
                         <hr className="countdown-line" style={{width: barWidth}}/>
                     </div>
+
                     <p className={"bot-question"}>
+                        <span className="bot-face">
+                                                 🤖
+                        </span>
                         {botState.question[0]}
                     </p>
                     <div>
