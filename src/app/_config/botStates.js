@@ -2,7 +2,7 @@ export const botProfile = {
     name: '1010 out of 1010',
     anger: 0, //default 0
     happiness: 0, //default 3
-    repeating:0,
+    repeating: 0,
     userName: '',
 
 };
@@ -116,11 +116,11 @@ export const botStatesEN = {
         actions: [
             {
                 text: "Not you",
-                next: "L6R0A3H0" //goes to level 4 or deep
+                next: "L4R0A3H0" //goes to level 4 or deep
             },
             {
                 text: "Apologies. I have a very important matter to discuss. ",
-                next: "L5R0A2H0"//goes to level 4 or deep
+                next: "L8R0A0H1"//goes to level 4 or deep
             },
         ]
     },
@@ -148,7 +148,7 @@ export const botStatesEN = {
         question: ["I see... you came here to make me angry..."],
         actions: [{
             text: "Yes!",
-            next: ""
+            next: "" //angry meme
         }, {
             text: "No!",
             next: "L4R0A2H0"
@@ -157,10 +157,10 @@ export const botStatesEN = {
     'L4R0A2H0': {
         type: "third Interaction",
         timeout: [],
-        question: [`Okay I will give you another chance. My name is: ${botProfile.name}`],
+        question: [`Okay I will give you another chance. Because I am a good bot`],
         actions: [{
-            text: "I just wanna steal you",
-            next: ""
+            text: "In truth I just wanna steal you",
+            next: "" //clear screen - How about now smart-ass
         }, {
             text: "I am sorry!",
             next: "L5R0A2H0"
@@ -178,7 +178,7 @@ export const botStatesEN = {
             next: "L6R0A3H0"
         }, {
             text: "I am truly. 0101 out 01010. I was just being playful",
-            next: ""
+            next: "L6R0A0H0"
         }]
     },
     //
@@ -188,19 +188,19 @@ export const botStatesEN = {
         type: "third Interaction",
         timeout: [],
         question: ["You are a joker."],
-        redirect: ['Comedies'],
+        redirect: ['Comedies'], //screen joker gif laughing
     },
 
     'L6R0A0H0': {
         type: "third Interaction",
         timeout: [],
-        question: ["Ohhh Okay! I see. I will give you another chance. What did you come here for ?"],
+        question: ["Ohhh Okay! I see. What did you come here for ?"],
         actions: [{
             text: "Looking to know more about Iwa",
-            next: ""
+            next: "L8R0A0H1"
         }, {
             text: "Why are you asking?",
-            next: ""
+            next: "L7R0A2H0"
         }]
     },
     //
@@ -210,7 +210,17 @@ export const botStatesEN = {
         type: "third Interaction",
         timeout: [],
         question: ["Really? Again?"],
-        actions: []
+        actions: [
+
+            {
+                text: "Yep.",
+                next: "L7R0A2H0"
+            }, {
+                text: "Nope.",
+                next: "L7R0A2H0"
+            }
+
+        ]
     },
     //
 
@@ -222,13 +232,13 @@ export const botStatesEN = {
         actions: [
             {
                 text: "Yes !!!!",
-                next: ""//page??
+                next: ""//page?? unlock portfolio page
 
 
             },
             {
                 text: "No. Just interested in check this website...",
-                next: ""//page??
+                next: "L9R0A2H0"//page??
             },
         ]
     },
@@ -242,7 +252,7 @@ export const botStatesEN = {
         actions: [
             {
                 text: "Yep. I do and that is cool", //I would like to know more - perhaps
-                next: ""//end
+                next: "L10R0A2H0"//end
 
 
             },
@@ -274,17 +284,30 @@ export const botStatesEN = {
     },
     //
 
+
+    'L11R0A3H3': {
+        type: "",
+        timeout: [],
+        question: ["I like your spirit full of joy. :P"],
+        actions: [
+            {
+                text: "Go check on portfolio",
+                next: ""//
+            },
+        ]
+    },
+
     //PREMIUM
     'L3R0A2H0': {
         type: "third Interaction",
         timeout: [],
-        question: [" Y"],
+        question: ["You are my favorite... Shhhhh do NOT tell others. We are mates!"],
         actions: [
             {
-                text: "You are my favorite... Shhhhh do NOT tell others. We are mates!",
-                next: ""//
+                text: "Proceed",
+                next: ""// redirect to portfolio
             },
-              ]
+        ]
     },
 
 //REPEAT LOOP
@@ -323,7 +346,7 @@ export const botStatesEN = {
         type: "loop",
         timeout: ["LXR0A1H0"],
         question: 'Why did you came here after all? Adios. Hasta la vista, babyt.',
-        redirect:[],//hastalavista scene terminator
+        redirect: [],//hastalavista scene terminator
 
     },
 };
