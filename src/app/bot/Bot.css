@@ -70,21 +70,36 @@
     top: 16vh;
     padding: 0;
     background-color: transparent;
-    border:0;
+    border: 0;
     color: white;
     cursor: pointer;
     font-size: 25px;
 }
-.bot-refresh:hover{
+
+.bot-refresh:hover {
     transform: scale(1.4);
 
 }
+
 .bot-footer hr {
     margin: auto;
     border: 1px solid white;
     height: 40%;
 }
+
 .bot-question {
 
     margin-top: 1rem;
+}
+
+.bot-footer > div {
+    max-width: 310px;
+    cursor: pointer;
+
+}
+
+.bot-face {
+    font-size: 2.5rem;
+    margin: 0 0.2rem;
+
 }
