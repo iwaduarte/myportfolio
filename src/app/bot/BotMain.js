@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 //{ botProfile, botStatesEN }
-import {botStatesEN} from '../_config/botStates'
+import {botStatesEN, botProfile} from '../_config/botStates'
 import {FaCheck} from "react-icons/fa";
 
 const BotMain = props => {
@@ -10,8 +10,8 @@ const BotMain = props => {
     const [stopApplication, setStopApplication] = useState(false);
     let intervals = [];
     // const [refreshBot, setRefreshBot] = useState(false);
-
     const [botState, setBotState] = useState(botStatesEN.default);
+    const [username, setUsername] = useState(botProfile.userName);
 
     //Timer
     // "effect is just executing once"
@@ -60,37 +60,47 @@ const BotMain = props => {
     }, [DEFAULT_BAR_WIDTH]);
 
     // another useEffect?
-    //
-// useEffect(()=>{
-//     if (refreshBot){
-//         botCurrentState = botStatesEN[botCurrentState.timeout].question[0];
-//         console.log(botCurrentState);
-//         console.log('hey');
-//         setRefreshBot(false);
-//     }
-// },[refreshBot])
+     // useEffect(()=>{
+    //     if (refreshBot){
+    //         botCurrentState = botStatesEN[botCurrentState.timeout].question[0];
+    //         console.log(botCurrentState);
+    //         console.log('hey');
+    //         setRefreshBot(false);
+    //     }
+    // },[refreshBot])
+
     //debugging
-
-
     useEffect(() => {
         const handleKeys = (event) => {
-            console.log('something pressed');
-            if (event.keyCode === 83) {
-                console.log('stopping application for debugging purposes');
-                setStopApplication(true);
-                intervals.forEach(intervalObj => clearInterval(intervalObj.intervalId))
+            if (event.shiftKey && event.ctrlKey) { //shift + ctrl + (S - stop) ||  + (R - resume)
 
-            } else if (event.keyCode === 82) {
-                console.log('resuming application for debugging purposes')
-                setStopApplication(false);
+                if (event.keyCode === 83) {
+                    console.log('stopping application for debugging purposes');
+                    setStopApplication(true);
+                    intervals.forEach(intervalObj => clearInterval(intervalObj.intervalId))
+
+                } else if (event.keyCode === 82) {
+                    console.log('resuming application for debugging purposes');
+                    setStopApplication(false);
+                }
+
             }
-
         };
-        console.log('entered')
         document.addEventListener('keydown', handleKeys);
 
         return () => document.removeEventListener("keydown", handleKeys);
     }, []);
+
+    function handleClick(e) {
+
+        botProfile.userName = "";
+
+    }
+
+    function handleChange(event) {
+
+        setUsername(event.target.value);
+    }
 
     return <>
         <div className="container flex-container">
@@ -105,8 +115,15 @@ const BotMain = props => {
                         {botState.question[0]}
                     </p>
                     <div>
-                        <input className={'input-field mx-1'} type="text"/>
-                        <FaCheck className={'icon icon-ok'}/>
+                        {botState.actions.length
+                            ? botState.actions.map(action => <span>{action}</span>)
+                            : <>
+                                <input value={username} onChange={handleChange} className={'input-field mx-1'}
+                                       type="text"/>
+                                <FaCheck onClick={handleClick} className={'icon icon-ok'}/>
+                            </>
+                        }
+
                     </div>
                 </>
                 : "stopped"
