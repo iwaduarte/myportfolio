@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 //{ botProfile, botStatesEN }
 import {botStatesEN, botProfile} from '../_config/botStates'
 import {FaCheck} from "react-icons/fa";
+import Button from "../__Components/Button/Button";
 
 const BotMain = props => {
     const DEFAULT_BAR_WIDTH = 500;
@@ -27,7 +28,7 @@ const BotMain = props => {
             const displayTime = Math.floor((COUNT_DOWN_MILLISECONDS - elapsedTime) / 1000);
             // console.log(elapsedTime)
             setSeconds(displayTime);
-            emitUpdate = elapsedTime + 50 >= COUNT_DOWN_MILLISECONDS && elapsedTime - 50 < COUNT_DOWN_MILLISECONDS;
+            // emitUpdate = elapsedTime + 50 >= COUNT_DOWN_MILLISECONDS && elapsedTime - 50 < COUNT_DOWN_MILLISECONDS;
             emitUpdate && setBotState(prevState => {
 
                 const botState = botStatesEN[prevState.timeout && prevState.timeout[0] || 'default'];
@@ -94,7 +95,7 @@ const BotMain = props => {
             return setBotState(botStatesEN[next]);
         }
 
-       //username not provided or botProfile username not set;
+        //username not provided or botProfile username not set;
         if (!botProfile.userName && !username) {
             return;
         }
@@ -103,7 +104,7 @@ const BotMain = props => {
         // otherwise setBotState to the second element of the array.
         // @Todo improve botState for level 1 to explicitly use the proper way of show the next object to be explored instead
         // of using array positions that does not clearly  represent anything
-       return  setBotState(prevState => botStatesEN[(prevState.question[1]) || 'default']);
+        return setBotState(prevState => botStatesEN[(prevState.question[1]) || 'default']);
 
     };
 
@@ -117,24 +118,21 @@ const BotMain = props => {
 
             {!stopApplication
                 ? <>
-
-
                     <div>
                         {seconds} s
                         <hr className="countdown-line" style={{width: barWidth}}/>
                     </div>
-
                     <p className={"bot-question"}>
-                        <span className="bot-face">
-                                                 🤖
-                        </span>
+                        <span className="bot-face"> 🤖 </span>
                         {botState.question[0]}
                     </p>
                     <div>
                         {botState.actions.length
                             ? botState.actions.map((action, index) =>
-                                <span onClick={event => handleClick(event, action.next)}
-                                      key={index}>{action.text}</span>)
+                                <Button onClick={event => handleClick(event, action.next)}
+                                        key={index}> {action.text} </Button>
+                            )
+
                             : <>
                                 <input value={username} onChange={handleChange} className={'input-field mx-1'}
                                        type="text"/>
@@ -149,7 +147,6 @@ const BotMain = props => {
             }
 
         </div>
-
     </>;
 }
 export default BotMain;
