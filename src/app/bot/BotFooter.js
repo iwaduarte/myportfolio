@@ -26,9 +26,8 @@ const BotFooter = props => {
                target={"_blank"} href={link}>{weNeedTalk}</a>
         </div>
         <hr/>
-        <div className="flex-items m-auto">
-            Copying your terrible idea.
-            Like at least
+        <div className="flex-items  m-auto"><h5 className="m-auto"> Copying your terrible idea 📄. </h5>
+            <h4 className="txt-align-center m-auto"> Like at least 👍  </h4>
         </div>
     </footer>
 };
