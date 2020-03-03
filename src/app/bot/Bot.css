@@ -34,7 +34,8 @@
 }
 
 .bot-footer {
-    background-color: #e0471b;
+    /*background-color: #e0471b;*/
+    background-color: #59e01b;;
     color: white;
     display: flex;
     justify-content: space-around;
@@ -44,7 +45,8 @@
     bottom: 0;
     width: 100%; /* why is width necessary here? */
     height: 20%;
-    border-top: #e0471b solid 3px;
+    /*border-top: #e0471b solid 3px;*/
+    border-top: #59e01b solid 3px;
     font-size: 1.34rem;
 }
 
