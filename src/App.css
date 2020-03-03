@@ -32,11 +32,10 @@
     }
 }
 
-/* general rules to all pages */
+/* General rules to all pages */
 
-.rounded {
-    border-radius: 50%;
-}
+
+/* FLEX */
 
 .flex-items {
     flex-grow: 0; /* flex-grows nullifies justify-content because it has higher precedence and takes all available space*/
@@ -48,6 +47,16 @@
     display: flex;
 }
 
+.justify-center {
+    justify-content: center;
+}
+.space-between {
+    justify-content: space-between;
+}
+
+/* * * * * */
+
+
 .inline-block {
     display: inline-block;
 }
@@ -55,6 +64,7 @@
     text-align: center;
 }
 
+/* margin */
 .m-auto {
     margin: auto;
 }
@@ -73,15 +83,12 @@
 .mx-1 {
     margin: auto 1rem;
 }
-.space-between {
-    justify-content: space-between;
-}
 
-hr.horizontal-rule {
+/* * * * * */
 
-    margin-inline-start: 10%;
-    margin-inline-end: 10%;
 
+.rounded {
+    border-radius: 50%;
 }
 
 .border-right {
@@ -94,6 +101,14 @@ hr.horizontal-rule {
     align-content: center;
     align-items: center;
     margin: 5% 5%;
+}
+
+
+hr.horizontal-rule {
+
+    margin-inline-start: 10%;
+    margin-inline-end: 10%;
+
 }
 
 .input-field {
@@ -115,3 +130,4 @@ hr.horizontal-rule {
 
     transform: scale(1.3);
 }
+

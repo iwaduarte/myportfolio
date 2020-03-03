@@ -5,4 +5,12 @@
     border: 0;
     background-color: #ff4f4f;
     color: #0000009e;
+    max-width: 30%;
+    cursor: pointer;
+}
+
+.c-button:hover {
+    background-color: #64e020;
+    color: white;
+
 }
