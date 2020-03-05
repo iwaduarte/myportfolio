@@ -8,10 +8,9 @@
 }
 
 
-
 .home {
     display: flex;
-    margin: 2%;
+    margin: 1% 2%;
 
     /*justify-content: space-around;*/
 
@@ -90,7 +89,7 @@ img.icon {
 /*style videos buttons */
 .videos-buttons {
     display: flex;
-    align-content: center;
+    border: 0;    align-content: center;
     align-items: center;
     justify-content: space-between;
     margin-top: 2%;
@@ -104,6 +103,7 @@ img.icon {
     padding: 1rem 2rem;
     color: ghostwhite;
     background-color: rgb(252, 82, 72);
+    border: 0;
 }
 
 .videos-button:hover {

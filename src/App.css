@@ -56,7 +56,9 @@
 .self-center {
     align-self:center;
 }
-
+.direction-colum{
+ flex-direction: column;
+}
 /* * * * * */
 
 .d-block {
