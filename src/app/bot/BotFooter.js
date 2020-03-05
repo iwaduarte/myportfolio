@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import clearScreen from './clearScreen'
 
 const footerStates = ["🖐 Stop, this is serious! We need talk.",
     `Nice... 😠 Can we talk now?`,
@@ -8,10 +9,12 @@ const links = ["https://goodreads.com/quotes/tag/seriousness", null, "https://gi
 const linkIterator = links[Symbol.iterator]();
 const firstFooterStates = iterator.next().value; // executes only once
 
+
 const BotFooter = props => {
 
     const [link, setLink] = useState(0);
     const [weNeedTalk, setWeNeedTalk] = useState(firstFooterStates);
+
 
     return <footer className={"bot-footer"}>
         <div className="flex-items m-auto">
@@ -23,11 +26,17 @@ const BotFooter = props => {
                 !footerLink.done && setLink(footerLink.value);
 
             }}
-               target={"_blank"} href={link}>{weNeedTalk}</a>
+               target={"_blank"} rel="noopener noreferrer" href={link}>{weNeedTalk}</a>
         </div>
         <hr/>
-        <div className="flex-items  m-auto"><h5 className="m-auto"> Copying your terrible idea 📄. </h5>
-            <h4 className="txt-align-center m-auto"> Like at least 👍  </h4>
+        <div className="flex-items  m-auto">
+            <span className="d-block">
+                Copying your terrible idea <span role="img" aria-label="okay-emoji">📄</span>
+            </span>
+            <div className="clear-screen" onClick={clearScreen}>
+                Like at least
+                <span role="img" aria-label="okay-emoji">👍 </span>
+            </div>
         </div>
     </footer>
 };
