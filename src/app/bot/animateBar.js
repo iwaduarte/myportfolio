@@ -1,4 +1,4 @@
-function animateBar(props) {
+export default function animateBar(props) {
     if (!props) return; //throw Error would be better in that case
     const {barWidth, seconds, currentBarWidth, refreshTime} = props;
 
