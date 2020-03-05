@@ -13,7 +13,7 @@ const Profile = props =>
             <div className="profile-description">
                 <div className="profile-title">
                     <a href="https://www.andyshora.com/full-stack-developers.html" target="_blank">
-                        <h2 class="inline-block color-orange mb-0 mt-0">
+                        <h2 className="inline-block color-orange mb-0 mt-0">
                             Full Stack Developer!?! </h2> <h6 className="inline-block mb-0 mt-0"> (link) </h6>
 
                     </a>
@@ -35,7 +35,7 @@ const Profile = props =>
                     </a>
                 </div>
 
-                <div class="profile-bio">
+                <div className="profile-bio">
                     A full stack developer with experience in several technologies...
                     I also like to binge watch Netflix and talk about meaningful things that make me cry (:P).
                 </div>
@@ -44,50 +44,85 @@ const Profile = props =>
         </div>
         <div className="more-info">
 
-
-            <h2>
+            <h2 className="mb-0">
                 Github Projects:
             </h2>
-            <div className="github flex-container">
-                <p>1. Web application using api</p>
-                <p> 2. Bronchure site</p>
-                <p> 3. E-commerce site</p>
-                <p> 4. Personal Portfolio</p>
-                <p> 5. Simple game</p>
-                <p> 6. Build a movie search app using React (with hooks)</p>
-                <p> 7. Build a chat app </p>
-                <p> X. Build a beautiful weather app </p>
-                <p> X. Build a to-do app </p>
-                <p> X. Build a to-do app </p>
-                <p> X. Build an e-commerce shopping cart with Next.js </p>
-                <p> X. Build a full blown multi-language blog </p>
-                <p> X. Build a Social Media App </p>
-                <p> X. Build an E-Commerce App </p>
-                <p> X. Build an Entertainment App </p>
-                <p> X. Build a Messaging App </p>
-                <p> X. Customizable Rich-Text Editor </p>
-                <p> X. CPU Activity Monitor </p>
-                <p> X. Apple Music Clone </p>
-                <p> X. Calendar Application</p>
-                <p> X. Display and filter GitHub Repositories</p>
-                <p> X. develop your own authentication middleware node js</p>
+            <div className="github flex-container inline-block">
+
+                <span role="img" title="Web application using api" aria-label={"wink-tongue-emoji"}>
+                     😜
+                </span>
+                <span role="img" title="Brochure site" aria-label={"zipper-face-emoji"}>
+                    🤐
+                </span>
+                <span role="img" title="E-commerce site" aria-label={"bag-emoji"}>
+                        💰
+                </span>
+
+                <span role="img" title="Personal portfolio" aria-label={"man-emoji"}>
+                      🧔
+                </span>
+                <span role="img" title="Simple game" aria-label={"joystick-emoji"}>
+                         🕹
+                 </span>
+
+                <span role="img" title="Movie search  (with hooks)" aria-label={"joystick-emoji"}>
+                       🎥
+                 </span>
+                <span role="img" title="Build a chat app" aria-label={"joystick-emoji"}>
+                        💬
+                 </span> <span role="img" title="Beautiful weather app " aria-label={"joystick-emoji"}>
+                        🌡
+                 </span>
+                <span role="img" title="Multi-language blog" aria-label={"joystick-emoji"}>
+                         🌎
+                 </span>
+                <span role="img" title="Build an e-commerce shopping cart with Next.js " aria-label={"joystick-emoji"}>
+                         🕹
+                 </span>
+                <span role="img" title="  Customizable Rich-Text Editor" aria-label={"joystick-emoji"}>
+                         🕹
+                 </span>
+                <span role="img" title="CPU Activity Monitor" aria-label={"joystick-emoji"}>
+                         🕹
+                 </span>
+
+                <span role="img" title="Spotify Music Clone" aria-label={"joystick-emoji"}>
+                         🕹
+                 </span>
+                <span role="img" title="Calendar Application" aria-label={"joystick-emoji"}>
+                         🕹
+                 </span>
+                <span role="img" title="Display and filter GitHub Repositories" aria-label={"joystick-emoji"}>
+                         🕹
+                 </span>
+                <span role="img" title="Develop your own authentication middleware node js"
+                      aria-label={"joystick-emoji"}>
+                         🕹
+                </span>
             </div>
 
-            <h2> Languages: </h2>
-            <p> - Javascript 8/10 </p>
-            <p> - C, Java 5/10 </p>
+            <h2 className="mb-0"> Languages: </h2>
+            <div className="flex-container">
+                <span className="mx-1"> - Javascript 8/10 </span>
+                <span> - C, Java 5/10 </span>
+            </div>
 
-            <h2>Cloud:</h2>
-            <p>AWS Stack Exposure:</p>
+
+            <h2 className="mb-0">Cloud:</h2>
+            <span className="d-block">AWS Stack Exposure:</span>
             - S3, EC2, SQS, SES, SNS, Lambda, CloudWatch Events, IAM, Organizations,
-            <h2>Backend: </h2>
-            <p> - Nodejs </p>
-            <h2> Speaks: </h2>
-            <p>Portuguese | English</p>
+            <div className="flex-container">
+                <h2 className="mb-0">Backend: </h2>
+                <p> - Nodejs </p>
+
+            </div>
+            <h2 className="mb-0"> Speaks: </h2>
+            <p className="mt-0">Portuguese | English</p>
 
         </div>
 
-    </div>;
+        < /div>;
 
 
-export default Profile;
+            export default Profile;
