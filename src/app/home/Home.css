@@ -11,6 +11,8 @@
 
 .home {
     display: flex;
+    margin: 2%;
+
     /*justify-content: space-around;*/
 
 }
