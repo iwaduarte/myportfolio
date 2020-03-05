@@ -5,8 +5,8 @@
     border: 0;
     background-color: #ff4f4f;
     color: #0000009e;
-    max-width: 30%;
     cursor: pointer;
+    flex: 1;
 }
 
 .c-button:hover {

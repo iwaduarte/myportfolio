@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #5EA5D6;
+    /*background-color: #5EA5D6;*/
     padding: 1%;
     height: 17vh;
     overflow-y: hidden;
@@ -39,14 +39,11 @@
     color: white;
     display: flex;
     justify-content: space-around;
-    /*align-items: center;*/
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%; /* why is width necessary here? */
-    height: 20%;
-    /*border-top: #e0471b solid 3px;*/
-    border-top: #59e01b solid 3px;
+    height: 12%;
     font-size: 1.34rem;
 }
 
@@ -65,7 +62,7 @@
     width: 500px;
     border-color: black;
     border-style: solid;
-    border-width: 2px;
+    border-width: 4px;
 }
 
 .bot-refresh {
@@ -74,7 +71,7 @@
     padding: 0;
     background-color: transparent;
     border: 0;
-    color: white;
+    /*color: white;*/
     cursor: pointer;
     font-size: 25px;
 }
@@ -87,16 +84,16 @@
 .bot-footer hr {
     margin: auto;
     border: 1px solid white;
-    height: 40%;
+    height: 20%;
 }
 
 .bot-question {
-
+    align-self: center;
     margin-top: 1rem;
 }
 
 .bot-footer > div {
-    max-width: 310px;
+    max-width: 350px;
     cursor: pointer;
 
 }
@@ -105,4 +102,17 @@
     font-size: 2.5rem;
     margin: 0 0.2rem;
 
+}
+
+.bot-timer {
+    align-self: center;
+
+}
+
+.clear-screen:hover {
+    transform: translateX(5%) scale(1.1);
+}
+
+.smile-emoji {
+    font-size: 3rem;
 }
