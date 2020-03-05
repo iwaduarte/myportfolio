@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import  {useEffect} from 'react';
 
 // reset the interval (every action that it is not an timeout execution should reset the interval)
 // pause the interval? (in case of debugging (dealt at the moment using the listeners (priority -> low)
@@ -6,7 +6,7 @@ import React, {useEffect} from 'react';
 
 const useIntervalTimer = (intervalProperties) => {
 
-    let fnTimeIntervalID;
+    let fnTimeIntervalID, remainingSeconds;
     const {refreshTime = 50, seconds = 16, arrayFunctions = [console.log('0 functions found')]} = intervalProperties;
     const timeStart = Date.now(); //should go inside intervalProperties
     const elapsedTimeInAPeriod = () => {
@@ -22,7 +22,7 @@ const useIntervalTimer = (intervalProperties) => {
     };
 
     const newArrayFunctions = [timer, ...arrayFunctions];
-    const newProps = {elapsedTimeInAPeriod,timer, ...intervalProperties};
+    const newProps = {elapsedTimeInAPeriod, timer, ...intervalProperties};
 
     const callbackFn = () => {
         // console.log('executing');
@@ -56,16 +56,17 @@ const useIntervalTimer = (intervalProperties) => {
     }, []);
 
     const intervalPause = () => {
-
+        remainingSeconds = timer()* 1000;
         clearInterval(fnTimeIntervalID);
     };
 
     const intervalResume = () => {
 
-        const remainingSeconds = timer() * 1000;
         const resume = () => {
             fnTimeIntervalID = setInterval(callbackFn, refreshTime);
         };
+        console.log(remainingSeconds);
+
 
         setTimeout(resume, remainingSeconds);
     };
