@@ -89,7 +89,8 @@ img.icon {
 /*style videos buttons */
 .videos-buttons {
     display: flex;
-    border: 0;    align-content: center;
+    border: 0;
+    align-content: center;
     align-items: center;
     justify-content: space-between;
     margin-top: 2%;
@@ -121,4 +122,22 @@ img.icon {
 .github > p {
     margin-right: 0.6rem;
 
+}
+
+.profile-emoji {
+
+    font-size: 1.5rem;
+    cursor: pointer;
+
+}
+
+.profile-cv {
+    margin-top: 0.8rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.profile-cv:hover {
+    color:dimgray;
+    transform: scale(1.05) translateX(2%);
 }
