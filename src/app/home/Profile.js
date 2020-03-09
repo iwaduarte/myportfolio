@@ -124,9 +124,9 @@ const Profile = props =>
             </div>
 
             <div>
-                <h2 className=" mt-1 mr-1">Backend: </h2>
+                <h2 className=" mt-1 mb-0 mr-1">Backend: </h2>
                 <FaNode className="mr-1" title="Node" size="40" color="#43853d"/>
-                <span className="mr-1"> <img title="Sequelize" className="icon-md inline-block"
+                <span className="mr-1"> <img title="Sequelize" className=" cursor-auto icon-md inline-block"
                                              src={'/images/sequelize.png'}
                                              alt={'Logo Sequelize'}/></span>
 
