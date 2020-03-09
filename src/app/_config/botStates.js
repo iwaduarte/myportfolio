@@ -260,7 +260,7 @@ export const loadBot = (username) => {
                     next: {
                         type: 'redirect',
                         message: '',
-                        url: '/home'
+                        url: '/y0ush0u1dn0th4v3gu3ss3d' //@Todo create random url or state to allow access upon bot authentication
                     } //page?? unlock portfolio page
                 },
                 {
@@ -300,7 +300,7 @@ export const loadBot = (username) => {
                     next: {
                         type: 'redirect',
                        message: '',
-                        url: '/home'
+                        url: '/y0ush0u1dn0th4v3gu3ss3d' //@Todo create random url or state to allow access upon bot authentication
                     } // redirect portfolio
 
                 },
@@ -326,7 +326,7 @@ export const loadBot = (username) => {
                     next: {
                         type: 'redirect',
                         message: '',
-                        url: '/home'
+                        url: '/y0ush0u1dn0th4v3gu3ss3d' //@Todo create random url or state to allow access upon bot authentication
                     } // redirect portfolio
                 },
             ]
@@ -342,7 +342,7 @@ export const loadBot = (username) => {
                     next: {
                         type: 'redirect',
                         message: '',
-                        url: '/home'
+                        url: '/y0ush0u1dn0th4v3gu3ss3d' //@Todo create random url or state to allow access upon bot authentication
                     } // redirect portfolio
                 },
             ]
