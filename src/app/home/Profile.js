@@ -38,7 +38,7 @@ const Profile = props =>
     <div className="profile ">
 
         <div className="profile-head">
-            <div className="flex-container space-between">
+            <div className="flex-container">
                 <div className="profile-image rounded">
                     <img className="logo " src={'/images/profile-picture.png'} alt={'Logo Profile'}/>
                 </div>
@@ -87,10 +87,9 @@ const Profile = props =>
 
 
         <div className="profile-projects">
-
             <h2 className="mt-1 mb-0 inline-block">
                 Github Projects:
-            </h2> <span className="small-font d-block"> (projects below are under development...)</span>
+            </h2> <span className="small-font mb-1 inline-block"> (projects below are under development...)</span>
             <div className="github flex-container inline-block">
                 {projects.map(project => <span className="profile-emoji" role="img" title={project.title}
                                                aria-label={project.label}>
@@ -102,11 +101,11 @@ const Profile = props =>
         <div className="profile-languages">
             <h2 className="mt-1 mb-0"> Languages: </h2>
             <div className="flex-container">
-                <span title="JavaScript" className="mx-1 small-font"> <FaJs size="32" color="#F1DA4E"/> 8/10</span>
-                <span title="PHP" className="mr-1 small-font">  <FaPhp size="32" color="#C4C9DF"/>  6/10 </span>
-                <span title="Java" className="mr-1 small-font"> <FaJava size="32" color="#0077B5"/>5/10 </span>
+                <span className="mr-1 small-font"> <FaJs  title="JavaScript" size="32" color="#F1DA4E"/> </span>
+                <span title="PHP" className="mr-1 small-font">  <FaPhp size="32" color="#C4C9DF"/>  </span>
+                <span title="Java" className="mr-1 small-font"> <FaJava size="32" color="#0077B5"/> </span>
                 <span title="C"  className="mr-1 small-font"> <img className="icon inline-block" src={'/images/c-programming.png'}
-                                                        alt={'Logo C Programming'}/> 5/10 </span>
+                                                        alt={'Logo C Programming'}/>  </span>
 
             </div>
         </div>
@@ -138,10 +137,10 @@ const Profile = props =>
 
             <h2 className="mt-0 mx-0">Cloud: </h2>
 
-            <div className="flex-container justify-center">
+            <div className="flex-container ">
                 <FaAws className="justify-center" size="40" color="#FF9900"/>
             </div>
-            <div className="flex-container space-around">
+            <div className="flex-container ">
 
                 <a className="aws-links no-link-style" target="blank" rel="noopener noreferrer"
                    href="https://aws.amazon.com/s3/">
