@@ -1,0 +1,11 @@
+{
+  "name": "myportfolio-backend",
+  "version": "1.0.0",
+  "description": "lambda designed to send email via smtp aws",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "@iwaduarte",
+  "license": "ISC"
+}
