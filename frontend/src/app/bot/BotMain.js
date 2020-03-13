@@ -138,7 +138,7 @@ const BotMain = props => {
         <div className="container flex-container">
             {!stopApplication
                 ? ''
-                : <div className="m-auto">(S)</div>
+                : <div className="m-auto">(Stopped)</div>
             }
             {image
                 ? <>
