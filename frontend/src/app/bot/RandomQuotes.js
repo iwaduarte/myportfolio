@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import { TiRefresh } from "react-icons/ti";
+import {TiRefresh} from "react-icons/ti";
 
 import quoteAPIList from "./QuoteAPIList.json"
 import "./Bot.css"
@@ -45,9 +45,14 @@ const RandomQuotes = props => {
 
     return <div className="bot-header">
 
-        <p className={"bot-quote"}><span>"</span>{quote[quote.fieldName]}<span>"</span></p>
-        <p className={"bot-author"}>{quote[quote.fieldAuthor]}</p>
-        <TiRefresh className="bot-refresh" onClick = {() => setRefresh(prevState => !prevState)} />
+        <p className="bot-quote self-center"><span>"</span>{quote[quote.fieldName]}<span>"</span></p>
+        <div className="flex-container space-between">
+       <span className="flex-grow">
+            <TiRefresh className="bot-refresh" onClick={() => setRefresh(prevState => !prevState)}/>
+       </span>
+            <p className="bot-author ">{quote[quote.fieldAuthor]}</p>
+
+        </div>
 
     </div>
 

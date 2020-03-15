@@ -1,11 +1,9 @@
 .bot-header {
     display: flex;
     flex-direction: column;
-    align-items: center;
     /*background-color: #5EA5D6;*/
-    padding: 1%;
-    height: 17vh;
-    overflow-y: hidden;
+    padding: 1% 2%;
+
 }
 
 .bot-quote {
@@ -16,13 +14,10 @@
 }
 
 .bot-author {
-    position: absolute;
-    right: 0;
-    top: 12vh;
-    margin-right: 16%;
-    margin-top: 0;
+    margin-top:0;
+    margin-right: 3rem;
     font-family: 'Shadows Into Light', cursive;
-    align-self: flex-end;
+    align-self: center;
     font-size: 1.3rem;
 
 }
@@ -67,7 +62,7 @@
 
 .bot-refresh {
     position: absolute;
-    top: 16vh;
+    left: 50%;
     padding: 0;
     background-color: transparent;
     border: 0;
