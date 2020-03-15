@@ -16,8 +16,8 @@ const BotFooter = props => {
     const [weNeedTalk, setWeNeedTalk] = useState(firstFooterStates);
 
 
-    return <footer className={"bot-footer"}>
-        <div className="flex-items m-auto">
+    return <footer className="bot-footer">
+        <div className="flex-items self-center ">
             <a onClick={() => {
                 const footerState = iterator.next();
                 !footerState.done && setWeNeedTalk(footerState.value);
@@ -29,7 +29,7 @@ const BotFooter = props => {
                target={"_blank"} rel="noopener noreferrer" href={link}>{weNeedTalk}</a>
         </div>
         <hr/>
-        <div className="flex-items  m-auto">
+        <div className="flex-items self-center  ">
             <span className="d-block">
                 Copying your terrible idea <span role="img" aria-label="okay-emoji">📄</span>
             </span>
