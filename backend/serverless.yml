@@ -10,14 +10,15 @@ service: serverless-smtp
 provider:
   name: aws
   runtime: nodejs12.x
-  region: sa-east-1
-
+  region: ${env:REGION, "sa-east-1"}
 # you can add statements to the Lambda function's IAM Role here
-#  iamRoleStatements:
-#    - Effect: "Allow"
-#      Action:
-#        - "s3:ListBucket"
-#      Resource: { "Fn::Join" : ["", ["arn:aws:s3:::", { "Ref" : "ServerlessDeploymentBucket" } ] ]  }
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "ses:SendEmail"
+      Resource:
+        - "arn:aws:ses:${env:SES_REGION,'us-east-1'}:{$env:AWS_ACC_ID}:*/*"
+
 #    - Effect: "Allow"
 #      Action:
 #        - "s3:PutObject"
@@ -49,5 +50,5 @@ functions:
           path: /{proxy}
           method: ANY
     environment:
-      SEND_TO: ${secrets.SEND_TO, "contact@iwaduarte.dev"}
+      SEND_TO: ${env:SEND_TO , secrets.SEND_TO}
 
