@@ -16,8 +16,7 @@ provider:
     - Effect: "Allow"
       Action:
         - "ses:SendEmail"
-      Resource:
-        - "arn:aws:ses:${env:SES_REGION,'us-east-1'}:{$env:AWS_ACC_ID}:*/*"
+      Resource: "*"
 
 #    - Effect: "Allow"
 #      Action:
@@ -47,8 +46,8 @@ functions:
     handler: email.handler
     events:
       - http:
-          path: /{proxy}
-          method: ANY
+          path: /send-email
+          method: POST
     environment:
       SEND_TO: ${env:SEND_TO , secrets.SEND_TO}
 
