@@ -11,6 +11,7 @@ service: serverless-smtp
 provider:
   name: aws
   runtime: nodejs12.x
+  stage: ${env:ENV, 'dev'}
   region: ${env:AWS_REGION, "sa-east-1"}
 # you can add statements to the Lambda function's IAM Role here
   iamRoleStatements:
@@ -51,4 +52,43 @@ functions:
           method: POST
     environment:
       SEND_TO: ${env:SEND_TO , secrets.SEND_TO}
+
+resources:
+  Resources:
+
+    #Custom Domain Naming (ie. test-framework.dev.laava.id )
+    DomainName:
+      Type: "AWS::ApiGateway::DomainName"
+      Properties:
+        DomainName: ${env:CUSTOM_DOMAIN_NAME, 'email.iwaduarte.dev'}
+        CertificateArn: ${env:CERTIFICATE_ARN, 'arn:aws:acm:us-east-1:021427749222:certificate/128ecb95-b556-417b-a298-d71bb81f1b16'}
+        EndpointConfiguration:
+          Types:
+            - EDGE #PRIVATE or EDGE
+
+    #Base Mappings  (points CustomDomain Name to specific ApiGateway)
+    BasePathMapping:
+      Type: "AWS::ApiGateway::BasePathMapping"
+      Properties:
+#        BasePath: ${env:BASE_PATH, ''}
+        DomainName:
+          Ref: DomainName
+        RestApiId: { "Ref": "ApiGatewayRestApi" }
+        Stage: ${self:provider.stage}
+      DependsOn:
+        - ApiGatewayDeployment
+
+    # Record Set in route 53
+    RecordSet:
+      Type: AWS::Route53::RecordSet
+      Properties:
+#        HostedZoneName: ${env:CUSTOM_DOMAIN_NAME, 'email.iwaduarte.dev'}
+        Name: ${env:CUSTOM_DOMAIN_NAME, 'email.iwaduarte.dev'}
+        Type: A
+#        AliasTarget:
+#          HostedZoneId:
+#            Fn::GetAtt: [ "DomainName", "RegionalHostedZoneId" ]
+#          DNSName:
+#            Fn::GetAtt: [ "DomainName", "RegionalDomainName" ]
+
 
