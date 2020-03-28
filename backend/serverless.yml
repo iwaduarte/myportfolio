@@ -61,7 +61,7 @@ resources:
       Type: "AWS::ApiGateway::DomainName"
       Properties:
         DomainName: ${env:CUSTOM_DOMAIN_NAME, 'email.iwaduarte.dev'}
-        CertificateArn: ${env:CERTIFICATE_ARN, 'arn:aws:acm:sa-east-1:021427749222:certificate/05fc7089-bde0-4867-9c37-eb59b0addbf4'}
+        CertificateArn: ${env:CERTIFICATE_ARN, 'arn:aws:acm:us-east-1:021427749222:certificate/7e173459-0932-405a-adfa-0bf588d1d409'}
         EndpointConfiguration:
           Types:
             - EDGE #PRIVATE or EDGE
