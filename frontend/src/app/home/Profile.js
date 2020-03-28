@@ -55,7 +55,7 @@ const Profile = props =>
 
             <div className="profile-description">
                 <div className="profile-title">
-                    <a href="https://www.andyshora.com/full-stack-developers.html" target="_blank">
+                    <a href="https://www.andyshora.com/full-stack-developers.html" target="_blank" rel="noopener noreferrer">
                         <h2 className="inline-block  mb-0 mt-0">
                             Full Stack Developer!?! </h2> <h6 className="inline-block mb-0 mt-0"> (link) </h6>
 
@@ -91,7 +91,7 @@ const Profile = props =>
                 Github Projects:
             </h2> <span className="small-font mb-1 inline-block"> (projects below are under development...)</span>
             <div className="github flex-container inline-block">
-                {projects.map(project => <span className="profile-emoji" role="img" title={project.title}
+                {projects.map((project,index) => <span  key={index} className="profile-emoji" role="img" title={project.title}
                                                aria-label={project.label}>
                     {project.icon}
                 </span>)}
