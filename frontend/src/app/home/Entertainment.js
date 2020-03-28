@@ -31,7 +31,7 @@ const Entertainment = props => {
 
         <div className="videos">
             <h2 className="txt-align-center  mt-0 "> While you here why not get entertained a little?</h2>
-            <iframe className="self-center" width="504" height="284" src={videoYT.video} frameBorder="0"
+            <iframe title="youtube-iframe" className="self-center" width="504" height="284" src={videoYT.video} frameBorder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen/>
             <div className="videos-buttons self-center pointer ">
