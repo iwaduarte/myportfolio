@@ -14,10 +14,10 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install serverless framework
         working-directory: ./backend
-        run: npm install serverless
-      - name: Deploy
+        run: npm install serverless --save-dev
+      - name: Serverless deploy
         working-directory: ./backend
-        run: serverless deploy -v
+        run: npm run deploy
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
