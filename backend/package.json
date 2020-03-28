@@ -4,7 +4,8 @@
   "description": "lambda designed to send email via smtp aws",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "serverless deploy -v"
   },
   "author": "@iwaduarte",
   "license": "ISC"
