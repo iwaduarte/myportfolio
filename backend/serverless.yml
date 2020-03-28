@@ -19,6 +19,7 @@ provider:
       Action:
         - "ses:SendEmail"
       Resource: "*"
+  versionFunctions: false
 
 #    - Effect: "Allow"
 #      Action:
@@ -60,8 +61,8 @@ resources:
     DomainName:
       Type: "AWS::ApiGateway::DomainName"
       Properties:
-        DomainName: ${env:CUSTOM_DOMAIN_NAME, 'email.iwaduarte.dev'}
-        CertificateArn: ${env:CERTIFICATE_ARN, 'arn:aws:acm:us-east-1:021427749222:certificate/7e173459-0932-405a-adfa-0bf588d1d409'}
+        DomainName: ${env:CUSTOM_DOMAIN_NAME}
+        CertificateArn: ${env:CERTIFICATE_ARN}
         EndpointConfiguration:
           Types:
             - EDGE #PRIVATE or EDGE
@@ -82,14 +83,16 @@ resources:
     RecordSet:
       Type: AWS::Route53::RecordSet
       Properties:
-        HostedZoneName: ${env:CUSTOM_DOMAIN_NAME, 'iwaduarte.dev.'}
-        Name: ${env:CUSTOM_DOMAIN_NAME, 'email.iwaduarte.dev'}
+        HostedZoneName: ${env:HOSTED_ZONE_NAME}
+        Name: ${env:CUSTOM_DOMAIN_NAME}
         Type: A
         AliasTarget:
           HostedZoneId:
             Fn::GetAtt: [ "DomainName", "DistributionHostedZoneId" ]
           DNSName:
             Fn::GetAtt: [ "DomainName", "DistributionDomainName" ]
+
+    # Api Gateway Deployment
     ApiGatewayDeployment:
       Type: 'AWS::ApiGateway::Deployment'
       Properties:
