@@ -22,6 +22,10 @@ exports.handler = async event => {
     const {message, appSource, from, subject} = body;
     const response = {
         statusCode: 200,
+        headers: {
+            'Content-Type': 'application/json',
+            "Access-Control-Allow-Origin": "iwaduarte.dev"
+        },
         isBase64Encoded: false
     };
     // the form does not contain message or source fields
