@@ -12,7 +12,7 @@ const fnObj = {clearScreen, animateBar, Redirect};
 
 const BotMain = props => {
     const DEFAULT_BAR_WIDTH = 500;
-    const [seconds, setSeconds] = useState(15);
+    const [seconds, setSeconds] = useState(10);
     const [barWidth, setWidthBar] = useState(DEFAULT_BAR_WIDTH);
     const [stopApplication, setStopApplication] = useState(false);
     // const [refreshBot, setRefreshBot] = useState(false);
@@ -71,10 +71,11 @@ const BotMain = props => {
     const [intervalPause, intervalResume,] = useIntervalTimer({
         arrayFunctions: [update],
         refreshTime: 50,
-        seconds: 16,
+        seconds: 11,
     });
     //debugging
     useEffect(() => {
+
         const handleKeys = (event) => {
             if (event.altKey && event.ctrlKey) { //shift + ctrl + (S - stop) ||  + (R - resume)
 
@@ -94,7 +95,7 @@ const BotMain = props => {
         document.addEventListener('keydown', handleKeys);
 
         return () => document.removeEventListener("keydown", handleKeys);
-    }, []);
+    }, [intervalPause,intervalResume]);
     //
     const handleClick = (event, next) => {
         //action has been clicked and next object has been provided
