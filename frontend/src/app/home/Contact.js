@@ -1,8 +1,11 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+
+const appSource = "contact@iwaduarte.dev";
+
 const Contact = () => {
 
-    const [email, setEmail] = useState('');
+    const [from, setEmail] = useState('');
     const [subject, setSubject] = useState('');
     const [message, setMessage] = useState('');
     const [allowSend, setAllowSend] = useState(0);
@@ -14,8 +17,9 @@ const Contact = () => {
 
     };
     const handleSubmit = (evt) => {
+
         evt.preventDefault();
-        if (!email || !message) return;
+        if (!from || !message) return;
 
         setAllowSend(prevState => {
             if (prevState < 2)
@@ -32,8 +36,8 @@ const Contact = () => {
 
         }, 5000);
 
-        console.log('Sending', email, subject, message);
-        axios.post('https://email.iwaduarte.dev/send-email', {email, subject, message})
+        console.log('Sending', from, subject, message);
+        axios.post('https://email.iwaduarte.dev/send-email', {from, subject, message,appSource})
             .then(res => console.log(res));
     };
     if (!allowSend && typeof allowSend === 'boolean') {
@@ -48,7 +52,7 @@ const Contact = () => {
             <div className="email ">
                 <label className="small-font-2 bold"> Your Email: </label>
                 <input onChange={(evt) => handleChange(evt, "setEmail")}
-                       value={email}
+                       value={from}
                        className="home-input-field"
                        type="text"/>
             </div>
