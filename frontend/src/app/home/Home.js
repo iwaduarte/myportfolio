@@ -1,9 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './Home.css';
-import videosList from '../_config/videosList'
 import Profile from "./Profile";
-import Contact from "./Contact";
-import Articles from "./Articles"
 import Entertainment from "./Entertainment"
 // import quoteAPIList from "../bot/QuoteAPIList"; //re use ?
 
