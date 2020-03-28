@@ -51,6 +51,7 @@ functions:
       - http:
           path: /send-email
           method: POST
+          cors: true
     environment:
       SEND_TO: ${env:SEND_TO , secrets.SEND_TO}
 
