@@ -2,7 +2,7 @@
 
 ##### tl;dr - checkout the website:  
 The final stack used it was React, HTML5, CSS3( vanilla).  
-d40k1drixw8tm.cloudfront.net  _(temp domain until money comes in 😜)_
+[iwaduarte.dev]
 
 This repo consists of a website containing information about the author. There you could find its CV in a 
 summarized format or as a regular pdf.You will also find a bot 🤖  that will protect you from access further until
@@ -13,7 +13,9 @@ Furthermore, I will be discussing in that __README__ the technologies
 and strategies used to build such a simple website.
 
 #### Front-end:  
-__React__ it was used as the view library with Hooks. Hooks it was chosen due its functional characteristic.
+__React__ it was used as the view library with Hooks. Hooks it was chosen due its functional characteristic and ease to use.
+It was used only raw css and no frameworks (bootstrap, ant, etc..) in order to keep the dependencies to a minimum.
+(It is not responsive at the moment)
 
 #### Back-end: 
 Initially to have Node.js to run a small SQL database seemed overkill. So data structures were built to suffice the need of it.
