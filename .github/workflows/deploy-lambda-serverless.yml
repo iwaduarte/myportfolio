@@ -23,6 +23,9 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
           SEND_TO: ${{ secrets.SES_SEND_TO}}
+          CUSTOM_DOMAIN_NAME: ${{ secrets.CUSTOM_DOMAIN_NAME}}
+          CERTIFICATE_ARN: ${{ secrets.CERTIFICATE_ARN}}
+          HOSTED_ZONE_NAME: ${{ secrets.HOSTED_ZONE_NAME}}
 
 
 
