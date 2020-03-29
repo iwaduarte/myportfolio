@@ -17,7 +17,7 @@ const Contact = () => {
 
     };
     const handleSubmit = (evt) => {
-
+        console.log('Sending', from, subject, message);
         evt.preventDefault();
         if (!from || !message) return;
 
@@ -26,6 +26,9 @@ const Contact = () => {
                 return prevState + 1;
             return false;
         });
+        axios.post('https://email.iwaduarte.dev/send-email', {from, subject, message, appSource})
+            .then(res => console.log(res));
+
         setHasSent(true);
         setEmail('');
         setMessage('');
@@ -36,9 +39,7 @@ const Contact = () => {
 
         }, 5000);
 
-        console.log('Sending', from, subject, message);
-        axios.post('https://email.iwaduarte.dev/send-email', {from, subject, message,appSource})
-            .then(res => console.log(res));
+
     };
     if (!allowSend && typeof allowSend === 'boolean') {
         return <div className="flex-container direction-column space-evenly m-auto profile-form">
