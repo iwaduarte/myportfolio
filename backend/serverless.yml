@@ -62,8 +62,8 @@ resources:
     DomainName:
       Type: "AWS::ApiGateway::DomainName"
       Properties:
-        DomainName: ${env:CUSTOM_DOMAIN_NAME}
-        CertificateArn: ${env:CERTIFICATE_ARN}
+        DomainName: ${env:CUSTOM_DOMAIN_NAME, secrets.CUSTOM_DOMAIN_NAME}
+        CertificateArn: ${env:CERTIFICATE_ARN, secrets.CERTIFICATE_ARN}
         EndpointConfiguration:
           Types:
             - EDGE #PRIVATE or EDGE
@@ -84,8 +84,8 @@ resources:
     RecordSet:
       Type: AWS::Route53::RecordSet
       Properties:
-        HostedZoneName: ${env:HOSTED_ZONE_NAME}
-        Name: ${env:CUSTOM_DOMAIN_NAME}
+        HostedZoneName: ${env:HOSTED_ZONE_NAME, secrets.HOSTED_ZONE_NAME}
+        Name: ${env:CUSTOM_DOMAIN_NAME, secrets.CUSTOM_DOMAIN_NAME}
         Type: A
         AliasTarget:
           HostedZoneId:
