@@ -18,13 +18,21 @@ const htmlEscape = (text) => {
 
 exports.handler = async event => {
 
-    const body = querystring.decode(event.body);
+    const contentType = event.headers && (event.headers['content-type'] || event.headers['Content-Type']);
+    let body = {};
+
+    if (contentType && contentType.includes('x-www-form-urlencoded')) {
+        body = querystring.decode(event.body);
+
+    } else if (contentType && contentType.includes('json'))
+        body = JSON.parse(event.body);
+
     const {message, appSource, from, subject} = body;
     const response = {
         statusCode: 200,
         headers: {
             'Content-Type': 'application/json',
-            "Access-Control-Allow-Origin": "iwaduarte.dev"
+            "Access-Control-Allow-Origin": "https://iwaduarte.dev"
         },
         isBase64Encoded: false
     };
