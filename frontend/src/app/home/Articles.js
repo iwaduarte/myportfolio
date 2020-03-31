@@ -12,15 +12,15 @@ const Articles = props => {
         console.log('New article...');
     };
 
-    return < div className="article flex-container self-center ">
-        <FaChevronLeft onClick={handleClick} size="50" color="rgb(108,103,134)" className="mx-1 pointer scale-hover"/>
+    return < div className="article flex-container  ">
+        <FaChevronLeft onClick={handleClick} size="50" color="rgb(108,103,134)" className="mx-1 fa-arrow pointer scale-hover"/>
         {article.length
             ? article.map(article => <div> {article}</div>)
             : <div className="self-center">Articles are being made... Wait a little my friend.
                 <span className="profile-emoji" role="img" aria-label='wink-emoji'> 😉 </span>
             </div>
         }
-        <FaChevronRight onClick={handleClick} size="50" color="rgb(108,103,134)" className="mx-1 pointer scale-hover"/>
+        <FaChevronRight onClick={handleClick} size="50" color="rgb(108,103,134)" className="mx-1 fa-arrow pointer scale-hover"/>
     </div>
 
 };
