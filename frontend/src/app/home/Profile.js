@@ -34,6 +34,31 @@ const projects = [
     {title: 'Develop your own authentication middleware node js', icon: '   📗', label: 'green-book-emoji'},
 ];
 
+const awsLinks = [
+    {href: "https://aws.amazon.com/s3/", title: "AWS S3", src: "/images/s3.png", alt: "Logo S3"},
+    {href: "https://aws.amazon.com/ec2/", title: "AWS EC2", src: "/images/ec2.png", alt: "Logo EC2"},
+    {href: "https://aws.amazon.com/sqs/", title: "AWS SQS", src: "/images/sqs.png", alt: "Logo SQS"},
+    {href: "https://aws.amazon.com/ses/", title: "AWS SES", src: "/images/ses.png", alt: "Logo SES"},
+    {href: "https://aws.amazon.com/sns/", title: "AWS SNS", src: "/images/sns.svg", alt: "Logo SNS"},
+    {href: "https://aws.amazon.com/rds/", title: "AWS RDS", src: "/images/rds.png", alt: "Logo RDS"},
+    {href: "https://aws.amazon.com/iam/", title: "AWS IAM", src: "/images/iam.png", alt: "Logo IAM"},
+    {href: "https://aws.amazon.com/lambda/", title: "AWS Lambda", src: "/images/lambda.png", alt: "Logo Lambda"},
+    {
+        href: "https://aws.amazon.com/api-gateway/", title: "API Gateway", src: "/images/api-gateway.png",
+        alt: "Logo API Gateway"
+    },
+    {
+        href: "https://docs.aws.amazon.com/lambda/latest/dg/services-cloudwatchevents.html", title: "AWS Cloudwatch",
+        src: "/images/cloudwatch.png", alt: "Logo Cloudwatch"
+    },
+    {
+        href: "https://aws.amazon.com/organizations/", title: "AWS Organizations", src: "/images/organizations.png",
+        alt: "Logo Organizations"
+    },
+
+
+]
+
 const Profile = props =>
     <div className="profile ">
 
@@ -55,7 +80,8 @@ const Profile = props =>
 
             <div className="profile-description">
                 <div className="profile-title">
-                    <a href="https://www.andyshora.com/full-stack-developers.html" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.andyshora.com/full-stack-developers.html" target="_blank"
+                       rel="noopener noreferrer">
                         <h2 className="inline-block  mb-0 mt-0">
                             Full Stack Developer!?! </h2> <h6 className="inline-block mb-0 mt-0"> (link) </h6>
 
@@ -91,8 +117,9 @@ const Profile = props =>
                 Github Projects:
             </h2> <span className="small-font mb-1 inline-block"> (projects below are under development...)</span>
             <div className="github flex-container inline-block">
-                {projects.map((project,index) => <span  key={index} className="profile-emoji" role="img" title={project.title}
-                                               aria-label={project.label}>
+                {projects.map((project, index) => <span key={index} className="profile-emoji" role="img"
+                                                        title={project.title}
+                                                        aria-label={project.label}>
                     {project.icon}
                 </span>)}
             </div>
@@ -101,11 +128,12 @@ const Profile = props =>
         <div className="profile-languages">
             <h2 className="mt-1 mb-0"> Languages: </h2>
             <div className="flex-container">
-                <span className="mr-1 small-font"> <FaJs  title="JavaScript" size="32" color="#F1DA4E"/> </span>
+                <span className="mr-1 small-font"> <FaJs title="JavaScript" size="32" color="#F1DA4E"/> </span>
                 <span title="PHP" className="mr-1 small-font">  <FaPhp size="32" color="#C4C9DF"/>  </span>
                 <span title="Java" className="mr-1 small-font"> <FaJava size="32" color="#0077B5"/> </span>
-                <span title="C"  className="mr-1 small-font"> <img className="icon inline-block" src={'/images/c-programming.png'}
-                                                        alt={'Logo C Programming'}/>  </span>
+                <span title="C" className="mr-1 small-font"> <img className="icon inline-block"
+                                                                  src={'/images/c-programming.png'}
+                                                                  alt={'Logo C Programming'}/>  </span>
 
             </div>
         </div>
@@ -133,88 +161,19 @@ const Profile = props =>
 
         </div>
         <div className="profile-cloud">
-
-
             <h2 className="mt-0 mx-0">Cloud: </h2>
 
             <div className="flex-container ">
                 <FaAws className="justify-center" size="40" color="#FF9900"/>
             </div>
             <div className="flex-container ">
+                {awsLinks.map(({href, title, alt, src}, index) =>
+                    <a key={index} className="no-link-style" target="blank" rel="noopener noreferrer"
+                       href={href}>
+                        <img title={title} src={src} alt={alt} className="icon-md inline-block"/>
+                    </a>
+                )}
 
-                <a className="aws-links no-link-style" target="blank" rel="noopener noreferrer"
-                   href="https://aws.amazon.com/s3/">
-                    <img title="AWS S3" className="icon-md inline-block"
-                         src={'/images/s3.png'}
-                         alt={'Logo S3'}/>
-
-
-                </a>
-                <a className="aws-links no-link-style" target="blank" rel="noopener noreferrer"
-                   href="https://aws.amazon.com/ec2/">
-                    <img title="AWS EC2" className="icon-md inline-block"
-                         src={'/images/ec2.png'}
-                         alt={'Logo EC2'}/>
-
-
-                </a>
-                <a className="aws-links no-link-style" target="blank" rel="noopener noreferrer"
-                   href="https://aws.amazon.com/sqs/">
-                    <img title="AWS SQS" className="icon-md inline-block"
-                         src={'/images/sqs.png'}
-                         alt={'Logo SQS'}/>
-
-                </a>
-                <a className="aws-links no-link-style" target="blank" rel="noopener noreferrer"
-                   href="https://aws.amazon.com/ses/"> <img title="AWS SES" className="icon-md inline-block"
-                                                            src={'/images/ses.png'}
-                                                            alt={'Logo SES'}/>
-                </a>
-                <a className="aws-links no-link-style" target="blank" rel="noopener noreferrer"
-                   href="https://aws.amazon.com/sns/">
-                    <img title="AWS SNS" className="icon-md inline-block"
-                         src={'/images/sns.svg'}
-                         alt={'Logo SNS'}/>
-
-
-                </a>
-                <a className="aws-links no-link-style" target="blank" rel="noopener noreferrer"
-                   href="https://aws.amazon.com/rds/">
-                    <img title="AWS RDS" className="icon-md inline-block"
-                         src={'/images/rds.png'}
-                         alt={'Logo RDS'}/>
-                </a>
-                <a className="aws-links no-link-style" target="blank" rel="noopener noreferrer"
-                   href="https://aws.amazon.com/iam/">
-                    <img title="AWS IAM" className="icon-md inline-block"
-                         src={'/images/iam.png'}
-                         alt={'Logo IAM'}/>
-                </a>
-
-                <a className="aws-links no-link-style" target="blank" rel="noopener noreferrer"
-                   href="https://aws.amazon.com/lambda/">
-                    <img title="AWS Lambda" className="icon-md inline-block"
-                         src={'/images/lambda.png'}
-                         alt={'Logo Lambda'}/>
-                </a>
-                <a className="aws-links no-link-style" target="blank" rel="noopener noreferrer"
-                   href="https://aws.amazon.com/api-gateway/">
-                    <img title="API Gateway" className="icon-md inline-block"
-                         src={'/images/api-gateway.png'}
-                         alt={'Logo Gateway'}/>
-                </a>
-                <a className="aws-links no-link-style" target="blank" rel="noopener noreferrer"
-                   href="https://docs.aws.amazon.com/lambda/latest/dg/services-cloudwatchevents.html">
-                    <img title="AWS Cloudwatch" className="icon-md inline-block"
-                         src={'/images/cloudwatch.png'}
-                         alt={'Logo Cloudwatch'}/>
-                </a>
-                <a className="aws-links no-link-style" target="blank" rel="noopener noreferrer"
-                   href="https://aws.amazon.com/organizations/">
-                    <img title="AWS Organizations" className="icon-md inline-block"
-                         src={'/images/organizations.png'}
-                         alt={'Logo Organizations'}/>
-                </a>
             </div>
         </div>
         <div className="profile-speaks">
