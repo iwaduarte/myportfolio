@@ -7,50 +7,32 @@
 }
 
 .bot-quote {
-    font-size: 1.6rem;
+    /*font-size: 1.6rem;*/
+    font-size: calc(16px + 0.5vw);
     font-weight: bold;
     font-family: 'Lacquer', sans-serif;
-    margin: 0;
+    margin: 1rem 0;
 }
 
 .bot-author {
-    margin-top:0;
-    margin-right: 3rem;
+    margin-top: 0;
+    margin-right: 3vw;
     font-family: 'Shadows Into Light', cursive;
     align-self: center;
-    font-size: 1.3rem;
+    /*font-size: 1.3rem;*/
+    font-size: calc(14px + 1vw);
 
+
+}
+.bot-main{
+    width: 90vw;
+    margin: 0 auto;
 }
 
 .bot-quote > span {
-    font-size: 1.5rem;
+
     font-family: 'Knewave', cursive;
     margin: 0 0.5rem;
-}
-
-.bot-footer {
-    /*background-color: #e0471b;*/
-    background-color: #59e01b;;
-    color: white;
-    display: flex;
-    justify-content: space-evenly;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%; /* why is width necessary here? */
-    height: 16vh;
-    font-size: 1.34rem;
-}
-
-.bot-footer a {
-    text-decoration: none;
-    color: inherit;
-
-}
-
-.bot-footer a:hover {
-    color: #282c34bf;
-    transform: scale(1.3);
 }
 
 .countdown-line {
@@ -58,6 +40,26 @@
     border-color: black;
     border-style: solid;
     border-width: 4px;
+    overflow: hidden;
+}
+.bot-footer {
+    background-color: #59e01b;;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    font-size: calc(7px + 1vw);
+    height: calc(30px + 4vmax);
+
+}
+
+.bot-footer a {
+    text-decoration: none;
+    color: inherit;
+
 }
 
 .bot-refresh {
@@ -69,6 +71,11 @@
     /*color: white;*/
     cursor: pointer;
     font-size: 25px;
+}
+
+.bot-footer a:hover {
+    color: #282c34bf;
+    transform: scale(1.3);
 }
 
 .bot-refresh:hover {
@@ -86,23 +93,35 @@
 }
 
 .bot-question {
+    display: flex;
     align-self: center;
     margin-top: 1rem;
+    font-size: calc(14px + 1vw);
+}
+.bot-question h1{
+    font-size: inherit;
 }
 
 .bot-footer > div {
-    max-width: 350px;
+    max-width: 45%;
     cursor: pointer;
 
 }
 
 .bot-face {
-    font-size: 2.5rem;
+    font-size: calc(40px + 0.5vw);
     margin: 0 0.2rem;
 
 }
 
+.bot-seconds{
+
+    align-self: center;
+}
+
 .bot-timer {
+    display: flex;
+    flex-direction: column;
     align-self: center;
 
 }

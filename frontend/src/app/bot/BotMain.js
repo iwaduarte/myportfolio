@@ -136,7 +136,7 @@ const BotMain = props => {
 
     }
     return <>
-        <div className="container flex-container">
+        <div className="bot-main container flex-container">
             {!stopApplication
                 ? ''
                 : <div className="m-auto">(Stopped)</div>
@@ -150,8 +150,9 @@ const BotMain = props => {
                 :
                 <>
                     <div className="bot-timer">
-                        {seconds} s
+                        <div className="bot-seconds">{seconds} s </div>
                         <hr className="countdown-line" style={{width: barWidth}}/>
+                        {/*<hr className="countdown-line" style={{width: '500px'}}/>*/}
                     </div>
                     <div className={"bot-question"}>
                         <span role="img" aria-label="bot-emoji" className="bot-face"> 🤖 </span>
