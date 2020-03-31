@@ -68,8 +68,7 @@ const Contact = () => {
                 <label className="d-block small-font-2 bold"> Quick message: </label>
                 <textarea onChange={(evt) => handleChange(evt, "setMessage")}
                           value={message}
-                          className="home-input-field textarea mt-1 mb-0"
-                          name="Body" id="" cols="50" rows="3"/>
+                          className="home-input-field textarea mt-1 mb-0"/>
             </div>
             <button onClick={handleSubmit} className="videos-button mt-1" type="submit "> Submit</button>
 

@@ -12,7 +12,7 @@ const Articles = props => {
         console.log('New article...');
     };
 
-    return < div className="article flex-container  ">
+    return < div className="article flex-container wrap ">
         <FaChevronLeft onClick={handleClick} size="50" color="rgb(108,103,134)" className="mx-1 fa-arrow pointer scale-hover"/>
         {article.length
             ? article.map(article => <div> {article}</div>)

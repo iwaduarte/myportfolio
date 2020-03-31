@@ -202,6 +202,9 @@ img.icon-md {
 
 /* Form */
 .home-input-field.textarea {
+    /*/ cols="50" rows="3"*/
+    height: 10vh;
+    width: 22vw;
     border: solid 2px orangered;
     background-color: #fff;
 }
@@ -248,18 +251,17 @@ label {
     }
 
     .entertainment {
-        width: 100vw;
+        width: 92vw;
         margin: 10px auto;
     }
 
     .youtube-iframe {
-        width: 90vw;
+        width: 88vw;
         height: 30vh;
 
     }
     .profile-form{
         padding: 4% 0;
-        flex-direction: row;
         border-right: none;
         border-left:none;
     }
@@ -267,4 +269,18 @@ label {
     margin: 1rem 10px;
     }
 
+    .home-input-field.textarea {
+        /*/ cols="50" rows="3"*/
+        height: 10vh;
+        width: 70vw;
+        border: solid 2px orangered;
+        background-color: #fff;
+    }
+
+
+    .videos-button {
+        padding: 2% 5%;
+        height: 50%;
+        align-self: center;
+    }
 }

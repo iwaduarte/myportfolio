@@ -63,7 +63,7 @@ const Profile = props =>
     <div className="profile ">
 
         <div className="profile-head">
-            <div className="flex-container">
+            <div className="flex-container wrap">
                 <div className="profile-image rounded">
                     <img className="logo " src={'/images/profile-picture.png'} alt={'Logo Profile'}/>
                 </div>
@@ -87,7 +87,7 @@ const Profile = props =>
 
                     </a>
                 </div>
-                <div className="flex-container">
+                <div className="flex-container wrap">
                     <a className={"profile-links"} href="https://github.com/iwaduarte" target="blank"><GoMarkGithub
                         color="black"
                         size="32"/></a>
@@ -116,7 +116,7 @@ const Profile = props =>
             <h2 className="mt-1 mb-0 inline-block">
                 Github Projects:
             </h2> <span className="small-font mb-1 inline-block"> (projects below are under development...)</span>
-            <div className="github flex-container inline-block">
+            <div className="github flex-container wrap inline-block">
                 {projects.map((project, index) => <span key={index} className="profile-emoji" role="img"
                                                         title={project.title}
                                                         aria-label={project.label}>
@@ -138,7 +138,7 @@ const Profile = props =>
             </div>
         </div>
 
-        <div className="profile-stack flex-container">
+        <div className="profile-stack flex-container wrap">
             <div className="mr-3">
                 <h2 className="mt-1 mb-0 mr-1">Frontend: </h2>
                 <FaReact title="React" size="40" color="#61dafb"/>
@@ -163,10 +163,10 @@ const Profile = props =>
         <div className="profile-cloud">
             <h2 className="mt-0 mx-0">Cloud: </h2>
 
-            <div className="flex-container ">
+            <div className="flex-container wrap">
                 <FaAws className="justify-center" size="40" color="#FF9900"/>
             </div>
-            <div className="flex-container ">
+            <div className="flex-container wrap">
                 {awsLinks.map(({href, title, alt, src}, index) =>
                     <a key={index} className="no-link-style" target="blank" rel="noopener noreferrer"
                        href={href}>
