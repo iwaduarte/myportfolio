@@ -234,10 +234,7 @@ label {
 }
 
 @media (max-width: 930px) {
-#root{
 
-    width: 100%;
-}
     .home {
         flex-direction: column;
         align-content: center;

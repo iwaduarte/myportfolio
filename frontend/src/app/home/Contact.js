@@ -71,7 +71,7 @@ const Contact = () => {
                           className="home-input-field textarea mt-1 mb-0"
                           name="Body" id="" cols="50" rows="3"/>
             </div>
-            <button onClick={handleSubmit} className="videos-button mt-0" type="submit "> Submit</button>
+            <button onClick={handleSubmit} className="videos-button mt-1" type="submit "> Submit</button>
 
 
         </form>
