@@ -10,12 +10,12 @@
 
 .home {
     display: flex;
-    /*margin: 0.5% 2%;*/
     justify-content: space-around;
     background-image: url('/images/dot.jpg');
     background-repeat: round;
 }
-.home:after{
+
+.home:after {
 
     background-color: gray;
 }
@@ -28,7 +28,7 @@
     width: 35%; /*necessity? */
     background-color: aliceblue;
     padding: 1% 2%;
-    margin:  0 2%;
+    margin: 0 2%;
 }
 
 .profile-head {
@@ -56,7 +56,6 @@
 
 .profile-title:hover {
     transform: scale(1.02);
-    /*font-size: 18px;*/
 }
 
 .profile-image {
@@ -71,12 +70,13 @@
 }
 
 .profile-bio {
-    width: 28rem;
+    font-size: calc(14px + 0.2vw);
 
 }
-.profile-form{
+
+.profile-form {
     border: 2px dashed black;
-    padding: 5%;
+    padding: 1.6vw;
 }
 
 .logo {
@@ -104,10 +104,16 @@ img.icon-md {
 
 }
 
+.aws-links {
+    flex-shrink: 1;
+    flex-wrap: wrap;
+
+}
 
 .videos {
     display: flex;
     flex-direction: column;
+    font-size: calc(10px + 0.2vw);
 
 }
 
@@ -178,11 +184,9 @@ img.icon-md {
 }
 
 .entertainment {
-    /*background-color: #ffe8e7;*/
     background-color: #F8F0FF;
-  
     padding: 1%;
-    width: 42%;
+    width: 50vw;
 }
 
 .home-input-field {
@@ -213,4 +217,57 @@ label {
 
 .article {
     margin: 3% auto;
+    flex-wrap: nowrap;
+
+}
+
+.youtube-iframe {
+    width: 40vw;
+    height: 40vh;
+    margin: 0 auto;
+
+}
+
+.fa-arrow {
+    height: calc(20px + 0.2vw);
+
+}
+
+@media (max-width: 930px) {
+#root{
+
+    width: 100%;
+}
+    .home {
+        flex-direction: column;
+        align-content: center;
+    }
+
+    .profile {
+
+        margin: 0 auto;
+        width: 90vw;
+        height: 100%;
+    }
+
+    .entertainment {
+        width: 100vw;
+        margin: 10px auto;
+    }
+
+    .youtube-iframe {
+        width: 90vw;
+        height: 30vh;
+
+    }
+    .profile-form{
+        padding: 4% 0;
+        flex-direction: row;
+        border-right: none;
+        border-left:none;
+    }
+    .videos h2{
+    margin: 1rem 10px;
+    }
+
 }
