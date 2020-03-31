@@ -2,7 +2,7 @@
 
 ##### tl;dr - checkout the website:  
 The final stack used it was React, HTML5, CSS3( vanilla).  
-[iwaduarte.dev]
+https://iwaduarte.dev
 
 This repo consists of a website containing information about the author. There you could find its CV in a 
 summarized format or as a regular pdf.You will also find a bot 🤖  that will protect you from access further until
