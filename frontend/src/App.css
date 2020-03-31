@@ -49,6 +49,7 @@
 
 .flex-container {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .justify-center {
@@ -156,8 +157,8 @@
 
 .container {
     flex-direction: column;
-    justify-content: center;
     height: 60vh;
+    overflow: auto;
 }
 
 
@@ -173,7 +174,7 @@ hr.horizontal-rule {
     border: none;
     border-bottom: solid 6px orangered;
     font-family: inherit;
-    font-size: 2rem;
+    /*font-size: 2rem;*/
     text-align: center;
     flex-basis: 30%
 }
