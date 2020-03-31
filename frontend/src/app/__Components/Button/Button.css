@@ -1,5 +1,6 @@
 .c-button {
-    font-size: x-large;
+    font-size: calc(8px + 1vw);
+    font-weight: bold;
     margin: 0.2rem 0.5rem;
     padding: 2%;
     border: 0;
