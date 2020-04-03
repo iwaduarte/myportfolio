@@ -1,4 +1,5 @@
 const escapeHtml = require('../utils/escapeHtml');
+const deserialize = require('../utils/deserialize');
 
 
 describe("fn: escapeHtml", () => {
@@ -31,9 +32,47 @@ describe("fn: escapeHtml", () => {
         expect(escapeHtml(html)).toBe(htmlEscaped)
     });
     test(`Escaping non escapable string`, () => {
-               const html = `This characters are not escapable @!_>.+()*^%$#?`
+        const html = `This characters are not escapable @!_>.+()*^%$#?`
         expect(html).toBe(html);
     });
 
 });
 
+describe("fn: deserialize", () => {
+
+    test('If object is parsed (JSON.parse) when header "json" is provided', () => {
+
+        const event = {
+            headers: {
+                "content-type": "json",
+            },
+            body: '{"message":"Hello Iwa", "from":"yourself@testing", "to":"contact@contact"}',
+        };
+        const bodyObj = {
+            message: "Hello Iwa",
+            from: "yourself@testing",
+            to: "contact@contact"
+        };
+        expect(deserialize(event)).toStrictEqual(bodyObj)
+
+    });
+    test('If object is decoded (querystring.decode) when header "x-www-form-urlencoded" is provided', () => {
+
+        const event = {
+            headers: {
+                "content-type": "x-www-form-urlencoded",
+            },
+            body: "message=Hello%20Iwa&from=yourself%40testing&to=contact%40contact",
+        };
+        const bodyObj = {
+            message: "Hello Iwa",
+            from: "yourself@testing",
+            to: "contact@contact"
+        };
+
+        expect(deserialize(event)).toEqual(bodyObj)
+
+    });
+
+
+});
