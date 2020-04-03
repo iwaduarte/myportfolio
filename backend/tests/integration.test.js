@@ -1,4 +1,3 @@
-const email = require('../email');
 jest.mock('aws-sdk', () => ({
     SES: function () {
         return {
@@ -6,8 +5,7 @@ jest.mock('aws-sdk', () => ({
         };
     }
 }));
-const AWS = require('aws-sdk');
-
+const email = require('../email');
 
 describe('fn: email.js - Testing aws lambda function', () => {
 
