@@ -10,7 +10,12 @@ const sendTo = process.env.SEND_TO;
 
 exports.handler = async event => {
     const body = deserialize(event);
-    const {message, appSource, from, subject} = body;
+    let {message, appSource, from, subject} = body;
+
+    message = message && message.trim();
+    appSource = appSource && appSource.trim();
+    from = from && from.trim();
+    subject = subject && subject.trim();
 
     const response = {
         statusCode: 200,
@@ -20,8 +25,9 @@ exports.handler = async event => {
         },
         isBase64Encoded: false
     };
+
     // the form does not contain message or source or appSource fields
-    if (!message.trim() || !from.trim() || !appSource.trim()) {
+    if (!message  || !from || !appSource ) {
         response.statusCode = 400;
         response.body = JSON.stringify({
             message: `Malformed email form! Missing [message:${!!message}, from:${!!from}, appSource:${!!appSource}]`,
