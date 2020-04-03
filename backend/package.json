@@ -11,5 +11,8 @@
   "license": "ISC",
   "devDependencies": {
     "jest": "^25.2.4"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.653.0"
   }
 }
