@@ -1,4 +1,4 @@
-# myportifolio
+# myportfolio
 
 ##### tl;dr - checkout the website:  
 The final stack used it was React, HTML5, CSS3( vanilla).  
