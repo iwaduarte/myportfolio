@@ -1,11 +1,15 @@
 .bot-header {
     display: flex;
     flex-direction: column;
-    /*background-color: #5EA5D6;*/
+    background-color: #e5ffe4;
     padding: 1% 2%;
 
 }
+.bot-qa {
 
+    margin: auto;
+
+}
 .bot-quote {
     /*font-size: 1.6rem;*/
     font-size: calc(16px + 0.5vw);
@@ -27,6 +31,7 @@
 .bot-main{
     width: 90vw;
     margin: 0 auto;
+
 }
 
 .bot-quote > span {
@@ -94,6 +99,7 @@
 
 .bot-question {
     display: flex;
+    justify-content: center;
     align-self: center;
     margin-top: 1rem;
     font-size: calc(14px + 1vw);
@@ -125,6 +131,7 @@
     align-self: center;
     max-width: 100%;
     overflow: hidden;
+    margin: 2% 0;
 }
 
 .clear-screen:hover {
