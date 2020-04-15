@@ -95,7 +95,7 @@ const BotMain = props => {
         document.addEventListener('keydown', handleKeys);
 
         return () => document.removeEventListener("keydown", handleKeys);
-    }, [intervalPause,intervalResume]);
+    }, [intervalPause, intervalResume]);
     //
     const handleClick = (event, next) => {
         //action has been clicked and next object has been provided
@@ -150,27 +150,29 @@ const BotMain = props => {
                 :
                 <>
                     <div className="bot-timer">
-                        <div className="bot-seconds">{seconds} s </div>
+                        <div className="bot-seconds">{seconds} s</div>
                         <hr className="countdown-line" style={{width: barWidth}}/>
                         {/*<hr className="countdown-line" style={{width: '500px'}}/>*/}
                     </div>
-                    <div className={"bot-question"}>
-                        <span role="img" aria-label="bot-emoji" className="bot-face"> 🤖 </span>
-                        <h1 className="inline-block">{botState.question[0]}</h1>
-                    </div>
-                    <div className="flex-container justify-center">
-                        {botState.actions.length
-                            ? botState.actions.map((action, index) =>
-                                <Button onClick={event => handleClick(event, action.next)}
-                                        key={index}> {action.text} </Button>
-                            )
+                    <div className="bot-qa">
+                        <div className="bot-question">
+                            <span role="img" aria-label="bot-emoji" className="bot-face"> 🤖 </span>
+                            <h1 className="inline-block">{botState.question[0]}</h1>
+                        </div>
+                        <div className="flex-container justify-center">
+                            {botState.actions.length
+                                ? botState.actions.map((action, index) =>
+                                    <Button onClick={event => handleClick(event, action.next)}
+                                            key={index}> {action.text} </Button>
+                                )
 
-                            : <>
-                                <input value={username} onChange={handleChange} className={'input-field mx-1'}
-                                       type="text"/>
-                                <FaCheck onClick={handleClick} className={'icon icon-ok d-block'}/>
-                            </>
-                        }
+                                : <>
+                                    <input value={username} onChange={handleChange} className={'input-field mx-1'}
+                                           type="text"/>
+                                    <FaCheck onClick={handleClick} className={'icon icon-ok d-block'}/>
+                                </>
+                            }
+                        </div>
                     </div>
                 </>
             }
