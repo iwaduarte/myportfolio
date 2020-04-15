@@ -9,7 +9,6 @@ const Home = props => {
     return <>
         <div className="home">
             <Profile/>
-            {/*<hr className="horizontal-rule"/>*/}
             <Entertainment/>
         </div>
     </>
