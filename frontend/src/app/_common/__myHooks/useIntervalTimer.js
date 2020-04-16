@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import  {useEffect,useCallback} from 'react';
 
 // reset the interval (every action that it is not an timeout execution should reset the interval)
