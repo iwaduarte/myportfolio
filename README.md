@@ -1,6 +1,15 @@
 # myportfolio
 
-##### tl;dr - checkout the website:  
+#### Updates:
+- Improved version of **myportfolio** was added for 2022:  
+I have recently changed the version of my portfolio to be more user friendly and direct to the point.
+More UX/UI centric and more responsive. I have removed the bot entirely and replaced the old approach with new ones.
+
+The old website will be displayed here:
+https://iwaduarte.dev/oldportfolio
+
+
+##### tl;dr - we can go directly to the website:  
 The final stack used it was React, HTML5, CSS3( vanilla).  
 https://iwaduarte.dev
 
