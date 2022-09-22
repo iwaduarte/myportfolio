@@ -1,0 +1,42 @@
+.boxes {
+  display: flex;
+  justify-content: flex-end;
+  background: #22292d;
+  min-width: 40vw;
+  max-height: 47vh;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  padding-top: 2.5rem;
+}
+.title {
+  font-family: 'Righteous', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: calc(2rem + 2vw);
+  line-height: 89px;
+  color: #ffffff;
+}
+.anchor {
+  box-shadow: inset 0 0 0 1000px rgba(34, 41, 45, 1);
+}
+
+.anchor:hover {
+  transition: 2s linear;
+  box-shadow: inset 0 0 0 1000px transparent;
+  background-size: cover;
+}
+
+.anchor.about:hover {
+  background: url('/public/meee.jpg') no-repeat;
+}
+.anchor.videos:hover {
+  background-image: url('/public/videos.png');
+}
+
+@media screen and (max-width: 880px) {
+  .boxes {
+    justify-content: flex-start;
+    margin-left: 8%;
+    width: 50vw;
+  }
+}

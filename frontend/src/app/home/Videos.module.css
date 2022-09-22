@@ -1,0 +1,64 @@
+.closeModal {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  color: #ffffff;
+  font-size: 12px;
+  font-family: 'Righteous';
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  width: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  background: #838383;
+}
+.closeModal:hover {
+  transform: scale(1.005);
+  color: #282c34;
+}
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+  background: rgb(40, 44, 52, 0.8);
+  transition: opacity 400ms ease-in;
+}
+
+.videos {
+  opacity: 100;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-around;
+  align-items: center;
+  width: 80vw;
+  height: 100%;
+}
+.youtubeFrame {
+  display: flex;
+  align-self: center;
+}
+.buttons {
+  cursor: pointer;
+  margin: 0.5rem 1rem;
+  color: #ffffff;
+  font-family: 'Amatic SC', cursive;
+  font-size: 160px;
+  align-self: center;
+}
+.buttons:hover {
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 880px) {
+  .buttons {
+    font-size: 120px;
+    margin: 0.4rem 0.2rem;
+  }
+  .modal {
+    width: 118vw;
+  }
+}

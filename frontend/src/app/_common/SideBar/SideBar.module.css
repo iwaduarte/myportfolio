@@ -1,0 +1,38 @@
+.text {
+  font-family: 'Righteous', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: calc(5rem + 2vh);
+  line-height: 119px;
+  writing-mode: vertical-rl;
+}
+
+.sidebar {
+  display: flex;
+  position: fixed;
+  min-width: 106px;
+  width: 5.8vw;
+  height: 94vh;
+  color: #22292d;
+  transform: rotate(180deg);
+  overflow: hidden;
+}
+
+.outside {
+  width: 5.8vw;
+  min-width: 106px;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 880px) {
+  .text {
+    font-size: calc(4rem + 1.5vh);
+    line-height: 80px;
+  }
+  .sidebar {
+    min-width: 90px;
+  }
+  .outside {
+    min-width: 90px;
+  }
+}
