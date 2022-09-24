@@ -12,6 +12,7 @@ const NavBar = () => null;
  - linkedin
  - github
  - medium
+ - stackoverflow
  - dark mode
 
  The NavBar has to have a X component that will close to the side. ( X => < )
