@@ -1,0 +1,33 @@
+.card {
+  display: flex;
+  margin: 2rem;
+}
+
+.card > img {
+  flex-shrink: 0;
+  width: 189px;
+  height: 171px;
+  background: #22292d;
+}
+
+.tag {
+  height: 30%;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  margin: 0 2.5rem;
+}
+
+.content {
+  font-size: 20px;
+  height: 60%;
+  width: 84%;
+}
+
+.actions {
+  display: flex;
+  height: 30%;
+  align-items: center;
+}
