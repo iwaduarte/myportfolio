@@ -1,0 +1,40 @@
+.button {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  margin-top: 8px;
+  margin-right: 1rem;
+  width: 164px;
+  height: 32px;
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: #22292d;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.button > img {
+  width: 24px;
+  height: 24px;
+  padding-bottom: 2px;
+}
+
+.light {
+  border: 1px solid #22292d;
+  background: #fff;
+  color: #22292d;
+}
+
+.button:hover {
+  background: #fff;
+  color: #22292d;
+}
+
+.light:hover {
+  background: #887e94;
+  border: 1px solid #887e94;
+}
