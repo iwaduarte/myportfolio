@@ -1,5 +1,11 @@
 .articles {
   display: flex;
-  margin: 1rem auto auto;
-  width: 80%;
+  flex-wrap: wrap;
+  margin: 1rem -2%;
+  /*margin: 1rem auto auto;*/
+  /*justify-content: center;*/
+}
+
+.spinner {
+  margin: 20vh;
 }

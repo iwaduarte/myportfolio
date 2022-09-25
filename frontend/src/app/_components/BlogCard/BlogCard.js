@@ -1,18 +1,25 @@
 import React from 'react';
 import style from './BlogCard.module.css';
+import Tag from '../Tag/Tag';
 
-const { card, container, image } = style;
+const { card, container, image, body, footer } = style;
 
-const article = 'This is an medium articleeee';
-
-const BlogCard = ({ src = ``, alt = 'Avatar' }) => (
-  <div className={card}>
+const BlogCard = ({ src = ``, alt = 'Avatar', title = '', content = '', author, tags, link }) => (
+  <div className={card} onClick={() => window.open(link)}>
     <div className={image}>{src && <img src={src} alt={alt} style={{ width: '100%' }} />}</div>
     <div className={container}>
-      <h4>
-        <b>{article}</b>
-      </h4>
-      <p>Architect & Engineer</p>
+      <div className={body}>
+        <h4>
+          <b>{title}</b>
+        </h4>
+        <p>{content}...</p>
+      </div>
+      <div className={footer}>
+        {tags.map(tag => {
+          const [name, color] = Array.isArray(tag) ? tag : [tag];
+          return <Tag name={name} backgroundColor={color} margin="2px" />;
+        })}
+      </div>
     </div>
   </div>
 );
