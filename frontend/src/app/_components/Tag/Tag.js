@@ -3,8 +3,8 @@ import style from './Tag.module.css';
 
 const { tag } = style;
 
-const Tag = ({ name, backgroundColor }) => (
-  <button className={tag} style={{ backgroundColor }}>
+const Tag = ({ name, backgroundColor, margin }) => (
+  <button className={tag} title={name} style={{ backgroundColor, margin }}>
     {name}
   </button>
 );
