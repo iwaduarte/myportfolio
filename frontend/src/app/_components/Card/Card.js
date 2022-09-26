@@ -10,13 +10,13 @@ const Card = ({ src, alt, tags = [], children, codeUrl = true, demoUrl = true })
     <img src={src} alt={alt} />
     <div className={body}>
       <div className={tag}>
-        {tags.map(tag => {
+        {tags.map((tag, key) => {
           const [name, color] = Array.isArray(tag) ? tag : [tag];
-          return <Tag name={name} backgroundColor={color} />;
+          return <Tag name={name} key={key} backgroundColor={color} />;
         })}
       </div>
       <div className={content}>{children}</div>
-      <div class={actions}>
+      <div className={actions}>
         {demoUrl && <Button> View Demo </Button>}
         {codeUrl && (
           <Button icon="social-github.svg" lightBtn>

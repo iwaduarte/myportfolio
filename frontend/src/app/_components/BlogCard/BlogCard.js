@@ -15,9 +15,9 @@ const BlogCard = ({ src = ``, alt = 'Avatar', title = '', content = '', author, 
         <p>{content}...</p>
       </div>
       <div className={footer}>
-        {tags.map(tag => {
+        {tags.map((tag, key) => {
           const [name, color] = Array.isArray(tag) ? tag : [tag];
-          return <Tag name={name} backgroundColor={color} margin="2px" />;
+          return <Tag name={name} key={key} backgroundColor={color} margin="2px" />;
         })}
       </div>
     </div>

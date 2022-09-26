@@ -24,7 +24,6 @@ const Articles = props => {
     axios
       .get('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@mehulkothari05')
       .then(({ data }) => {
-        console.log(data);
         const { items } = data || {};
         setPosts(items);
       });

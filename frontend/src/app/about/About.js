@@ -8,7 +8,7 @@ const { inlineBlock, body, content } = styles;
 const About = () => (
   <Container>
     <Title titleName="About me" />
-    <div class={body}>
+    <div className={body}>
       <div>
         <h1 className={inlineBlock}> Everyone has a story worth to sharing. </h1> <small> ( 📒 4 minute read )</small>
       </div>
