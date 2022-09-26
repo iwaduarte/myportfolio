@@ -15,8 +15,8 @@ const Home = () => {
         <Boxes to="about" name="ABOUT ME" className="about" />
         <Boxes name="VIDEOS" className="videos" onClick={() => setModal(prevState => !prevState)} />
         {modal && <Videos onClick={() => setModal(prevState => !prevState)} />}
-        <Boxes to="/articles" name="ARTICLES" />
-        <Boxes to="/projects" name="PROJECTS" />
+        <Boxes to="/articles" className="articles" name="ARTICLES" />
+        <Boxes to="/projects" className="projects" name="PROJECTS" />
       </div>
     </div>
   );
