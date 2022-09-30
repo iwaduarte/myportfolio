@@ -21,12 +21,10 @@ const Articles = props => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    axios
-      .get('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@mehulkothari05')
-      .then(({ data }) => {
-        const { items } = data || {};
-        setPosts(items);
-      });
+    axios.get('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@iwaduarte').then(({ data }) => {
+      const { items } = data || {};
+      setPosts(items);
+    });
   }, []);
 
   return (
