@@ -5,6 +5,7 @@
 
 .card > img {
   flex-shrink: 0;
+  filter: blur(1px);
   width: 189px;
   height: 171px;
   background: #22292d;
@@ -21,7 +22,7 @@
 }
 
 .content {
-  font-size: 20px;
+  font-size: 18px;
   height: 60%;
   width: 84%;
 }

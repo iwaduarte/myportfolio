@@ -6,18 +6,38 @@ import Container from '../_components/Container/Container';
 
 const { project } = style;
 
-const { easy, hard, medium } = { easy: ['easy', '#2D6871'], medium: ['medium', '#F9F871'], hard: ['hard', '#5D3134'] };
+// const { easy, hard, medium } = { easy: ['easy', '#2D6871'], medium: ['medium', '#F9F871'], hard: ['hard', '#5D3134'] };
 
 const Projects = () => (
   <Container className={project}>
     <Title titleName="Projects" />
     <div>
-      <Card tags={['easy', 'javascript', 'node.js', 'aws']}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec sodales tortor. Nunc ac pretium est. Donec
-        neque enim, aliquet vitae magna id, vestibulum placerat arcu. Suspendisse potenti.  
+      <Card
+        tags={['moderate', 'javascript', 'node.js', 'aws', 'ses', 'react.js']}
+        src={'/portfolio.png'}
+        codeUrl="https://github.com/iwaduarte/myportfolio"
+        demoUrl="self"
+      >
+        This portfolio website has everything one needs to know about Iwá Duarte @developer. It was developed from
+        scratch using only react, css and html. All animations, buttons and grid were designed as a proof of concept.
       </Card>
-      <Card />
-      <Card />
+      <Card
+        tags={['easy', 'javascript', 'react.js', 'style-components']}
+        src={'/movieme.png'}
+        codeUrl="https://github.com/iwaduarte/movieme"
+      >
+        A web site to search for movie and recommendations based on your tastes. It contains the top 250 IMDB rated
+        movies. From there user would rate movies until recommendation start showing "must see pictures".
+      </Card>
+      <Card
+        tags={['moderate', 'express.js', 'graphQL', 'aws', 'serverless', 'react.js', 'style-components']}
+        src={'/smff.png'}
+        codeUrl="https://github.com/iwaduarte/semeufuscafalasse"
+        demoUrl="https://semeufuscafalasse.iwaduarte.dev/"
+      >
+        Game initially developed as a technical challenge for the Upnid company and consists of several technology
+        stacks. Node, Express, GraphQL, Serverless, React, Styled Components etc.
+      </Card>
     </div>
   </Container>
 );
