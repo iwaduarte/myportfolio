@@ -2,7 +2,7 @@ service: serverless-smtp
 
 provider:
   name: aws
-  runtime: nodejs12.x
+  runtime: nodejs16.x
   stage: ${env:ENV, 'dev'}
   region: ${env:AWS_REGION, "sa-east-1"}
 # you can add statements to the Lambda function's IAM Role here

@@ -1,4 +1,4 @@
-const { XMLParser, XMLBuilder, XMLValidator } = require("fast-xml-parser");
+const { XMLParser } = require("fast-xml-parser");
 const axios = require("axios");
 
 const parser = new XMLParser();
@@ -16,10 +16,16 @@ exports.handler = async () => {
     .get(`https://medium.com/feed/@iwaduarte`)
     .then(({ data }) => data);
 
+  console.log("dataaaa", xmlData);
+
   const javascriptObject = parser.parse(xmlData);
+  console.log("JSOBject", javascriptObject);
   const item = javascriptObject?.rss?.channel?.item;
+  console.log("item");
+
   response.body = JSON.stringify(item);
 
+  console.log("jSON");
   return response;
 };
 
