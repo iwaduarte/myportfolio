@@ -17,11 +17,28 @@ exports.handler = async () => {
     .then(({ data }) => data);
 
   const javascriptObject = parser.parse(xmlData);
-  const item = javascriptObject?.rss?.channel?.item;
+  const items = javascriptObject?.rss?.channel?.item;
 
-  response.body = JSON.stringify(item);
+  const newItems = items.map((item, index) => {
+    const {
+      category: categories,
+      guid,
+      title,
+      "dc:creator": author,
+      "content:encoded": content,
+    } = item;
+
+    const description = content.substring(0, 300);
+    const partialContent = content.substring(
+      content.indexOf(`<figure>`),
+      content.indexOf(`<figcaption>`)
+    );
+    const thumbnail = partialContent.replace(/.*src="(.+)".*/, "$1");
+
+    return { categories, guid, title, author, description, thumbnail };
+  });
+
+  response.body = JSON.stringify(newItems);
 
   return response;
 };
-
-exports.handler();
