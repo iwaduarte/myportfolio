@@ -21,29 +21,6 @@ provider:
       Resource: "*"
   versionFunctions: false
 
-#    - Effect: "Allow"
-#      Action:
-#        - "s3:PutObject"
-#      Resource:
-#        Fn::Join:
-#          - ""
-#          - - "arn:aws:s3:::"
-#            - "Ref" : "ServerlessDeploymentBucket"
-#            - "/*"
-
-# you can define service wide environment variables here
-#  environment:
-#    variable1: value1
-
-# you can add packaging information here
-#package:
-#  include:
-#    - include-me.js
-#    - include-me-dir/**
-#  exclude:
-#    - exclude-me.js
-#    - exclude-me-dir/**
-
 functions:
   hello:
     handler: email.handler
@@ -54,11 +31,18 @@ functions:
           cors: true
     environment:
       SEND_TO: ${env:SEND_TO}
+  articles:
+    handler: articles.handler
+    events:
+      - http:
+          path: /get-articles
+          method: GET
+          cors: true
 
 resources:
   Resources:
 
-    #Custom Domain Naming (ie. test-framework.dev.laava.id )
+    #Custom Domain Naming (ie. iwaduarte.dev)
     DomainName:
       Type: "AWS::ApiGateway::DomainName"
       Properties:
