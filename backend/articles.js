@@ -6,7 +6,7 @@ const response = {
   statusCode: 200,
   headers: {
     "Content-Type": "application/json",
-    "Access-Control-Allow-Origin": "https://iwaduarte.dev",
+    "Access-Control-Allow-Origin": "*",
   },
   isBase64Encoded: false,
 };
