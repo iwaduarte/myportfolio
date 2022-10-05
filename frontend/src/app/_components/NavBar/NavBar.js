@@ -14,7 +14,7 @@ import styles from './NavBar.module.css';
  - search (to implement later in life) :P
  */
 
-const { navBar, arrow, lt, animateClose, animateOpen, icon, icons } = styles;
+const { navBar, arrow, lt, gt, animateClose, animateOpen, icon, icons } = styles;
 
 const NavBar = () => {
   const [showBar, setShowBar] = useState(true);
@@ -31,7 +31,7 @@ const NavBar = () => {
   return showBar ? (
     <div className={`${navBar} ${animate ? animateClose : ''}`}>
       <div className={icons}>
-        <MdArrowForwardIos onClick={closeBar} className={icon} color="#fff" size={22} />
+        <MdArrowForwardIos onClick={closeBar} className={`${icon} ${gt}`} color="#fff" size={22} />
         <a className={'profile-links'} href="https://stackoverflow.com/users/7350853/iwaduarte" target="blank">
           <FaStackOverflow className={icon} color="#fff" size={size} />
         </a>

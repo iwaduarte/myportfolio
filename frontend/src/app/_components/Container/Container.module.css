@@ -1,8 +1,16 @@
 .container {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   justify-content: space-around;
   margin: 8vh auto auto;
   width: 60%;
   align-items: center;
+  line-height: 32px;
+}
+
+@media screen and (max-width: 880px) {
+  .container {
+    line-height: 1.58;
+  }
 }
