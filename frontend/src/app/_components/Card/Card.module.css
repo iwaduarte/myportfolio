@@ -1,6 +1,5 @@
 .card {
   display: flex;
-  flex-wrap: wrap;
   margin: 2rem;
 }
 
@@ -40,5 +39,8 @@
   }
   .content {
     margin: 12px 0;
+  }
+  .card {
+    flex-wrap: wrap;
   }
 }
