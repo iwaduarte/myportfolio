@@ -13,8 +13,8 @@ const Home = () => {
       <div className={line} />
       <div className={main}>
         <Boxes to="about" name="ABOUT ME" className="about" />
-        <Boxes name="VIDEOS" className="videos" onClick={() => setModal(prevState => !prevState)} />
-        {modal && <Videos onClick={() => setModal(prevState => !prevState)} />}
+        <Boxes name="VIDEOS" className="videos" onClick={() => setModal(true)} />
+        {modal && <Videos onClick={() => setModal(false)} />}
         <Boxes to="/articles" className="articles" name="ARTICLES" />
         <Boxes to="/projects" className="projects" name="PROJECTS" />
       </div>

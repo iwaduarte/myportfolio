@@ -26,6 +26,7 @@
   height: 100vh;
   background: rgb(40, 44, 52, 0.8);
   transition: opacity 400ms ease-in;
+  cursor: pointer;
 }
 
 .videos {

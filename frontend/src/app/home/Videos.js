@@ -41,12 +41,26 @@ const Videos = ({ onClick }) => {
   };
 
   return (
-    <div className={modal}>
-      <div className={closeModal} onClick={onClick}>
+    <div className={modal} onClick={onClick}>
+      <div
+        className={closeModal}
+        onClick={() => {
+          console.log('clicked');
+          onClick();
+        }}
+      >
         X
       </div>
       <div className={videos}>
-        <div title="Previous" className={buttons} onClick={() => loadVideo('prev')} color="#fc5248">
+        <div
+          title="Previous"
+          className={buttons}
+          onClick={e => {
+            loadVideo('prev');
+            e.stopPropagation();
+          }}
+          color="#fc5248"
+        >
           &lt;
         </div>
         <iframe
@@ -59,7 +73,15 @@ const Videos = ({ onClick }) => {
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         />
-        <div title="Next" className={buttons} onClick={() => loadVideo('next')} color="#fc5248">
+        <div
+          title="Next"
+          className={buttons}
+          onClick={e => {
+            loadVideo('next');
+            e.stopPropagation();
+          }}
+          color="#fc5248"
+        >
           >
         </div>
       </div>
