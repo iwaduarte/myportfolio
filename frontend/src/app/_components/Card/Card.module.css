@@ -4,8 +4,6 @@
 }
 
 .card > img {
-  flex-shrink: 0;
-  filter: blur(1px);
   width: 189px;
   height: 171px;
   background: #22292d;
@@ -35,12 +33,23 @@
 
 @media screen and (max-width: 880px) {
   .body {
+    justify-content: center;
     margin: 2.5rem 0;
+    align-items: center;
   }
   .content {
-    margin: 12px 0;
+    margin: 2.5rem 0;
   }
   .card {
+    justify-content: center;
     flex-wrap: wrap;
+  }
+  .tag {
+    height: 100%;
+  }
+  .card > img {
+    justify-content: center;
+    width: auto;
+    background: #22292d;
   }
 }

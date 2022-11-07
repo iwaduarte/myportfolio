@@ -1,0 +1,12 @@
+.navBar {
+  display: none;
+}
+
+@media screen and (max-width: 880px) {
+  .navBar {
+    height: 12%;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 0.25rem;
+  }
+}

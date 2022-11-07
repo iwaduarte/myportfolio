@@ -14,9 +14,21 @@ h4 {
 }
 
 .body > img {
-  /*margin: auto;*/
   display: block;
 }
 .content {
   margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 880px) {
+  .body {
+    width: 100%;
+  }
+  .content {
+    margin-bottom: 6rem;
+  }
+  .headline {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
 }

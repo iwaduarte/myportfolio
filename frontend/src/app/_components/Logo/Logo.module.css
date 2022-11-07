@@ -1,0 +1,19 @@
+.text {
+  font-family: 'Righteous', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: calc(5rem + 2vh);
+  line-height: 119px;
+  writing-mode: vertical-rl;
+}
+
+@media screen and (max-width: 880px) {
+  .text {
+    color: black;
+    writing-mode: horizontal-tb;
+    font-size: calc(1.9rem + 2vw);
+    margin: -1rem 0;
+    align-items: center;
+    overflow: hidden;
+  }
+}

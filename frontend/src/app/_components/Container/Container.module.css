@@ -11,6 +11,10 @@
 
 @media screen and (max-width: 880px) {
   .container {
-    line-height: 1.58;
+    line-height: 1.8;
+    justify-content: flex-start;
+    margin: 0;
+    width: 100%;
+    flex-wrap: nowrap;
   }
 }

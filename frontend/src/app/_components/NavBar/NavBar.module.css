@@ -9,6 +9,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .arrow {
@@ -43,24 +44,9 @@
   transition: 1s;
 }
 
-.icon {
-  margin: 16px 8px;
-}
-
-.icon:hover {
-  transform: scale(1.2);
-}
-.icons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-flow: column;
-  background: #22292d;
-  border-radius: 14px 0 0 14px;
-}
-
 @media screen and (max-width: 880px) {
   .navBar {
+    display: none;
     top: 0;
     left: 0;
     width: calc(94px + 2vw);
@@ -82,9 +68,5 @@
     width: calc(80px + 2vw);
     height: 60px;
     border-radius: 0 14px 14px 0;
-  }
-  .lt,
-  .gt {
-    transform: rotate(180deg);
   }
 }

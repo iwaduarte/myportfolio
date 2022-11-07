@@ -1,8 +1,9 @@
 .main {
   display: flex;
   height: 94vh;
-  width: 90vw;
+  width: 88vw;
   overflow: hidden;
+
   flex-wrap: wrap;
 }
 
@@ -18,5 +19,9 @@
 @media screen and (max-width: 880px) {
   .main {
     justify-content: center;
+    width: 100%;
+  }
+  .line {
+    width: 100%;
   }
 }

@@ -17,6 +17,39 @@ const htmlExtractText = (node, limit = 100) => {
 //useCRUD data from medium and create blog card
 // 1 -open modal with iframe pointing to tutorial
 
+const OrderedArticles = ({ posts = [] }) => {
+  console.log('posts', posts);
+  const { blogCardsArray } = posts.reduce(
+    (acc, post, key) => {
+      const { author, categories, guid, thumbnail, title, description } = post;
+
+      const { decreaseOdd, decreaseEven, blogCardsArray } = acc;
+      const isOdd = key % 2 !== 0;
+      const offset = posts.length / 2;
+      const newBlogCardsArray = blogCardsArray.concat(
+        <BlogCard
+          order={isOdd ? key + (offset - decreaseOdd) : key - (offset - decreaseEven)}
+          src={thumbnail}
+          title={title}
+          key={key}
+          content={htmlExtractText(description)}
+          author={author}
+          tags={categories}
+          link={guid}
+        />
+      );
+      return {
+        decreaseOdd: isOdd ? decreaseOdd + 1 : decreaseOdd,
+        decreaseEven: !isOdd ? decreaseEven - 1 : decreaseEven,
+        blogCardsArray: newBlogCardsArray
+      };
+    },
+    { decreaseOdd: 1, decreaseEven: 4, blogCardsArray: [] }
+  );
+
+  return blogCardsArray;
+};
+
 const Articles = props => {
   const [posts, setPosts] = useState([]);
 
@@ -31,20 +64,7 @@ const Articles = props => {
       <Title titleName={'Articles'} />
       <div className={articles}>
         {posts.length ? (
-          posts.map((post, key) => {
-            const { author, categories, guid, thumbnail, title, description } = post;
-            return (
-              <BlogCard
-                src={thumbnail}
-                title={title}
-                key={key}
-                content={htmlExtractText(description)}
-                author={author}
-                tags={categories}
-                link={guid}
-              />
-            );
-          })
+          <OrderedArticles posts={posts} />
         ) : (
           <div className={spinner}>
             <Spinner />

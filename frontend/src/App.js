@@ -7,7 +7,7 @@ import About from './app/about/About';
 import Articles from './app/articles/Articles';
 import Projects from './app/projects/Projects';
 import NavBar from './app/_components/NavBar/NavBar';
-
+import NavBarMobile from './app/_components/NavBarMobile/NavBarMobile';
 const { home } = styles;
 
 function App() {

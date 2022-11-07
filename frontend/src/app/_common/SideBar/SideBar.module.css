@@ -1,12 +1,3 @@
-.text {
-  font-family: 'Righteous', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: calc(5rem + 2vh);
-  line-height: 119px;
-  writing-mode: vertical-rl;
-}
-
 .sidebar {
   display: flex;
   position: fixed;
@@ -33,6 +24,7 @@
     min-width: 90px;
   }
   .outside {
+    display: none;
     min-width: 90px;
   }
 }

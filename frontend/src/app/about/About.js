@@ -3,13 +3,13 @@ import styles from './About.module.css';
 import Title from '../_components/Title/Title';
 import Container from '../_components/Container/Container';
 
-const { inlineBlock, body, content } = styles;
+const { inlineBlock, body, content, headline } = styles;
 
 const About = () => (
   <Container>
     <Title titleName="About me" />
     <div className={body}>
-      <div>
+      <div className={headline}>
         <h1 className={inlineBlock}> Everyone has a story worth to sharing. </h1> <small> ( 📒 4 minute read )</small>
       </div>
       <h4> Thus a unique tale... </h4>
