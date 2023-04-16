@@ -6,7 +6,7 @@ import style from './Articles.module.css';
 import axios from 'axios';
 import Spinner from '../_components/Spinner/Spinner';
 
-const { articles, spinner } = style;
+const { articles, spinner, languageSelector, languageItem } = style;
 
 const htmlExtractText = (node, limit = 100) => {
   const tag = document.createElement('div');
@@ -14,20 +14,16 @@ const htmlExtractText = (node, limit = 100) => {
   return tag.innerText.substring(0, limit);
 };
 
-//useCRUD data from medium and create blog card
-// 1 -open modal with iframe pointing to tutorial
-
-const OrderedArticles = ({ posts = [] }) => {
-  const { blogCardsArray } = posts.reduce(
-    (acc, post, key) => {
+const FilteredArticles = ({ posts = [], selectedLanguage }) => {
+  return posts
+    .filter(post => {
+      return post.categories.includes(selectedLanguage);
+    })
+    .map((post, key) => {
       const { author, categories, guid, thumbnail, title, description } = post;
 
-      const { decreaseOdd, decreaseEven, blogCardsArray } = acc;
-      const isOdd = key % 2 !== 0;
-      const offset = posts.length / 2;
-      const newBlogCardsArray = blogCardsArray.concat(
+      return (
         <BlogCard
-          order={isOdd ? key + (offset - decreaseOdd) : key - (offset - decreaseEven)}
           src={thumbnail}
           title={title}
           key={key}
@@ -37,20 +33,12 @@ const OrderedArticles = ({ posts = [] }) => {
           link={guid}
         />
       );
-      return {
-        decreaseOdd: isOdd ? decreaseOdd + 1 : decreaseOdd,
-        decreaseEven: !isOdd ? decreaseEven - 1 : decreaseEven,
-        blogCardsArray: newBlogCardsArray
-      };
-    },
-    { decreaseOdd: 1, decreaseEven: 4, blogCardsArray: [] }
-  );
-
-  return blogCardsArray;
+    });
 };
 
 const Articles = () => {
   const [posts, setPosts] = useState([]);
+  const [selectedLanguage, setSelectedLanguage] = useState('english');
 
   useEffect(() => {
     axios.get('https://email.iwaduarte.dev/get-articles').then(({ data }) => {
@@ -58,12 +46,35 @@ const Articles = () => {
     });
   }, []);
 
+  const handleLanguageChange = language => {
+    setSelectedLanguage(language);
+  };
+
   return (
     <Container>
       <Title titleName={'Articles'} />
+      <div className={languageSelector}>
+        <span
+          className={languageItem}
+          role="img"
+          aria-label="English Flag"
+          onClick={() => handleLanguageChange('english')}
+        >
+          EN
+        </span>
+        |
+        <span
+          className={languageItem}
+          role="img"
+          aria-label="Brazilian Flag"
+          onClick={() => handleLanguageChange('brasil')}
+        >
+          PT-BR
+        </span>
+      </div>
       <div className={articles}>
         {posts.length ? (
-          <OrderedArticles posts={posts} />
+          <FilteredArticles posts={posts} selectedLanguage={selectedLanguage} />
         ) : (
           <div className={spinner}>
             <Spinner />

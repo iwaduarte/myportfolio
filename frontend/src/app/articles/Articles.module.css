@@ -8,6 +8,19 @@
   margin: 20vh;
 }
 
+.languageSelector {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: flex-end;
+}
+
+.languageItem {
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 880px) {
   .articles {
     justify-content: center;
