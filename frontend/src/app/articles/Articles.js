@@ -18,7 +18,6 @@ const htmlExtractText = (node, limit = 100) => {
 // 1 -open modal with iframe pointing to tutorial
 
 const OrderedArticles = ({ posts = [] }) => {
-  console.log('posts', posts);
   const { blogCardsArray } = posts.reduce(
     (acc, post, key) => {
       const { author, categories, guid, thumbnail, title, description } = post;
@@ -50,7 +49,7 @@ const OrderedArticles = ({ posts = [] }) => {
   return blogCardsArray;
 };
 
-const Articles = props => {
+const Articles = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
