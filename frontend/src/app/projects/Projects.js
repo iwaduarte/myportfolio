@@ -51,6 +51,26 @@ const Projects = () => (
         Game initially developed as a technical challenge for the Upnid company and consists of several technology
         stacks. Node, Express, GraphQL, Serverless, React, Styled Components etc.
       </Card>
+      <Card
+        tags={['moderate', 'react.js', 'styled-components', 'formik']}
+        src={'/pokemon.png'}
+        codeUrl="https://github.com/iwaduarte/pokemon"
+        demoUrl="https://iwaduarte.github.io/pokemon/"
+      >
+        Do you like Pokemon? This is a simple project that allows you to search for Pokemon and see their details. It
+        allows the capture of Pokemon using the PokeAPI. The project uses technologies such as Styled-Components,
+        Formik, and React, and is completely responsive.
+      </Card>
+      <Card
+        tags={['hard', 'react.js', 'styled-components', 'indexeddb', 'chrome-extension', 'firefox-extension']}
+        src={'/form-filler.png'}
+        codeUrl="https://github.com/iwaduarte/form-filler"
+        demoUrl="https://addons.mozilla.org/pt-BR/firefox/addon/form-filler-applier/"
+      >
+        Form-Filler is a powerful browser extension designed to make your life easier by automatically filling out
+        online forms with data from your PDF files, such as CVs or resumes. With a simple and intuitive user interface,
+        Form-Filler allows you to add custom properties and a PDF file to be used for filling forms on the web.
+      </Card>
     </div>
   </Container>
 );
