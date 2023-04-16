@@ -1,16 +1,21 @@
 .card {
   display: flex;
   margin: 2rem;
+  padding: 1rem;
 }
 
 .card > img {
   width: 189px;
   height: 171px;
-  background: #22292d;
+  object-fit: contain;
+  border: 3px solid rgba(255, 255, 255, 0.62);
+  border-radius: 10px;
 }
 
 .tag {
   height: 30%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .body {
@@ -20,9 +25,10 @@
 }
 
 .content {
-  font-size: 18px;
+  font-size: 1rem;
   height: 60%;
   width: 84%;
+  margin: 0.5rem 0;
 }
 
 .actions {
@@ -39,6 +45,7 @@
   }
   .content {
     margin: 2.5rem 0;
+    font-size: 0.9rem;
   }
   .card {
     justify-content: center;
