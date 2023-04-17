@@ -34,6 +34,17 @@ const Projects = () => (
       </Card>
       <Separator />
       <Card
+        tags={['easy', 'react.js', 'fabricjs', 'canvas']}
+        src={'/image-filter-magic.png'}
+        codeUrl="https://github.com/iwaduarte/image-filter-magic"
+        demoUrl="https://iwaduarte.github.io/image-filter-magic"
+      >
+        🌈 Image Filter Magic: A React app using Fabric.js for applying Instagram-like filters (vintage, sepia, blur) to
+        images. It also allows you to download the image with the filter applied. The project uses technologies such as
+        React, Fabric.js, and is completely responsive.
+      </Card>
+      <Separator />
+      <Card
         tags={['moderate', 'express-sire', 'generator', 'node', 'npm', 'cli', 'ci/cd']}
         src={'/good-day-sire.png'}
         codeUrl="https://github.com/iwaduarte/express-sire"

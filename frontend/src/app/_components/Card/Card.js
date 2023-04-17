@@ -29,7 +29,9 @@ const colorMap = {
   'express.js': '#6B8E23',
   graphQL: '#808000',
   serverless: '#556B2F',
-  'style-components': '#9ACD32'
+  'style-components': '#9ACD32',
+  fabricjs: '#FFD700',
+  canvas: '#faa306'
 };
 
 const Card = ({ src, alt, tags = [], children, codeUrl = '', demoUrl = '' }) => {
