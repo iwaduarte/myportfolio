@@ -31,7 +31,10 @@ const colorMap = {
   serverless: '#556B2F',
   'style-components': '#9ACD32',
   fabricjs: '#FFD700',
-  canvas: '#faa306'
+  canvas: '#faa306',
+  html: '#296683',
+  css: 'rgb(203,0,0)',
+  financejs: '#bea71e'
 };
 
 const Card = ({ src, alt, tags = [], children, codeUrl = '', demoUrl = '' }) => {
