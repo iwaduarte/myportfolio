@@ -12,17 +12,6 @@ const Projects = () => (
     <Title titleName="Projects" />
     <div>
       <Card
-        tags={['moderate', 'react.js', 'styled-components', 'formik']}
-        src={'/pokemon.png'}
-        codeUrl="https://github.com/iwaduarte/pokemon"
-        demoUrl="https://iwaduarte.github.io/pokemon/"
-      >
-        Do you like Pokemon? This is a simple project that allows you to search for Pokemon and see their details. It
-        allows the capture of Pokemon using the PokeAPI. The project uses technologies such as Styled-Components,
-        Formik, and React, and is completely responsive.
-      </Card>
-      <Separator />
-      <Card
         tags={['hard', 'react.js', 'styled-components', 'indexeddb', 'chrome-extension', 'firefox-extension']}
         src={'/form-filler.png'}
         codeUrl="https://github.com/iwaduarte/form-filler"
@@ -34,6 +23,18 @@ const Projects = () => (
       </Card>
       <Separator />
       <Card
+        tags={['moderate', 'react.js', 'styled-components', 'formik']}
+        src={'/pokemon.png'}
+        codeUrl="https://github.com/iwaduarte/pokemon"
+        demoUrl="https://iwaduarte.github.io/pokemon/"
+      >
+        Do you like Pokemon? This is a simple project that allows you to search for Pokemon and see their details. It
+        allows the capture of Pokemon using the PokeAPI. The project uses technologies such as Styled-Components,
+        Formik, and React, and is completely responsive.
+      </Card>
+      <Separator />
+
+      <Card
         tags={['easy', 'react.js', 'fabricjs', 'canvas']}
         src={'/image-filter-magic.png'}
         codeUrl="https://github.com/iwaduarte/image-filter-magic"
@@ -42,6 +43,18 @@ const Projects = () => (
         🌈 Image Filter Magic: A React app using Fabric.js for applying Instagram-like filters (vintage, sepia, blur) to
         images. It also allows you to download the image with the filter applied. The project uses technologies such as
         React, Fabric.js, and is completely responsive.
+      </Card>
+      <Separator />
+
+      <Card
+        tags={['easy', 'react.js', 'financejs', 'html', 'css']}
+        src={'/debt-calculator.png'}
+        codeUrl="https://github.com/iwaduarte/debt-calculator"
+        demoUrl="https://iwaduarte.github.io/debt-calculator"
+      >
+        Debt Consolidation Savings Calculator helps you calculate your potential savings by consolidating your existing
+        unsecured debts into a single loan. It is a simple poc for applying the financejs library to a real world
+        problem.
       </Card>
       <Separator />
       <Card
