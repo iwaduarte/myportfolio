@@ -5,7 +5,8 @@
   --projects: url('/public/projects.png');
 }
 
-.preload {
+body::after {
+  content: '';
   background-image: var(--me), var(--videos), var(--articles), var(--projects);
   height: 0;
   width: 0;
