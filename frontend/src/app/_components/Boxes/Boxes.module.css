@@ -1,3 +1,19 @@
+:root {
+  --me: url('/public/meee.jpg');
+  --videos: url('/public/videos.png');
+  --articles: url('/public/articles.png');
+  --projects: url('/public/projects.png');
+}
+
+.preload {
+  background-image: var(--me), var(--videos), var(--articles), var(--projects);
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  visibility: hidden;
+  position: absolute;
+}
+
 .boxes {
   display: flex;
   flex-basis: 44%;
@@ -29,16 +45,16 @@
 }
 
 .anchor.about:hover {
-  background: url('/public/meee.jpg') no-repeat;
+  background: var(--me) no-repeat;
 }
 .anchor.videos:hover {
-  background-image: url('/public/videos.png');
+  background-image: var(--videos);
 }
 .anchor.articles:hover {
-  background-image: url('/public/articles.png');
+  background-image: var(--articles);
 }
 .anchor.projects:hover {
-  background-image: url('/public/projects.png');
+  background-image: var(--projects);
 }
 
 @media screen and (max-width: 880px) {
