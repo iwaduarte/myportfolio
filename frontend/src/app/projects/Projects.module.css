@@ -3,3 +3,8 @@
     width: 100%;
   }
 }
+
+.project a {
+  color: #282c34;
+  font-weight: bold;
+}
