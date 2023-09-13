@@ -52,7 +52,7 @@ const Articles = () => {
 
   return (
     <Container>
-      <Title titleName={'Articles'} />
+      <Title titleName="Articles" />
       <div className={languageSelector}>
         <span
           className={languageItem}

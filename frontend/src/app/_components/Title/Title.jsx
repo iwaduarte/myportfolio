@@ -3,10 +3,10 @@ import style from './Title.module.css';
 
 const { title, line } = style;
 
-const Title = ({ titleName }) => (
-  <div className={title}>
+const Title = ({ titleName, to = '#' }) => (
+  <a className={title} href={to}>
     <h1>{titleName}</h1>
     <div className={line}></div>
-  </div>
+  </a>
 );
 export default Title;

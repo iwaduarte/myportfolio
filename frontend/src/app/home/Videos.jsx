@@ -82,7 +82,7 @@ const Videos = ({ onClick }) => {
           }}
           color="#fc5248"
         >
-          >
+          &gt;
         </div>
       </div>
       <div className="videos-buttons self-center pointer ">

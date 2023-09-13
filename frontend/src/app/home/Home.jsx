@@ -17,7 +17,7 @@ const Home = () => {
         <Boxes to="about" name="ABOUT ME" className="about" />
         <Boxes name="VIDEOS" className="videos" onClick={() => setModal(true)} />
         {modal && <Videos onClick={() => setModal(false)} />}
-        <Boxes to="/articles" className="articles" name="ARTICLES" />
+        <Boxes to="/blog" className="articles" name="ARTICLES" />
         <Boxes to="/projects" className="projects" name="PROJECTS" />
       </div>
     </div>

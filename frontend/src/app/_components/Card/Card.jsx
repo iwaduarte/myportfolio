@@ -1,5 +1,4 @@
 import Tag from '../Tag/Tag';
-import { useNavigate } from 'react-router-dom';
 import Button from '../Button/Button';
 import React from 'react';
 import style from './Card.module.css';
@@ -37,8 +36,6 @@ const colorMap = {
   financejs: '#1976D2'
 };
 const Card = ({ src, alt, tags = [], children, codeUrl = '', demoUrl = '' }) => {
-  const navigate = useNavigate();
-
   return (
     <div className={card}>
       <img src={src} alt={alt} />
@@ -52,7 +49,9 @@ const Card = ({ src, alt, tags = [], children, codeUrl = '', demoUrl = '' }) => 
         <div className={content}>{children}</div>
         <div className={actions}>
           {demoUrl && (
-            <Button handleClick={() => (demoUrl !== 'self' ? window.open(demoUrl) : navigate('/'))}> View Demo </Button>
+            <Button handleClick={() => (demoUrl !== 'self' ? window.open(demoUrl) : window.open('/'))}>
+              View Demo{' '}
+            </Button>
           )}
           {codeUrl && (
             <Button handleClick={() => window.open(codeUrl)} icon="social-github.svg" lightBtn>
