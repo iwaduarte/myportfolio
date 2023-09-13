@@ -10,6 +10,9 @@
   line-height: 45px;
   text-transform: uppercase;
   margin-bottom: 2rem;
+
+  text-decoration: none;
+  color: #22292d;
 }
 
 .line {
