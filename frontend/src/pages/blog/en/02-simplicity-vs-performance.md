@@ -1,0 +1,180 @@
+---
+url: https://medium.com/@iwaduarte/simplicity-vs-performance-how-to-transition-between-the-background-color-and-an-image-268edd5f73cd
+canonical_url: https://medium.com/@iwaduarte/simplicity-vs-performance-how-to-transition-between-the-background-color-and-an-image-268edd5f73cd
+title: 'Simplicity vs Performance: How to transition between the background color
+  and an image'
+subtitle: What to consider when they both clash?
+slug: simplicity-vs-performance-how-to-transition-between-the-background-color-and-an-image
+description: ""
+tags:
+- front-end-development
+- css
+- performance
+- javascript
+- english
+author: Iwá Duarte
+username: iwaduarte
+---
+
+# Simplicity vs Performance: How to transition between the background color and an image
+
+What to consider when they both clash?
+
+When developing my new website [https://iwaduarte.dev/](https://iwaduarte.dev/) I wanted to have a “***killer”*** feature: to hover over an element and have an image appear.
+
+![I am cute, am I not?](../../../assets/1*JtB-cYOYPAB8dK1Gu0MDxg.gif)
+
+I didn’t know at the time, this apparently silly task would be a herculean one.
+
+The path of a developer is the one where none cares. You spend weeks trying to learn and circumvent a difficult obstacle in order to increase the quality of a feature. To fix a difficult bug. Increasing the performance of an animation to improve CPU and memory usage. Compressing everything with gzip to have your files served faster from the back end. Dropping requests from 1 second to 0.2s by refactoring the architecture or properly indexing the database.
+
+Does not matter, the result is always the same:
+
+>> People do not care
+
+How could they? They do not understand what task have you done or how long it took. How stressed you were or how hard you took on your shoulders. They did not experience it. They only saw the result and well: it looks okay but…
+
+Complex jobs are difficult to measure and appreciate. What was the last time you kissed your open-source Android phone thanking the gods of development for a such beautiful piece of art? 
+Instead, you blamed the lags and silly configurations and everything else. And you are, my friend, a developer as well.
+
+If we do not get the effort and understand the intricacies of a task is hard to get the whole picture. That is why every profession will have a time where someone asks you to do: “a simple thing that will cost nothing of you”.
+
+For us are: “Could you build a better Medium/Instagram but with this better thing that I have thought of?”. For lawyers: “Could you listen to my sob story and offer free consultancy?”. For dentists: “Could look at my mouth and see why my teeth are so painful?”. Of course, the compensation is either minimal or non-existent.
+
+All these freebies requests and hard time measuring other people's worthiness are because people lack the understanding of how hard is to accrue that knowledge/skillset or how hard is to build those things and everything else related. They are blind. They are oblivious.
+
+For that reason, consider yourself as someone that should enlighten them and bring them closer to the problem. I promise they will pay attention if you deliver the bits and pieces as if they are a curious kid.
+
+With that, I will bring **you** to** the problem**. Maybe you did not know that **we** had one.
+
+# The problem
+
+The objective is pretty simple, we hover over a background element and smoothly appear a beautiful image.
+
+Simple right?! Firstly you create a CSS like shown below adding the property on hover and the image. For smoothness, you would add the property [**transition**](https://developer.mozilla.org/en-US/docs/Web/CSS/transition). Yep. That **does not work**. *(For more info on CSS transitions go [here](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions).)*
+
+__codepen__:
+[![CodePen](https://shots.codepen.io/iwaduarte/pen/qBYKXQP-512.jpg?version=1664842374)](https://codepen.io/iwaduarte/embed/preview/qBYKXQP?default-tabs=css%2Cresult&height=600&host=https%3A%2F%2Fcodepen.io&slug-hash=qBYKXQP)
+That would be step 1.
+
+You could add `transition` and try swapping `**background`** with `**background-image**` and `**background-color**`. Try using opacity and everything else. That would not work. *(You are welcome to try)*
+
+After a lot of attempts, you will either be frustrated and let it go or this absurd task or you would try to find a solution to understand why that bloody simple property is not giving you the expected results.
+
+After googling and reading, you discovered that the property `background-image` is not [animatable](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties). Shockingly, `background` it is though and you try clever different techniques to no avail as well. Life is hard you think.
+
+Those were the steps that I have done anyway. I have spent a few hours trying different approaches only to realize that 0 of them had any impact. Reading and trying answers from different sources on stack overflow did not make it either.
+
+I have learned that in relation to `transition`:
+
+1. `background-image` to `background-image`works in Chrome but does not work in **Firefox. *(Google** is not following the standard).*
+
+1. `background-color` to `background-color` works just fine as the specs say.
+
+1. `background` *with a URL* to `background-color` does not respect the `*transition*` property although both of them are in the specs as well.
+
+1. Not even trying to set multiple backgrounds ( like `background: transparent, url(image.png)`) by making one of them `transparent| rgba(X,Y,Z,0)` would work because `color` needs to be the last one as shown in the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Backgrounds_and_Borders/Using_multiple_backgrounds).
+
+__codepen__:
+[![CodePen](https://shots.codepen.io/iwaduarte/pen/LYmrzmM-512.jpg?version=1664849194)](https://codepen.io/iwaduarte/embed/preview/LYmrzmM?default-tabs=css%2Cresult&height=600&host=https%3A%2F%2Fcodepen.io&slug-hash=LYmrzmM)
+
+Therefore, you learned that you cannot easily use the property `transition`with `background-image`. Stupid as it is, you would have to navigate to the realm of hacks and tricks and that realm is far from simple.
+
+# Hacks and tricks:
+
+The internet:
+[https://medium.com/web-dev-survey-from-kyoto/change-the-background-color-with-transition-animation-web-dev-survey-from-kyoto-ef2f65756e9a](https://medium.com/web-dev-survey-from-kyoto/change-the-background-color-with-transition-animation-web-dev-survey-from-kyoto-ef2f65756e9a)
+
+[https://coder-coder.com/background-image-opacity/](https://coder-coder.com/background-image-opacity/)
+
+[https://stackoverflow.com/questions/59599420/smooth-css-background-image-transition](https://stackoverflow.com/questions/59599420/smooth-css-background-image-transition)
+
+[https://stackoverflow.com/questions/9483364/css3-background-image-transition](https://stackoverflow.com/questions/9483364/css3-background-image-transition)
+
+[https://dev.to/adriantwarog/tutorial-on-css-background-image-hovers-transitions-10cm](https://dev.to/adriantwarog/tutorial-on-css-background-image-hovers-transitions-10cm)
+
+[https://stackoverflow.com/questions/42342419/css-transition-on-background-image-change-of-div](https://stackoverflow.com/questions/42342419/css-transition-on-background-image-change-of-div)
+
+Most of the internet had the same ideas that appeared to me either too complicated or bloated.
+
+1 — Would have to set up a `position` property that would create a new stack context (i.e `position: absolute, position: relative` )
+2 — You would have to work with pseudo::elements and most of the tutorials were using either `::before` or `::after`
+3 — After the elements were stacked we would make one of them disappear by using `transition` property work with `opacity`
+
+In my opinion, that would lead to a bloated solution, which made me furious. I spent so much time trying to write less code as possible and then for some reason I would have to circumvent this lack of implementation from the CSS [committee](https://en.wikipedia.org/wiki/CSS_Working_Group) with that amount of code…Shame!Shame!
+
+I hated them for a brief period until I realized that in this story I am John Snow, do not know the whole picture and I am probably not bothered to investigate why the implementation was not done.
+
+![Ygritte yelling: “You know nothing John Snow” (DALLE-2)](../../../assets/1*XZxuCPKkFpw0Vy6S36hzZA.png)*Ygritte yelling: “You know nothing John Snow” (DALLE-2)*
+
+Still as clueless as I am, I did not want to give up. Eventually, I would learn a different way, a simpler one. Keep digging, keep experimenting and you can achieve wonders I thought to myself.
+
+Happily, I came up with a different solution. That for me was simpler than the whole “junk” I found on the internet. “It is the best and I am the best”. “I am proud”. “I am a genius”. I know every developer can relate to these feelings.
+
+I have achieved the solution by using freaking `box-shadow`.
+
+__codepen__:
+[![CodePen](https://shots.codepen.io/iwaduarte/pen/MWGXOvP-512.jpg?version=1664851798)](https://codepen.io/iwaduarte/embed/preview/MWGXOvP?default-tabs=css%2Cresult&height=600&host=https%3A%2F%2Fcodepen.io&slug-hash=MWGXOvP)
+
+[**Box-shadow](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow)** is a property that works by adding shadow to a box. As you know by now everything on an HTML page is a damn bloody box. This property has a `inset` parameter that puts the shadow on top of the box instead of the corners.` box-shadow` is also animatable and we could use it with the `transition` property.
+
+Solved. “Genius”. “Geniality”. “Einstein”. I was like, mate you are a beast. THE GOOOOAAAT. You did what no one ever did. Let’s test with another browser and be done with it.
+
+And that is what I did. I made my ego so inflated by throwing nice compliments to myself that I forgot what is the drawbacks of this solution.
+
+And boy. I am dumb.
+
+# The dumb boy who cried drawbacks
+
+Firstly, there are concerns about animating `box-shadow` , they are not performant. They do not scale.
+
+To understand that you should briefly know the CSS properties and browser animations.
+
+Modern browsers are like black boxes, most developers do not bother knowing (including myself) all the nitty-gritty details of it. Modern browsers are beasts, made from people way smarter than any of us.
+
+They are in the top 1%. They are the FANGers ( I will stop inventing words someday). And for that reason, we trust them blindly. The problem is they give us so many choices to work with and we end up doing the wrong approach, patting ourselves on the back and calling ourselves geniuses.
+
+In reality, you should go and understand the details or at least have a vague idea of what is what. And for animations you could start here:
+
+[Why are some animations slow?](https://web.dev/animations-overview/)
+
+In summary, there are phases when a browser is trying to display something on a webpage, they are called rendering pipelines. They have **4 step**s: the first step (**Style**) calls the second one (**Layout**) which calls the third one (**Paint**) which calls the last one (**Composite**).
+
+Think of CSS properties living in one of these realms. Some of them would demand the browser to do all of it over again (`box-shadow`). Some will ask a lot less (`opacity`).
+
+Also, by searching about box-shadow performances I have found a few articles as well:
+
+> [https://tobiasahlin.com/blog/how-to-animate-box-shadow/](https://tobiasahlin.com/blog/how-to-animate-box-shadow/)
+How do you animate the `box-shadow` property in CSS **without** causing **re-paints** on every frame, and heavily impacting the performance of your page? **Short answer**: **you don’t**. Animating a change of `box-shadow` *will* hurt performance.
+
+> [https://blog.cloud66.com/box-shadow-transition-performance](https://blog.cloud66.com/box-shadow-transition-performance)
+Adding a CSS transition to animate the `box-shadow` of an element is a handy trick. It’s a design technique that’s often used on `hover` to highlight something. If you've used this effect you might have noticed that sometimes the **performance** can be **sub optimal** making the animation slow.
+
+> **Stop animating box-shadows the wrong way!
+**[https://www.youtube.com/watch?v=u6Rur7G8HNY](https://www.youtube.com/watch?v=u6Rur7G8HNY)
+
+All these articles/videos ask you to return to the very first solutions that we have encountered. They go to a detailed performance review as to why you shouldn’t use `box-shadow` animations. They recommend the “bloated” but performant ones. What should we do now?
+
+# The clash between simplicity and performance. The last chapter.
+
+If you have read my previous articles, you would know that I am always striving for **simplicity**. It is my motto and how I try to do things. Simplicity is also an abstract concept. Sometimes it can be perceived by one but not the other.
+
+**Performance** is also my *baby*. Why bother building something that doesn’t scale? That it is too costly because of that? The performance also indicates bad code, it is a metric that says: “Something is smelling funny here” or in other words, is a [code smell](https://en.wikipedia.org/wiki/Code_smell) indicator.
+
+On these occasions that, to have one you have to let it go from the other, you have to ask yourself. Who is going to be hurt by that? Can I afford that?
+
+Let’s say I work for Canva* ([Canva](https://www.canva.com/en_au/) is a web app tool for design)*. And I am implementing this feature that is going to be used by millions. That I have to be performant otherwise I would end up losing customers, revenue, and money. And my work stability relies on that. You should come up with an answer here.
+
+But now let’s say that I have a solid team, working on a feature that will not be used by many. Mostly internally. Although the team is very great together it lacks the skills to code CSS because their background differs. Would you hurt some performance for a more readable code in this scenario?
+
+Now my scenario is that I have a website that few people would access and spend seconds on it. I have other things to do and I understand the drawbacks of my choice, should I change for performance? Should I stick with simplicity?
+
+Note that these answers are not definitive. Each one of you could get to a solid and different argument of why you would not do X or Y. It is not about who is right. The idea here is to understand and have solid reasons as to why you chose to hurt one for the other.
+
+Once we know the drawbacks of our choices, we expect that the decision will come easier. You would turn into a better developer and would grow to know that it is not always a *black-white decision* but layers of **geniality** and **stupidity**.
+
+So that is my take for you. Whatever you do, be bold and stupid, aim for the best out there (either simplicity or performance) and know your damn drawbacks.
+
+Good luck!
+
+
