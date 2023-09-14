@@ -1,0 +1,48 @@
+---
+import NavBar from '../app/_components/NavBar/NavBar.jsx';
+import SideBar from '../app/_common/SideBar/SideBar.jsx';
+import ThemeIcon from '../components/ThemeIcon.astro';
+
+import '../fonts.css';
+import '../index.css';
+---
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    href="https://fonts.gstatic.com/s/amaticsc/v24/TUZ3zwprpvBS1izr_vOMscGKfrUC.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin=""
+  />
+  <link
+    rel="preload"
+    href="https://fonts.gstatic.com/s/merriweather/v30/u-440qyriQwlOrhSvowK_l5-fCZM.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin=""
+  />
+  <link
+    rel="preload"
+    href="https://fonts.gstatic.com/s/righteous/v13/1cXxaUPXBpj2rGoU7C9WiHGF.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin=""
+  />
+  <link rel="icon" type="image/png" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="iwaduarte portfolio dev fullstack" />
+  <title>@iwaduarte</title>
+</head>
+
+<div class="home">
+  <NavBar client:only='react' />
+  <SideBar />
+  <slot/>
+
+
+</div>

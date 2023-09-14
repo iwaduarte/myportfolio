@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/layout.astro';
+import Container from '../app/_components/Container/Container.jsx';
+import Title from '../app/_components/Title/Title.jsx'
+import style from './blog.module.css'
+
+const { blog } = style;
+const { frontmatter } = Astro.props;
+const { title, author, date, duration, subtitle } = frontmatter;
+
+---
+
+<head>
+  <meta charset='utf-8'/>
+  <title>{title}</title>
+</head>
+<Layout>
+  <Container className={blog}>
+    <h1>{title}</h1>
+    <h3>{subtitle}</h3>
+    <p>{date} |  {author} |  {duration} </p>
+    <slot />
+  <Title titleName='Read More Articles' to='/blog'/>
+  </Container>
+</Layout>
