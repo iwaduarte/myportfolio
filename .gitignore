@@ -35,3 +35,4 @@ backend/.env
 
 frontend/build/
 /frontend/.astro/
+/frontend/dist/
