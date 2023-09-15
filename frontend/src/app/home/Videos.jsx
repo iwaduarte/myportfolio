@@ -68,7 +68,6 @@ const Videos = ({ onClick }) => {
           className=" youtube-iframe"
           width="660"
           height="415"
-          frameBorder="0"
           src={videoYT.video}
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
@@ -86,7 +85,7 @@ const Videos = ({ onClick }) => {
         </div>
       </div>
       <div className="videos-buttons self-center pointer ">
-        <div title="Random" className="scale-hover" size="30" onClick={() => loadVideo('rand')} color="#fc5248">
+        <div title="Random" className="scale-hover" onClick={() => loadVideo('rand')} color="#fc5248">
           ∞
         </div>
       </div>
