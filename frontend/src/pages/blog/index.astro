@@ -1,8 +1,18 @@
 ---
-import Articles from '../../app/articles/Articles';
+import Articles from '../../app/articles/Articles.jsx';
 import Layout from '../../layouts/layout.astro';
+
+import {getCollection} from 'astro:content'
+
+const allBlogPosts = await getCollection('blog');
+
+const postsMetadata = allBlogPosts.map(blog=>{
+  const { data } = blog;
+  return data;
+}).reverse()
+
 ---
 
 <Layout>
-  <Articles client:only='react'/>
+  <Articles client:only='react' posts={postsMetadata} />
 </Layout>
