@@ -1,50 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Container from '../_components/Container/Container';
 import Title from '../_components/Title/Title';
 import BlogCard from '../_components/BlogCard/BlogCard';
 import style from './Articles.module.css';
-import axios from 'axios';
-import Spinner from '../_components/Spinner/Spinner';
 
-const { articles, spinner, languageSelector, languageItem } = style;
-
-const htmlExtractText = (node, limit = 100) => {
-  const tag = document.createElement('div');
-  tag.innerHTML = node;
-  return tag.innerText.substring(0, limit);
-};
+const { articles, languageSelector, languageItem } = style;
 
 const FilteredArticles = ({ posts = [], selectedLanguage }) => {
-  return posts
-    .filter(post => {
-      return post.categories.includes(selectedLanguage);
-    })
-    .map((post, key) => {
-      const { author, categories, guid, thumbnail, title, description } = post;
+  return posts.reduce((acc, post, key) => {
+    const { author, tags, slug, image, title, description, language } = post;
 
-      return (
-        <BlogCard
-          src={thumbnail}
-          title={title}
-          key={key}
-          content={htmlExtractText(description)}
-          author={author}
-          tags={categories}
-          link={guid}
-        />
+    if (language === selectedLanguage)
+      acc.push(
+        <BlogCard src={image} title={title} key={key} content={description} author={author} tags={tags} link={slug} />
       );
-    });
+
+    return acc;
+  }, []);
 };
 
-const Articles = () => {
-  const [posts, setPosts] = useState([]);
+const Articles = ({ posts }) => {
   const [selectedLanguage, setSelectedLanguage] = useState('english');
-
-  useEffect(() => {
-    axios.get('https://email.iwaduarte.dev/get-articles').then(({ data }) => {
-      setPosts(data);
-    });
-  }, []);
 
   const handleLanguageChange = language => {
     setSelectedLanguage(language);
@@ -67,19 +43,13 @@ const Articles = () => {
           className={languageItem}
           role="img"
           aria-label="Brazilian Flag"
-          onClick={() => handleLanguageChange('brasil')}
+          onClick={() => handleLanguageChange('portuguese')}
         >
           PT-BR
         </span>
       </div>
       <div className={articles}>
-        {posts.length ? (
-          <FilteredArticles posts={posts} selectedLanguage={selectedLanguage} />
-        ) : (
-          <div className={spinner}>
-            <Spinner />
-          </div>
-        )}
+        <FilteredArticles posts={posts} selectedLanguage={selectedLanguage} />
       </div>
     </Container>
   );
