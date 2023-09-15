@@ -4,8 +4,7 @@ canonical_url: https://medium.com/@iwaduarte/simplicidade-vs-desempenho-como-faz
 title: 'Simplicidade vs Desempenho: Como fazer a transição entre a cor de fundo e
   uma imagem'
 subtitle: O que considerar quando esses fatores colidem?
-slug: simplicidade-vs-desempenho-como-fazer-a-transição-entre-a-cor-de-fundo-e-uma-imagem
-description: ""
+description: "Ao desenvolver meu novo site https://iwaduarte.dev/ eu queria ter um recurso “assassino”: “dar um hover” sobre um elemento e mostrar uma imagem."
 tags:
 - front-end-development
 - css
@@ -13,16 +12,22 @@ tags:
 - javascript
 - brasil
 author: Iwá Duarte
-username: iwaduarte
+
+date: "05 Out 2022"
+duration: "8 min"
+layout: ../../../layouts/blog.astro
+image: assets/1_JtB-cYOYPAB8dK1Gu0MDxg.gif
+language: portuguese
+slug: /blog/pt/02-simplicidade-vs-desempenho
 ---
 
 # Simplicidade vs Desempenho: Como fazer a transição entre a cor de fundo e uma imagem
 
 O que considerar quando esses fatores colidem?
 
-Ao desenvolver meu novo site [https://iwaduarte.dev/](https://iwaduarte.dev/) eu queria ter um recurso “**assassino**”: “dar um hover” sobre um elemento e mostrar uma imagem.
+Ao desenvolver meu novo site [https://iwaduarte.dev/](https://iwaduarte.dev/) eu queria ter um recurso “**matador**”: “dar um hover” sobre um elemento e mostrar uma imagem.
 
-![Eu sou lindão né?](../../../assets/1*JtB-cYOYPAB8dK1Gu0MDxg.gif)
+![Eu sou lindão né?](../../../../public/assets/1_JtB-cYOYPAB8dK1Gu0MDxg.gif)
 
 Eu não sabia na época, que essa tarefa aparentemente boba seria árdua demais.
 
@@ -54,10 +59,12 @@ O objetivo é bastante simples, damos um hover sobre um elemento de fundo e uma 
 Simples, certo?! Primeiramente você cria um CSS como mostrado abaixo adicionando a propriedade hover e a imagem. Depois, para uma transição suave, você adiciona propriedade [**transitions**](https://developer.mozilla.org/en-US/docs/Web/CSS/transition). Certo. Isso **não funciona**. *(Para mais informações sobre CSS transitions, veja [aqui](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions).)*
 
 __codepen__:
-[![CodePen](https://shots.codepen.io/iwaduarte/pen/qBYKXQP-512.jpg?version=1664842374)](https://codepen.io/iwaduarte/embed/preview/qBYKXQP?default-tabs=css%2Cresult&height=600&host=https%3A%2F%2Fcodepen.io&slug-hash=qBYKXQP)
+
+https://codepen.io/iwaduarte/pen/qBYKXQP
+
 Isso seria o passo 1.
 
-Você pode adicionar `transition` e tentar substituir `**background`** com `**background-image**`e `**background-color.**` Pode tentar usar opacidade e tudo mais. Não irá funcionar. *(Você pode para tentar)*
+Você pode adicionar `transition` e tentar substituir **`background`** com **`background-image`** e **`background-color.`** Pode tentar usar opacidade e tudo mais. Não irá funcionar. *(Você pode para tentar)*
 
 Depois de muitas tentativas, você vai parar com esta tarefa absurda ou então tentar encontrar uma solução para descobrir que esta maldita propriedade não está te dando o resultado esperado.
 
@@ -71,41 +78,44 @@ Eu aprendi que em relação a `transition`:
 
 1. `background-color`para `background-color`funciona normalmente como as especificações determinam.
 
-1. `background`*com um URL* para `background-color`não respeita a propriedade `*transition*` emboras ambas estejam nas especificações.
+1. `background`*com um URL* para `background-color`não respeita a propriedade *`transition`* emboras ambas estejam nas especificações.
 
 1. Nem mesmo tentar definir vários backgrounds ( como `background: transparent, url(image.png)`) ao fazer um deles `transparent| rgba(X,Y,Z,0)` funcionaria porque `color`precisa ser o último parâmetro, como mostrado no [MDN docs](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Backgrounds_and_Borders/Using_multiple_backgrounds).
 
 __codepen__:
-[![CodePen](https://shots.codepen.io/iwaduarte/pen/LYmrzmM-512.jpg?version=1664849194)](https://codepen.io/iwaduarte/embed/preview/LYmrzmM?default-tabs=css%2Cresult&height=600&host=https%3A%2F%2Fcodepen.io&slug-hash=LYmrzmM)
+
+https://codepen.io/iwaduarte/pen/LYmrzmM
 
 Portanto, você aprendeu que não pode usar facilmente a propriedade `transition`with `background-image`. Por mais estúpido que seja, você terá que navegar pelo reino dos hacks e truques e esse reino está longe de ser simples.
 
 # Hacks e truques:
 
 A Internet:
-[https://medium.com/web-dev-survey-from-kyoto/change-the-background-color-with-transition-web-dev-survey-from-kyoto-ef2f65756e9a](https://medium.com/web-dev-survey-from-kyoto/change-the-background-color-with-transition-animation-web-dev-survey-from-kyoto-ef2f65756e9a)
+- [https://medium.com/web-dev-survey-from-kyoto/change-the-background-color-with-transition-web-dev-survey-from-kyoto-ef2f65756e9a](https://medium.com/web-dev-survey-from-kyoto/change-the-background-color-with-transition-animation-web-dev-survey-from-kyoto-ef2f65756e9a)
 
-[https://coder-coder.com/background-image-opacidade/](https://coder-coder.com/background-image-opacity/)
+- [https://coder-coder.com/background-image-opacidade/](https://coder-coder.com/background-image-opacity/)
 
-[https://stackoverflow.com/questions/59599420/smooth-css-background-image-transição](https://stackoverflow.com/questions/59599420/smooth-css-background-image-transition)
+- [https://stackoverflow.com/questions/59599420/smooth-css-background-image-transição](https://stackoverflow.com/questions/59599420/smooth-css-background-image-transition)
 
-[https://stackoverflow.com/questions/9483364/cs3-background-image-transição](https://stackoverflow.com/questions/9483364/css3-background-image-transition)
+- [https://stackoverflow.com/questions/9483364/cs3-background-image-transição](https://stackoverflow.com/questions/9483364/css3-background-image-transition)
 
-[https://dev.to/adriantwarog/tutorial-on-cssback-ground-image-hovers-transitions-10cm](https://dev.to/adriantwarog/tutorial-on-css-background-image-hovers-transitions-10cm)
+- [https://dev.to/adriantwarog/tutorial-on-cssback-ground-image-hovers-transitions-10cm](https://dev.to/adriantwarog/tutorial-on-css-background-image-hovers-transitions-10cm)
 
 [https:/stackoverflow.com/questions/42342419/css-transition-on-ground-image-change-of-div](https://stackoverflow.com/questions/42342419/css-transition-on-background-image-change-of-div)
 
 A maior parte da internet tinha as mesmas ideias que me pareciam muito complicadas.
 
 1 — Teríamos que setar uma propriedade `position` que criaria um novo contexto (i.e `position: absolute, position: relative`) 
+
 2 — Teríamos que trabalhar com pseudo::elementos e a maioria dos tutoriais estavam usando ou `::before ou` `::after`
+
 3 — Depois que os elementos fossem empilhados, nós fariamos um deles desaparecer usando a propriedade`transition`com `opacity`
 
 Na minha opinião, isso levaria a uma solução empapuçada(bloated), que me deixou furioso. Eu estava gastando tempo tentando escrever menos código possível para então ter que contornar essa falta de implementação do [comitê](https://en.wikipedia.org/wiki/CSS_Working_Group)[ do CSS](https://en.wikipedia.org/wiki/CSS_Working_Group) com essa quantidade de código... Shame!Shame!
 
 Eu os odiei por um breve período até que percebi que nessa história eu sou o John Snow, não conheço todo o cenário por trás dessa decisão e não estou preocupado em investigar o porquê da implementação não ter sido feita.
 
-![Ygritte gritando: "Você não sabe nada John Snow" (DALLE-2)](../../../assets/1*XZxuCPKkFpw0Vy6S36hzZA.png)*Ygritte gritando: "Você não sabe nada John Snow" (DALLE-2)*
+![Ygritte gritando: "Você não sabe nada John Snow" (DALLE-2)](../../../../public/assets/1_XZxuCPKkFpw0Vy6S36hzZA.png)*Ygritte gritando: "Você não sabe nada John Snow" (DALLE-2)*
 
 Mesmo perdido como eu estava, eu não queria desistir. Eventualmente, eu aprenderia de uma maneira diferente, mais simples. Continue cavando, continue experimentando e você pode alcançar maravilhas, pensei comigo mesmo.
 
@@ -114,9 +124,10 @@ Felizmente, encontrei uma solução diferente. Isso era mais simples do que todo
 Eu consegui a solução usando o impressionante`box-shadow`.
 
 __codepen__:
-[![CodePen](https://shots.codepen.io/iwaduarte/pen/MWGXOvP-512.jpg?version=1664851798)](https://codepen.io/iwaduarte/embed/preview/MWGXOvP?default-tabs=css%2Cresult&height=600&host=https%3A%2F%2Fcodepen.io&slug-hash=MWGXOvP)
 
-[**Box-shadow**](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow)**** é uma propriedade que funciona adicionando sombra a uma caixa. Como você sabe, tudo em uma página HTML é uma maldita caixa. Esta propriedade tem um parâmetro `inset` que coloca a sombra em cima da caixa em vez dos cantos. O `box-shadow`também é animável e podemos usá-lo com a propriedade `transition`
+https://codepen.io/iwaduarte/pen/MWGXOvP
+
+[**Box-shadow**](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) é uma propriedade que funciona adicionando sombra a uma caixa. Como você sabe, tudo em uma página HTML é uma maldita caixa. Esta propriedade tem um parâmetro `inset` que coloca a sombra em cima da caixa em vez dos cantos. O `box-shadow`também é animável e podemos usá-lo com a propriedade `transition`
 
 Resolvido. “Gênio”. “Genialidade”. “Einstein”. Eu estava tipo, man, você é um animal. O melhoooor. Fez o que ninguém fez. Vamos testar com outro navegador e seguir em frente.
 
@@ -136,7 +147,7 @@ Eles estão no top 1%. Eles são os FANGers (vou parar de inventar palavras algu
 
 Na realidade, você deve ir e entender os detalhes ou pelo menos ter uma vaga ideia do quê é o quê. E para animações você pode começar aqui:
 
-[Por que algumas animações são lentas ?](https://web.dev/animations-overview/)* (artigo em inglês)*
+[Por que algumas animações são lentas ?](https://web.dev/animations-overview/) *(artigo em inglês)*
 
 Em resumo, existem fases quando um navegador está tentando exibir algo em uma página da Web, essas fases são chamadas de rendering pipelines. Elas têm **4 passos**: o primeiro passo (**Style**) invoca o segundo (**Layout**) que chama o terceiro (**Paint**) que chama o último (**Composite**).
 
@@ -144,14 +155,13 @@ Pense em propriedades do CSS vivendo em um desses reinos. Algumas delas exigem q
 
 Ao pesquisar sobre box-shadow, encontrei alguns artigos também:
 
-> [https://tobiasahlin.com/blog/how-to-animate-box-shadow/](https://tobiasahlin.com/blog/how-to-animate-box-shadow/)
+> - [https://tobiasahlin.com/blog/how-to-animate-box-shadow/](https://tobiasahlin.com/blog/how-to-animate-box-shadow/)
 Como você anima a propriedade `box-shadow` no CSS **sem causar re-paints** em cada quadro e impactar fortemente o desempenho da sua página? **Resposta curta: você não consegue**. Animar uma mudança de `box-shadow` prejudicará o desempenho.
 
-> [https://blog.cloud66.com/box-shadow-transition-performance](https://blog.cloud66.com/box-shadow-transition-performance)
-Adicionando uma transição CSS para animar o `*box-shadow*`é um truque útil. É uma técnica de design que é frequentemente usada em `*hover*`para destacar algo. Se você usou esse efeito, notou que às vezes o **desempenho** pode ser **sub ótimo** tornando a animação lenta.
+> - [https://blog.cloud66.com/box-shadow-transition-performance](https://blog.cloud66.com/box-shadow-transition-performance)
+Adicionando uma transição CSS para animar o *`box-shadow`* é um truque útil. É uma técnica de design que é frequentemente usada em *`hover`* para destacar algo. Se você usou esse efeito, notou que às vezes o **desempenho** pode ser **sub ótimo** tornando a animação lenta.
 
-> **Pare de animar box-shadows da maneira errada!
-**[https://www.youtube.com/watch?v?u6Rur7G8HNY](https://www.youtube.com/watch?v=u6Rur7G8HNY)
+> - **Pare de animar box-shadows da maneira errada!** [https://www.youtube.com/watch?v?u6Rur7G8HNY](https://www.youtube.com/watch?v=u6Rur7G8HNY)
 
 Todos esses artigos/vídeos pedem que você retorne às primeiras soluções que encontramos. Eles farão uma revisão detalhada do desempenho explicando o motivo pelo qual você não deveria usa `box-shadow`. Eles recomendam as soluções com mais código, mas com desempenho. E agora? O que devemos fazer?
 

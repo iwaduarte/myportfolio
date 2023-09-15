@@ -3,8 +3,7 @@ url: https://medium.com/@iwaduarte/gpt-4-and-why-it-is-good-for-chrome-to-crumbl
 canonical_url: https://medium.com/@iwaduarte/gpt-4-and-why-it-is-good-for-chrome-to-crumble-e75f284f1f97
 title: GPT 4 and Why it is Good for Chrome to Crumble
 subtitle: A story about an extension and why I am against Manifest v3
-slug: gpt-4-and-why-it-is-good-for-chrome-to-crumble
-description: ""
+description: "A long time without writing. Yeah, in a world of noise, I do not want to be this prolific AI copy/pasta that we see everywhere. The goal is to be less lazy but still try to be original (try because the temptation is real)."
 tags:
 - chatgpt
 - google
@@ -12,12 +11,15 @@ tags:
 - extension
 - javascript
 author: Iwá Duarte
-username: iwaduarte
+
+layout: ../../../layouts/blog.astro
+date: "Aug 27 2023"
+duration: "15 min read"
+image: assets/1_k79dm9Wr6b7Oc_edwi5Rbg.png
+language: english
+slug: /blog/en/04-gpt-4-and-why-it-is-good
+
 ---
-
-# GPT 4 and Why it is Good for Chrome to Crumble
-
-### A story about an extension and why I am against Manifest v3
 
 A long time without writing. Yeah, in a world of noise, I do not want to be this prolific AI copy/pasta that we see everywhere. The goal is to be less lazy but still try to be original (try because the temptation is real). Every word from here is from my own troubled mind unless is corrected for mistakes (I use Grammarly or whatever is suited for that).
 
@@ -57,9 +59,9 @@ From **features** in services that were **free** and became **ugly**, **buggy**,
 [https://www.androidpolice.com/2021/04/08/five-of-the-worst-things-google-has-ever-done/](https://www.androidpolice.com/2021/04/08/five-of-the-worst-things-google-has-ever-done/)
 [https://arstechnica.com/gadgets/2021/03/the-new-google-pay-repeats-all-the-same-mistakes-of-google-allo/](https://arstechnica.com/gadgets/2021/03/the-new-google-pay-repeats-all-the-same-mistakes-of-google-allo/)
 
-From** features that did not have the user interest at hand but profit**. And I am talking about you [Manifest V3](https://developer.chrome.com/docs/extensions/mv3/intro/). You are a scam artist stunt that uses heavy words like **security**, **privacy**, and **performance**.
+From **features that did not have the user interest at hand but profit**. And I am talking about you [Manifest V3](https://developer.chrome.com/docs/extensions/mv3/intro/). You are a scam artist stunt that uses heavy words like **security**, **privacy**, and **performance**.
 
-![Manifest V3 when Google is claiming its security](../../../assets/1*q_yR6Mn2dxwIPK6a0DPxuw.gif)
+![Manifest V3 when Google is claiming its security](../../../../public/assets/1_q_yR6Mn2dxwIPK6a0DPxuw.gif)*Manifest V3 when Google is claiming its security*
 
 I am not the only one claiming that. Hundreds of people are saying the same.
 
@@ -109,13 +111,13 @@ And even if you are stubborn the new solutions that come with the new disruptive
 
 Companies like **Firefox** and others to come can grab a substantial part of the market share if played right. Google is losing battles and losing the market (albeit slowly). And this perception is crucial to make the right play.
 
-We all moved from Internet Explorer to Firefox and then to Google. Maybe is time to reverse shift and Google does not have any [**moat](https://www.semianalysis.com/p/google-we-have-no-moat-and-neither)** left.
+We all moved from Internet Explorer to Firefox and then to Google. Maybe is time to reverse shift and Google does not have any [**moat**](https://www.semianalysis.com/p/google-we-have-no-moat-and-neither) left.
 
 ### A sad feeling that it is all for nothing
 
 Yep. So that is what I think will happen and that is why I am against Manifest V3 (those links are to be read Mr. Slacker). So I decided to not put my extension in the Google Web Store for the time being. However, I am aware that things can not go your way. And if I was great at predicting the market I would be rich (none is the case). Therefore, the feeling is just sadness.
 
-You can still use my** form-filler** in Google though (Chromium-based browsers) and you can use it in **Firefox** if you already made the change. Everything is further explained here:
+You can still use my **form-filler** in Google though (Chromium-based browsers) and you can use it in **Firefox** if you already made the change. Everything is further explained here:
 [https://github.com/iwaduarte/form-filler](https://github.com/iwaduarte/form-filler)
 
 The worst part is that I have some ideas that could improve people’s daily lives and I could use the reach that Google has. But as the saying goes: If you can not win them, annoy them, criticize them, and then join them.
@@ -125,6 +127,6 @@ Also don’t get me wrong here. I do like money, a lot haha. It is not about mar
 
 Please be cool. Always. The coolest. Me.
 
-![Everything is so astonishing when you are cool. (DALLE-2)](../../../assets/1*k79dm9Wr6b7Oc_edwi5Rbg.png)*Everything is so astonishing when you are cool. (DALLE-2)*
+![Everything is so astonishing when you are cool. (DALLE-2)](../../../../public/assets/1_k79dm9Wr6b7Oc_edwi5Rbg.png)*Everything is so astonishing when you are cool. (DALLE-2)*
 
 

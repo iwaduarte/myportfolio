@@ -3,8 +3,7 @@ url: https://medium.com/@iwaduarte/deployment-github-actions-bitbucket-pipelines
 canonical_url: https://medium.com/@iwaduarte/deployment-github-actions-bitbucket-pipelines-the-stupid-way-d5289e0a57ff
 title: Deployment (GitHub actions, Bitbucket pipelines), the stupid way
 subtitle: How to deploy your files in the simplest way possible and yet achieve wonders…
-slug: deployment-github-actions-bitbucket-pipelines-the-stupid-way
-description: ""
+description: "Every now and then someone will come up with new words: DevOps, GitOps, *.(*.)Ops, CI/CD, multifactor deployment pods orchestrated in virtual containers (I think I have invented that one)."
 tags:
 - devops
 - github-actions
@@ -16,7 +15,9 @@ author: Iwá Duarte
 layout: ../../../layouts/blog.astro
 date: "Oct 01 2022"
 duration: "15 min read"
-image: ../../../assets/knight.png
+image: assets/knight.png
+language: english
+slug: /blog/en/01-the-stupid-way
 ---
 
 Every now and then someone will come up with new words: DevOps, GitOps, \*.(\*.)Ops, CI/CD, multifactor deployment pods orchestrated in virtual containers (I think I have invented that one).
@@ -27,7 +28,7 @@ Thing is, every single developer/team/company wants to achieve a simple objectiv
 
 Let me dress my armor, my friend, I will start running from the best practice war before we dive into that topic.
 
-![That is me, running from the war of best practices in my new shining armor. (DALLE-2)](../../../assets/knight.png)*That is me, running from the war of best practices in my new shining armor. (DALLE-2)*
+![That is me, running from the war of best practices in my new shining armor. (DALLE-2)](../../../../public/assets/knight.png)*That is me, running from the war of best practices in my new shining armor. (DALLE-2)*
 
 People are used to mixing the things that they know with the term *best practices*. They learn something through sweat and tears and they hold to it. They hold to it even if there is better tech or way to do it out there, they hold to it because “it gets the job done”. They hold to it because they mastered it.
 
@@ -58,7 +59,7 @@ Code is pushed and follows a specific **YAML** file. It contains a set of **rule
 
 That is what the **YAML** is for. Securely send data to a specific cloud service ( [AWS](https://aws.amazon.com/), [Google Cloud](https://cloud.google.com/), [Azure](https://azure.microsoft.com/en-us/) ). They call the whole process, CI/CD, deployment, etc etc etc. (*Hey picky, I know they are not the same, but they kind of are.*)
 
-![The picky guy staring at me and shaking his head (DALLE-2)](../../../assets/angrydude.png)*The picky guy staring at me and shaking his head (DALLE-2)*
+![The picky guy staring at me and shaking his head (DALLE-2)](../../../../public/assets/angrydude.png)*The picky guy staring at me and shaking his head (DALLE-2)*
 
 If we could establish the steps of these files would be something like that:
 
@@ -231,12 +232,12 @@ GitHub calls it **Action secrets**, Bitbucket calls it **Repository variables.**
 For GitHub you would go for that link:
 [https://github.com/your-username/your-repository/settings/secrets/actions](https://github.com/iwaduarte/my-finances/settings/secrets/actions)
 
-![You can see that environment variables are encrypted as described in the image. (GitHub settings)](../../../assets/secret.png)*You can see that environment variables are encrypted as described in the image. (GitHub settings)*
+![You can see that environment variables are encrypted as described in the image. (GitHub settings)](../../../../public/assets/secret.png)*You can see that environment variables are encrypted as described in the image. (GitHub settings)*
 
 For Bitbucket you would have:
 [https://bitbucket.org/your-username/your-repo/admin/addon/admin/pipelines/repository-variables](https://bitbucket.org/iwaduarte/my-repo/admin/addon/admin/pipelines/repository-variables)
 
-![In Bitbucket you can encrypt or not. Your choice.](../../../assets/bitbucket.png)*In Bitbucket you can encrypt or not. Your choice.*
+![In Bitbucket you can encrypt or not. Your choice.](../../../../public/assets/bitbucket.png)*In Bitbucket you can encrypt or not. Your choice.*
 
 And then you would configure your file as follows:
 
@@ -374,7 +375,7 @@ This is a way more complex YAML file with several steps and configurations and y
 They have provided beautiful documentation:
 
 [**GitHub — Understanding GitHub actions**](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions)  
-[**BitBucket — Configure bitbucket-pipelines.yml (same as YAML)**](https://support.atlassian.com/bitbucket-cloud/docs/configure-bitbucket-pipelinesyml/)**
+[**BitBucket — Configure bitbucket-pipelines.yml (same as YAML)**](https://support.atlassian.com/bitbucket-cloud/docs/configure-bitbucket-pipelinesyml/)
 
 In the last part of this tutorial let’s discuss when you have different branches and similar code for them.
 
@@ -554,7 +555,7 @@ As you can easily see, using the IF clause ( if: github.ref == ‘branch' ) we h
 
 That is the stupidest way ever and I am proud. It is so straightforward that you will not need MAKE or thousands of files or anything else. Just a little bit of if’s here and there, a few env variables set and there you go you are mastering the way of becoming a **Jedi of KISS**.
 
-![KISS (Keep it simple, stupid) (DALLE-2)](../../../assets/jedi.png)*KISS (Keep it simple, stupid) (DALLE-2)*
+![KISS (Keep it simple, stupid) (DALLE-2)](../../../../public/assets/jedi.png)*KISS (Keep it simple, stupid) (DALLE-2)*
 
 It is worth noting, that I know, the world is full of complicated cases and specific scenarios that would need some level of complexity. Most of your rationale defending your idea can indeed be the only and only solution. I will not dispute that, there are complex cases that I as a blub programmer will not even conceive in my limited perception/knowledge.
 
@@ -564,7 +565,7 @@ I am defending simplicity and autonomy. I could go and show several other cases 
 
 **Finally** you can face them my young one. Without any hesitation or fear.
 
-![My padawan is starting to believe. (DALLE-2)](../../../assets/padawan.png)*My padawan is starting to believe. (DALLE-2)*
+![My padawan is starting to believe. (DALLE-2)](../../../../public/assets/padawan.png)*My padawan is starting to believe. (DALLE-2)*
 
 Good luck with your journey!
 

@@ -4,8 +4,7 @@ canonical_url: https://medium.com/@iwaduarte/deployment-github-actions-bitbucket
 title: Deployment (GitHub actions, Bitbucket pipelines), a maneira estúpida
 subtitle: Como implantar seus arquivos da maneira mais simples possível e ainda conseguir
   maravilhas…
-slug: deployment-github-actions-bitbucket-pipelines-a-maneira-estúpida
-description: ""
+description: "De vez em quando alguém vai criar novas palavras: DevOps, GitOps, *.(*.)Ops, CI/CD, deployment de pods multifator orquestrados em contêineres virtuais (acho que inventei esse)."
 tags:
 - devops
 - bitbucket
@@ -17,7 +16,9 @@ author: Iwá Duarte
 date: "01 Out 2022"
 duration: "15 min"
 layout: ../../../layouts/blog.astro
-image: ../../../assets/knight.png
+image: assets/knight.png
+language: portuguese
+slug: /blog/pt/01-a-maneira-estupida
 ---
 
 De vez em quando alguém vai criar novas palavras: DevOps, GitOps, \*.(\*.)Ops, CI/CD, deployment de pods multifator orquestrados em contêineres virtuais (acho que inventei esse).
@@ -28,7 +29,7 @@ O fato é que todo desenvolvedor/equipe/empresa deseja atingir um simples objeti
 
 Deixe-me vestir minha armadura, meu amigo, vou começar a fugir da guerra de melhores práticas antes de mergulharmos nesse tópico.
 
-![Esse sou eu, fugindo da guerra das melhores práticas em minha nova armadura brilhante. (DALLE-2)](../../../assets/knight.png)*Esse sou eu, fugindo da guerra das melhores práticas em minha nova armadura brilhante. (DALLE-2)*
+![Esse sou eu, fugindo da guerra das melhores práticas em minha nova armadura brilhante. (DALLE-2)](../../../../public/assets/knight.png)*Esse sou eu, fugindo da guerra das melhores práticas em minha nova armadura brilhante. (DALLE-2)*
 
 As pessoas estão acostumadas a misturar as coisas que sabem com o termo *melhores práticas*. Elas aprendem algo através do suor e das lágrimas e se apegam a isso. Elas se apegam mesmo que haja uma tecnologia melhor ou uma melhor maneira de fazer. Elas se apegam porque “funciona”. Elas se apegam porque são mestres daquele conhecimento.
 
@@ -59,7 +60,7 @@ O código é deployado e através de um arquivo **YAML** específico. Ele conté
 
 É para isso que serve o **YAML**. Enviar dados com segurança para um serviço de nuvem específico ( [AWS](https://aws.amazon.com/), [Google Cloud](https://cloud.google.com/), [Azure](https://azure.microsoft.com/en-us/)). Eles chamam todo o processo de CI/CD, deployment, etc etc etc. (*Ei hater, eu sei que não são iguais, mas meio que são*)
 
-![O hater olhando para mim e balançando a cabeça (DALLE-2)](../../../assets/angrydude.png)*O hater olhando para mim e balançando a cabeça (DALLE-2)*
+![O hater olhando para mim e balançando a cabeça (DALLE-2)](../../../../public/assets/angrydude.png)*O hater olhando para mim e balançando a cabeça (DALLE-2)*
 
 Se pudessemos estabelecer os passos desses arquivos YAML, seria algo assim:
 
@@ -230,12 +231,12 @@ GitHub chama o recurso de **Action secrets**, Bitbucket de **Repository variable
 Para o GitHub, esse é o link:
 [https://github.com/your-username/your-repository/settings/secrets/actions](https://github.com/iwaduarte/my-finances/settings/secrets/actions)
 
-![Você pode ver que as variáveis de ambiente são criptografadas conforme descrito na imagem. (configurações do GitHub)](../../../assets/secret.png)*Você pode ver que as variáveis de ambiente são criptografadas conforme descrito na imagem. (configurações do GitHub)*
+![Você pode ver que as variáveis de ambiente são criptografadas conforme descrito na imagem. (configurações do GitHub)](../../../../public/assets/secret.png)*Você pode ver que as variáveis de ambiente são criptografadas conforme descrito na imagem. (configurações do GitHub)*
 
 Para o Bitbucket:
 [https://bitbucket.org/your-username/your-repo/admin/addon/admin/pipelines/repository-variables](https://bitbucket.org/iwaduarte/my-repo/admin/addon/admin/pipelines/repository-variables)
 
-![No Bitbucket você pode criptografar ou não. Sua escolha.](../../../assets/bitbucket.png)
+![No Bitbucket você pode criptografar ou não. Sua escolha.](../../../../public/assets/bitbucket.png)
 
 E então você configuraria seu arquivo da seguinte forma::
 
@@ -556,7 +557,7 @@ Como você pode facilmente ver, usando cláusula IF ( if: github.ref == ‘branc
 
 Essa é a maneira mais estúpida de todos os tempos e eu estou orgulhoso. É tão simples que você não precisará de MAKE ou milhares de arquivos ou qualquer outra coisa. Apenas um pouco de if’s aqui e ali, algumas variáveis de ambiente definidas e pronto você está sendo tornando um master **Jedi do KISS.**
 
-![KISS (Mantenha as coisas simples, estúpido) (DALLE-2)](../../../assets/jedi.png)*KISS (Mantenha as coisas simples, estúpido) (DALLE-2)*
+![KISS (Mantenha as coisas simples, estúpido) (DALLE-2)](../../../../public/assets/jedi.png)*KISS (Mantenha as coisas simples, estúpido) (DALLE-2)*
 
 Vale a pena notar também, que eu sei, o mundo está cheio de casos complicados e cenários específicos que precisariam de um certo nivel de complexidade. A maior parte do seu raciocínio defendendo sua ideia pode de fato ser a única e a única solução mesmo. Não vou contestar isso, existem casos complexos que eu como programador do tipo blub nem sequer conceberei na minha limitada percepção/conhecimento.
 
@@ -566,7 +567,7 @@ Estou defendendo a simplicidade e a autonomia. Eu poderia ir e mostrar vários o
 
 E agora , **finalmente** , você pode enfrenta-los, meu jovem. Sem nenhuma hesitação ou medo.
 
-![Meu padawan está começando a acreditar. (DALLE-2)](../../../assets/padawan.png)*Meu padawan está começando a acreditar. (DALLE-2)*
+![Meu padawan está começando a acreditar. (DALLE-2)](../../../../public/assets/padawan.png)*Meu padawan está começando a acreditar. (DALLE-2)*
 
 Boa sorte na sua jornada.
 

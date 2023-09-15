@@ -3,8 +3,7 @@ url: https://medium.com/@iwaduarte/pregui%C3%A7a-ao-extremo-um-novo-gerador-de-c
 canonical_url: https://medium.com/@iwaduarte/pregui%C3%A7a-ao-extremo-um-novo-gerador-de-c%C3%B3digo-para-node-js-baafc7756d67
 title: 'Preguiça ao extremo: Um novo gerador de código para Node.js'
 subtitle: Adeus express-generator e olá express-sire!
-slug: preguiça-ao-extremo-um-novo-gerador-de-código-para-node-js
-description: ""
+description: "Na minha jornada de desenvolvimento, sempre “cliquei” no botão da preguiça. Preguiça é o caminho assim como o Dudeísmo é. Seguir o fluxo e ter calma até que seu chefe esteja gritando com você sobre o maldito prazo."
 tags:
 - javascript
 - nodejs
@@ -12,14 +11,16 @@ tags:
 - express
 - brasil
 author: Iwá Duarte
-username: iwaduarte
+
+date: "17 Out 2022"
+duration: "8 min"
+layout: ../../../layouts/blog.astro
+image: assets/1_lnh8K8jTmm0xMJS_SafUxw.png
+language: portuguese
+slug: /blog/pt/03-preguica-ao-extremo
 ---
 
-# Preguiça ao extremo: Um novo gerador de código para Node.js
-
-Adeus **express-generator** e olá **express-sire!**
-
-![Olá Senhor! (DALLE-2)](../../../assets/1*lnh8K8jTmm0xMJS_SafUxw.png)*Olá Senhor! (DALLE-2)*
+![Olá Senhor! (DALLE-2)](../../../../public/assets/1_lnh8K8jTmm0xMJS_SafUxw.png)*Olá Senhor! (DALLE-2)*
 
 Na minha jornada de desenvolvimento, sempre “cliquei” no botão da preguiça. Preguiça é o caminho assim como o [Dudeísmo](https://en.wikipedia.org/wiki/Dudeism) é. Seguir o fluxo e ter calma até que seu chefe esteja gritando com você sobre o maldito **prazo**.
 
@@ -57,7 +58,7 @@ O Node é a runtime que representa tudo. E isso é tudo que importa por enquanto
 
 # De volta ao TJ
 
-TJ criou milhares de pacotes *(um “pequeno” exagero para aumentar a narrativa*), coisas como [express](https://expressjs.com/).js, [commander](https://tj.github.io/commander.js/).js, [stylus](https://stylus-lang.com/), [koa](https://koajs.com/) e assim por diante.
+TJ criou milhares de pacotes *(um “pequeno” exagero para aumentar a narrativa)*, coisas como [express](https://expressjs.com/).js, [commander](https://tj.github.io/commander.js/).js, [stylus](https://stylus-lang.com/), [koa](https://koajs.com/) e assim por diante.
 
 O cara era tão prolífico que as pessoas questionavam se ele não era uma equipe em vez de uma pessoa. Ele começou como designer de nível novato para se tornar um desenvolvedor único.
 
@@ -114,7 +115,7 @@ Eu queria criar da mesma forma que o express-generator fez. Ele cria templates d
 
 Um arquivo de template (app.js.ejs) dentro do módulo do express-generator é assim:
 
-![](../../../assets/1*4ZkOzaqVSVy1vPe1t_lpSA.png)
+![](../../../../public/assets/1_4ZkOzaqVSVy1vPe1t_lpSA.png)
 
 Embora o EJS seja usado para gerar arquivos HTML, a estratégia aqui é usar o mesmo formato de template, mas para construir um arquivo .js. Uma solução elegante e excelente na época. Hoje em dia, desnecessária.
 
@@ -128,15 +129,15 @@ Com template literals sendo a escolha, precisamos definir como seria a melhor ma
 
 Primeira ideia. “Requiring” o arquivo:
 
-![fonte: https://stackoverflow.com/a/42881547/7350853](../../../assets/1*nba8dzeP__nV8RWNUbhYkw.png)
+![fonte: https://stackoverflow.com/a/42881547/7350853](../../../../public/assets/1_nba8dzeP__nV8RWNUbhYkw.png)
 
 Segunda abordagem. Combinando o template com regex:
 
-![fonte: https://stackoverflow.com/a/71090080/7350853](../../../assets/1*qjoX--6C-YrhwXlPShpZHA.png)
+![fonte: https://stackoverflow.com/a/71090080/7350853](../../../../public/assets/1_qjoX--6C-YrhwXlPShpZHA.png)
 
 Terceira e última. Usando o eval:
 
-![fonte: https://stackoverflow.com/a/55475107/7350853](../../../assets/1*2ItnhNMWnWsVreK6CdfyIg.png)
+![fonte: https://stackoverflow.com/a/55475107/7350853](../../../../public/assets/1_2ItnhNMWnWsVreK6CdfyIg.png)
 
 Você pode tentar adivinhar aqui. Eu escolhi eval. “Você disse eval?” - Sim. Eval. “Mas... mas... eval é E-V-I-L (mal)”. Meu camarada, evite generalizações e leia a resposta acima.
 

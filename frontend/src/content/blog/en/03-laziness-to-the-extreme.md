@@ -3,8 +3,7 @@ url: https://medium.com/@iwaduarte/applying-laziness-to-the-extreme-a-new-code-g
 canonical_url: https://medium.com/@iwaduarte/applying-laziness-to-the-extreme-a-new-code-generator-for-node-js-bc2cd5376ff7
 title: 'Applying laziness to the extreme: A new code generator for Node.js'
 subtitle: Goodbye express-generator and hello express-sire!
-slug: applying-laziness-to-the-extreme-a-new-code-generator-for-node-js
-description: ""
+description: "In my dev journey, I have always “clicked” the lazy button. Lazy is the way pretty much like Dudeism is. Going with the flow and taking it easy until your boss is yelling at you about the bloody deadline."
 tags:
 - javascript
 - nodejs
@@ -12,14 +11,17 @@ tags:
 - javascript-development
 - english
 author: Iwá Duarte
-username: iwaduarte
+
+layout: ../../../layouts/blog.astro
+date: "Oct 17 2022"
+duration: "8 min read"
+image: assets/1_lnh8K8jTmm0xMJS_SafUxw.png
+language: english
+slug: /blog/en/03-laziness-to-the-extreme
+
 ---
 
-# Applying laziness to the extreme: A new code generator for Node.js
-
-Goodbye **express-generator** and hello **express-sire**!
-
-![Hello Sire! (DALLE-2)](../../../assets/1*lnh8K8jTmm0xMJS_SafUxw.png)*Hello Sire! (DALLE-2)*
+![Hello Sire! (DALLE-2)](../../../../public/assets/1_lnh8K8jTmm0xMJS_SafUxw.png)*Hello Sire! (DALLE-2)*
 
 In my dev journey, I have always “clicked” the lazy button. Lazy is the way pretty much like [Dudeism](https://en.wikipedia.org/wiki/Dudeism) is. Going with the flow and taking it easy until your boss is yelling at you about the bloody **deadline**.
 
@@ -57,7 +59,7 @@ Node is the runtime that powers everything. And that is all matter for now… *(
 
 # Back to TJ
 
-TJ created thousands of packages* (a “little” exaggeration to increase the narrative)*, things like [express](https://expressjs.com/).js, [commander](https://tj.github.io/commander.js/).js, [stylus](https://stylus-lang.com/), [koa](https://koajs.com/) so on and forth.
+TJ created thousands of packages *(a “little” exaggeration to increase the narrative)*, things like [express](https://expressjs.com/).js, [commander](https://tj.github.io/commander.js/).js, [stylus](https://stylus-lang.com/), [koa](https://koajs.com/) so on and forth.
 
 The guy was so prolific that had people questioning if he was not a team instead of a person. He started as a designer with a level novice to become a one-of-a-kind developer.
 
@@ -70,7 +72,7 @@ Express-generator generates files for you. Generates a web server for you. It ge
 
 You can from there think about the logic. The business. The actual code. Instead of configuring things. It is simple enough that will not force you to write in a certain way or put through gigantic documentation so you can learn how to generate the “right way”. (Criticism intended)
 
-It is good because `express****` is good and simple. Therefore, it generates more of the simple. It is good for beginners and good for seasoned developers too.
+It is good because `express` is good and simple. Therefore, it generates more of the simple. It is good for beginners and good for seasoned developers too.
 
 ### What happened then? Why did you create express-sire?
 
@@ -99,7 +101,7 @@ And simple and stupid enough like express-generator. So, I went there for wisdom
 
 # The steps in building
 
-The thing with `express-generator`**** is that it is getting old. And `code` gets old. It gets legacy. Because it is not as successful as it should **9.000 weekly downloads** against **21.000.000** (**express**) it did not adhere to the current practices.
+The thing with `express-generator` is that it is getting old. And `code` gets old. It gets legacy. Because it is not as successful as it should **9.000 weekly downloads** against **21.000.000** (**express**) it did not adhere to the current practices.
 
 *It still uses templating and pure/raw/old SSR*. In an era of SPA, SSG, modern SSR, and micro-frontends the old way with templating is not as used anymore.
 
@@ -115,7 +117,7 @@ I wanted to create the same way express-generator did. It creates templates by d
 
 A template file (app.js.ejs) inside the express-generator module would look like this:
 
-![](../../../assets/1*4ZkOzaqVSVy1vPe1t_lpSA.png)
+![](../../../../public/assets/1_4ZkOzaqVSVy1vPe1t_lpSA.png)
 
 Although EJS is used to generate HTML files, the strategy here is to use the same templating but to build a .js file. An elegant and great solution at the time. Nowadays it seems off.
 
@@ -129,15 +131,15 @@ With template literals being the choice now we need to define how would be the b
 
 First approach. Requiring the file:
 
-![source: https://stackoverflow.com/a/42881547/7350853](../../../assets/1*nba8dzeP__nV8RWNUbhYkw.png)
+![source: https://stackoverflow.com/a/42881547/7350853](../../../../public/assets/1_nba8dzeP__nV8RWNUbhYkw.png)
 
 Second approach. Combining it with regex:
 
-![source: https://stackoverflow.com/a/71090080/7350853](../../../assets/1*qjoX--6C-YrhwXlPShpZHA.png)
+![source: https://stackoverflow.com/a/71090080/7350853](../../../../public/assets/1_qjoX--6C-YrhwXlPShpZHA.png)
 
 Third and final. Using eval:
 
-![source: https://stackoverflow.com/a/55475107/7350853](../../../assets/1*2ItnhNMWnWsVreK6CdfyIg.png)
+![source: https://stackoverflow.com/a/55475107/7350853](../../../../public/assets/1_2ItnhNMWnWsVreK6CdfyIg.png)
 
 You can guess. I choose eval. “Wait did you say eval?” Yep. Eval.
 “But..But.. Eval is E-V-I-L”. My comrade, avoid generalization and read the response above.
