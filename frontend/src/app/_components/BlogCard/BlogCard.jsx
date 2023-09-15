@@ -4,7 +4,7 @@ import Tag from '../Tag/Tag';
 
 const { card, container, image, body, footer } = style;
 
-const BlogCard = ({ src = ``, alt = 'Avatar', title = '', content = '', author, tags, link, order }) => (
+const BlogCard = ({ src = ``, alt = 'Avatar', title = '', content = '', tags, link, order }) => (
   <div className={card} onClick={() => (window.location = link)} style={{ order }}>
     <div className={image}>{src && <img src={src} alt={alt} style={{ width: '100%' }} />}</div>
     <div className={container}>
