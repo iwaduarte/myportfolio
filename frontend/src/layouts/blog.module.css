@@ -1,5 +1,6 @@
 .blog {
   align-items: flex-start;
+  width: 50%;
 }
 .blog h1 {
   margin-bottom: 0;
@@ -48,7 +49,27 @@
   display: flex;
 }
 
+.blog pre code {
+  display: inline-block;
+  margin: 2rem;
+}
+
+.blog pre {
+  width: 100%;
+  overflow-x: scroll;
+}
+
+.blog iframe {
+  width: 100%;
+  height: 400px;
+}
+.blog ol {
+  width: 100%;
+}
 @media screen and (max-width: 880px) {
+  .blog {
+    width: 100%;
+  }
   .blog img {
     width: 100%;
   }
