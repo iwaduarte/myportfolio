@@ -14,7 +14,7 @@ author: Iwá Duarte
 layout: ../../../layouts/blog.astro
 date: "30 Set 2022"
 duration: "4 min "
-image: assets/eagle.png
+image: /assets/eagle.png
 language: portuguese
 slug: /blog/pt/00-pessima-introducao
 

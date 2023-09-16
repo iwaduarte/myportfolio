@@ -16,7 +16,7 @@ author: Iwá Duarte
 date: "01 Out 2022"
 duration: "15 min"
 layout: ../../../layouts/blog.astro
-image: assets/knight.png
+image: /assets/knight.png
 language: portuguese
 slug: /blog/pt/01-a-maneira-estupida
 ---

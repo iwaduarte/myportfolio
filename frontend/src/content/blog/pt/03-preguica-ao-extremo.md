@@ -15,7 +15,7 @@ author: Iwá Duarte
 date: "17 Out 2022"
 duration: "8 min"
 layout: ../../../layouts/blog.astro
-image: assets/1_lnh8K8jTmm0xMJS_SafUxw.png
+image: /assets/1_lnh8K8jTmm0xMJS_SafUxw.png
 language: portuguese
 slug: /blog/pt/03-preguica-ao-extremo
 ---
