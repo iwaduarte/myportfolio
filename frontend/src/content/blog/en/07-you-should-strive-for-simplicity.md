@@ -15,7 +15,7 @@ author: Iwá Duarte
 layout: ../../../layouts/blog.astro
 date: "Sep 01 2023"
 duration: "1 min read"
-image: assets/1_dLRyt-BrPS2WgUaTl2_DSQ.png
+image: /assets/1_dLRyt-BrPS2WgUaTl2_DSQ.png
 language: english
 slug: /blog/en/07-you-should-strive-for-simplicity
 ---

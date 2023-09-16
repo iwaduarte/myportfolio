@@ -15,7 +15,7 @@ author: Iwá Duarte
 layout: ../../../layouts/blog.astro
 date: "Oct 17 2022"
 duration: "8 min read"
-image: assets/1_lnh8K8jTmm0xMJS_SafUxw.png
+image: /assets/1_lnh8K8jTmm0xMJS_SafUxw.png
 language: english
 slug: /blog/en/03-laziness-to-the-extreme
 

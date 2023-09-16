@@ -15,7 +15,7 @@ author: Iwá Duarte
 layout: ../../../layouts/blog.astro
 date: "Oct 01 2022"
 duration: "15 min read"
-image: assets/knight.png
+image: /assets/knight.png
 language: english
 slug: /blog/en/01-the-stupid-way
 ---

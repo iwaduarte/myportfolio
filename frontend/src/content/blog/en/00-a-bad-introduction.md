@@ -13,7 +13,7 @@ author: Iwá Duarte
 layout: ../../../layouts/blog.astro
 date: "Sep 30 2022"
 duration: "4 min read"
-image: assets/eagle.png
+image: /assets/eagle.png
 language: english
 slug: /blog/en/00-a-bad-introduction
 ---

@@ -15,7 +15,7 @@ author: Iwá Duarte
 layout: ../../../layouts/blog.astro
 date: "Aug 27 2023"
 duration: "15 min read"
-image: assets/1_k79dm9Wr6b7Oc_edwi5Rbg.png
+image: /assets/1_k79dm9Wr6b7Oc_edwi5Rbg.png
 language: english
 slug: /blog/en/04-gpt-4-and-why-it-is-good
 
