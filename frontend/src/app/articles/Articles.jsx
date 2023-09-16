@@ -4,7 +4,7 @@ import Title from '../_components/Title/Title';
 import BlogCard from '../_components/BlogCard/BlogCard';
 import style from './Articles.module.css';
 
-const { articles, languageSelector, languageItem } = style;
+const { articles, languageSelector, languageItem, bold } = style;
 
 const FilteredArticles = ({ posts = [], selectedLanguage }) => {
   return posts.reduce((acc, post, key) => {
@@ -22,28 +22,24 @@ const FilteredArticles = ({ posts = [], selectedLanguage }) => {
 const Articles = ({ posts }) => {
   const [selectedLanguage, setSelectedLanguage] = useState('english');
 
-  const handleLanguageChange = language => {
-    setSelectedLanguage(language);
-  };
-
   return (
     <Container>
       <Title titleName="Articles" />
       <div className={languageSelector}>
         <span
-          className={languageItem}
+          className={`${languageItem} ${selectedLanguage === 'english' ? bold : ''}`}
           role="img"
           aria-label="English Flag"
-          onClick={() => handleLanguageChange('english')}
+          onClick={() => setSelectedLanguage('english')}
         >
           EN
         </span>
         |
         <span
-          className={languageItem}
+          className={`${languageItem} ${selectedLanguage === 'portuguese' ? bold : ''}`}
           role="img"
           aria-label="Brazilian Flag"
-          onClick={() => handleLanguageChange('portuguese')}
+          onClick={() => setSelectedLanguage('portuguese')}
         >
           PT-BR
         </span>
