@@ -54,7 +54,7 @@ const Card = ({ src, alt, tags = [], children, codeUrl = '', demoUrl = '' }) => 
             </Button>
           )}
           {codeUrl && (
-            <Button handleClick={() => window.open(codeUrl)} icon="social-github.svg" lightBtn>
+            <Button handleClick={() => window.open(codeUrl)} icon="/social-github.svg" lightBtn>
               View Code
             </Button>
           )}
