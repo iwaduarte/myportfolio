@@ -28,7 +28,9 @@
   font-size: 88%;
   color: #6b6b6b;
 }
-
+.blog h3 {
+  margin-bottom: 0;
+}
 .blog p {
   margin-bottom: 0;
   width: 100%;
@@ -38,7 +40,7 @@
   text-decoration: underline;
 }
 
-.blog p:last-of-type {
+.blog > p:last-of-type {
   margin-bottom: 2.5rem;
 }
 
@@ -49,16 +51,24 @@
   display: flex;
 }
 
-.blog pre code {
-  display: inline-block;
-  margin: 2rem;
+.blog code {
+  background-color: #f2f2f2;
+  padding: 4px 8px;
 }
-
 .blog pre {
   width: 100%;
   overflow-x: scroll;
 }
-
+.blog pre code {
+  display: inline-block;
+  margin: 2rem;
+  background-color: inherit;
+  padding: 0;
+}
+.blog blockquote {
+  box-shadow: inset 3px 0 0 0 #242424;
+  padding-left: 20px;
+}
 .blog iframe {
   width: 100%;
   height: 400px;
