@@ -146,7 +146,7 @@ You can guess. I choose eval. “Wait did you say eval?” Yep. Eval.
 
 I will make it clear:
 
->> Although it can be dangerous to run JS code like this, if the templates are files that are in your control and written by you. I guess it can be done.
+> Although it can be dangerous to run JS code like this, if the templates are files that are in your control and written by you. I guess it can be done.
 
 And that is how I did. Apart from that, I found an awesome explanation from Safia Abdalla. She wrote a short but interesting text about how template literals work under the hood. I will not spoil it because it is easy to read and get the gist of it.
 
@@ -198,9 +198,9 @@ See? I told you I would get your back covered. Fear not mate. We are here for ea
 
 Cheers.
 
-More (external) reading:
+### More (external) reading:
 
-[Efficient, reusable application templates and scaffolding](https://medium.com/blue-harvest-tech-blog/refining-efficient-approaches-to-build-reusable-templates-and-a-scaffold-for-the-application-f1459edc3f74)
+[Efficient, reusable application templates and scaffolding](https://medium.com/blue-harvest-tech-blog/refining-efficient-approaches-to-build-reusable-templates-and-a-scaffold-for-the-application-f1459edc3f74)  
 [Start New Projects Faster: 10 Scaffolding Web Dev Tools](https://www.sitepoint.com/start-new-projects-faster/)
 
 

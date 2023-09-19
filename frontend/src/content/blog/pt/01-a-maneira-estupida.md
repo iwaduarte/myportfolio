@@ -86,7 +86,7 @@ Deixe me mostrar alguns examples, eu mostrarei alguns arquivos que são muito co
 
 O código abaixo é daqueles complexos que podem ser simplificados. *(É traiçoeiro porque **aparenta** ser simples.)*
 
-```
+```yaml
 image: someimage
 pipelines:
   branches:
@@ -113,7 +113,7 @@ Você poderia apenas com esse arquivo ver exatamente o que está acontecendo aqu
 
 Vou mostrar parcialmente o que o comando: make deploy está fazendo
 
-```
+```yaml
 ifdef DOTENV
    DOTENV_TARGET=dotenv
 else
@@ -179,7 +179,7 @@ Mudar e quebrar coisas são partes cruciais de qualquer ciclo humano. Não se pr
 
 ### Como eu simplificaria tudo isso?
 
-```
+```yaml
 image: someimage
 pipelines:
   branches:
@@ -242,7 +242,7 @@ E então você configuraria seu arquivo da seguinte forma::
 
 **Bitbucket YAML:**
 
-```
+```yaml
 pipelines:
   branches:
     master:
@@ -277,7 +277,7 @@ pipelines:
 
 **GitHub YAML:**
 
-```
+```yaml
 name: Deploy to Fargate
 on:
   push:
@@ -384,7 +384,7 @@ Na última parte deste tutorial, vamos discutir quando você tem branches difere
 
 Para o BitBucket os branches fazem parte da configuração, então você pode definir a branch específica e a configuração será executada exclusivamente. Esse recurso **é muito importante (parabéns à equipe da Atlassian)** porque você pode ter um banch de desenvolviment (development) e produção (production) separados no mesmo arquivo de configuração. Algo como:
 
-```
+```yaml
 pipelines:
   default:
     - step:
@@ -459,7 +459,7 @@ Depois de ler acima, você poderá ver a solução. Nós poderemos agora chegar 
 
 Vamos reutilizar o mesmo arquivo YAML do Fargate:
 
-```
+```yaml
 name: Deploy to Fargate
 on:
   push:

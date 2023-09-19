@@ -64,7 +64,7 @@ For our use case, we are going to use the [Serverless Framework](https://www.ser
 2.  Go to your **`terminal`**. Navigate to the folder created.
 3.  Install these dependencies on your project:
 
-```
+```bash
 npm init -y  
 npm install -g serverless   
 npm install -D serverless-apigateway-service-proxy serverless-domain-manager 
@@ -72,7 +72,7 @@ npm install -D serverless-apigateway-service-proxy serverless-domain-manager
 
 4. Create a **`.env`** file inside the folder with a few variables that will help set your AWS services upon deployment.
 
-```
+```dotenv
 CUSTOM_DOMAIN=images.yourdomain.com  
 CERTIFICATE_ARN=arn:aws:acm:region:account-id:certificate/certificate-id  
 SECRET=DONOTDRINKTHEKOOLAID
@@ -80,7 +80,7 @@ SECRET=DONOTDRINKTHEKOOLAID
 
 5. Create a **`serverless.yml`** file:
 
-```
+```yaml
 # Name of the service  
 service: upload-s3  
 # Use environment variables from .env file  
@@ -209,11 +209,11 @@ _( If you already have an AWS account set and configured on your PC this part ca
 
 7. Create the **`authorizer.mjs`** file and install its dependency:
 
-```
+```bash
 npm install jsonwebtoken
 ```
 
-```
+```javascript
 import jwt from "jsonwebtoken";  
   
 const { SECRET } = process.env;  
@@ -243,10 +243,10 @@ export const jwtAuthorizer = async (event) => {
 
 8. Create the **`handler.mjs`** file and install its dependency:
 
-```
+```bash
 npm install --arch=x64 --platform=linux --libc=glibc sharp
 ```
-```
+```javascript
 import {  
   S3Client,  
   HeadObjectCommand,  
@@ -329,7 +329,7 @@ In the end, CloudFormation is just a YAML file with directives of what to create
 
 The serverless framework helps you by creating a more simplified version of a CloudFormation.json file and other configurations that are handled for you. In the end, you will only need to type:
 
-``` 
+```bash
 serverless deploy 
 ```
 
@@ -411,7 +411,7 @@ Copy the encoded result. That is what we are going to need to authorize our requ
 
 After all this initial configuration you can run our final deployment:
 
-```
+```bash
 serverless create_domain  
 serverless deploy
 ```

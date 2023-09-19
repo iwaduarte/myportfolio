@@ -85,7 +85,7 @@ Let me start with examples, I will show you a few different files that are way t
 
 This below would be one of the complex ones that could be simplified. *(It is tricky because **it looks** simple)*
 
-```
+```yaml
 image: someimage
 pipelines:
   branches:
@@ -113,7 +113,7 @@ Could you with that file alone see exactly what is going on here? See where is g
 
 I will show you ***partially*** what the command: make deploy is doing
 
-```
+```yaml
 ifdef DOTENV
    DOTENV_TARGET=dotenv
 else
@@ -172,7 +172,7 @@ These kinds of rationales are in my view overzealous. They show your ego side mo
 
 They are also too concerned with vendor locking. One way or another we are going to be vendor locked at something. Does not matter. Either AWS or Azure, GitLab or Git, *Java or Node.js*. Therefore, trying to predict the future is not a great strategy in my books.
 
->> It is worth noting that although programming languages are not vendors if you think indirectly they are. They are the first architectural decision that will base all your choices afterward.
+> It is worth noting that although programming languages are not vendors if you think indirectly they are. They are the first architectural decision that will base all your choices afterward.
 
 The agnostic approach or silver bullet approach which is worrying about changing lines of code in the future is not effective as well. How many times did you change your well-planned architecture? If everything runs well and you are not facing some significant cost/performance/errors issues you are probably giving that system a **stamp** of the *legacy system to be*.
 
@@ -180,7 +180,7 @@ Changing and breaking things are crucial parts of any human cycle. Do not be too
 
 ### How I would change that for simplicity?
 
-```
+```yaml
 image: someimage
 pipelines:
   branches:
@@ -243,7 +243,7 @@ And then you would configure your file as follows:
 
 **Bitbucket YAML:**
 
-```
+```yaml
 pipelines:
   branches:
     master:
@@ -277,7 +277,7 @@ pipelines:
 
 **GitHub YAML:**
 
-```
+```yaml
 name: Deploy to Fargate
 on:
   push:
@@ -385,7 +385,7 @@ In the last part of this tutorial let’s discuss when you have different branch
 
 For BitBucket, branches are part of the configuration, so you can set the specific branch and the configuration will run exclusively. That feature is **very important (kudos to the Atlassian team)** because you can have a separate development branch and production in the same config file. Something like:
 
-```
+```yaml
 pipelines:
   default:
     - step:
@@ -448,7 +448,7 @@ Some of the tutorials that I have read before coming up with my (rant) one are p
 
 They have the same strategy. If you create a branch you create a different file.And “new branch — new YAML” paradigm it goes against what I have defended here so far, do you remember my young Padawan?
 
->> “Try to put the **minimum number of files out there**.”
+> “Try to put the **minimum number of files out there**.”
 
 And with that and the help of the best place to copypasta code:
 
@@ -458,7 +458,7 @@ After reading that you can see the solution. We could now come up with a better 
 
 Reusing the same Fargate YAML file:
 
-```
+```yaml
 name: Deploy to Fargate
 on:
   push:
