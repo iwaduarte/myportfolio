@@ -1,8 +1,8 @@
 :root {
   --me: url('/meee.jpg');
-  --videos: url('/videos.png');
-  --articles: url('/articles.png');
-  --projects: url('/projects.png');
+  --videos: url('/videos.webp');
+  --articles: url('/articles.webp');
+  --projects: url('/projects.webp');
 }
 
 body::after {

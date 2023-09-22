@@ -59,7 +59,7 @@ const Projects = () => (
       {/*<Separator />*/}
       <Card
         tags={['moderate', 'express-sire', 'generator', 'node', 'npm', 'cli', 'ci/cd']}
-        src={'/good-day-sire.png'}
+        src={'/good-day-sire.webp'}
         codeUrl="https://github.com/iwaduarte/express-sire"
         demoUrl="https://www.npmjs.com/package/express-sire"
       >
@@ -72,7 +72,7 @@ const Projects = () => (
       {/*<Separator />*/}
       {/*<Card*/}
       {/*  tags={['moderate', 'javascript', 'node.js', 'aws', 'ses', 'react.js']}*/}
-      {/*  src={'/portfolio.png'}*/}
+      {/*  src={'/portfolio.webp'}*/}
       {/*  codeUrl="https://github.com/iwaduarte/myportfolio"*/}
       {/*  demoUrl="self"*/}
       {/*>*/}
@@ -82,7 +82,7 @@ const Projects = () => (
       {/*<Separator />*/}
       {/*<Card*/}
       {/*  tags={['easy', 'javascript', 'react.js', 'style-components']}*/}
-      {/*  src={'/movieme.png'}*/}
+      {/*  src={'/movieme.webp'}*/}
       {/*  codeUrl="https://github.com/iwaduarte/movieme"*/}
       {/*>*/}
       {/*  A web site to search for movie and recommendations based on your tastes. It contains the top 250 IMDB rated*/}
@@ -91,7 +91,7 @@ const Projects = () => (
       {/*<Separator />*/}
       {/*<Card*/}
       {/*  tags={['moderate', 'express.js', 'graphQL', 'aws', 'serverless', 'react.js', 'style-components']}*/}
-      {/*  src={'/smff.png'}*/}
+      {/*  src={'/smff.webp'}*/}
       {/*  codeUrl="https://github.com/iwaduarte/semeufuscafalasse"*/}
       {/*  demoUrl="https://semeufuscafalasse.iwaduarte.dev/"*/}
       {/*>*/}

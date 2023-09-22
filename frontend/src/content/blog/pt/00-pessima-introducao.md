@@ -14,13 +14,13 @@ author: Iwá Duarte
 layout: ../../../layouts/blog.astro
 date: "30 Set 2022"
 duration: "4 min "
-image: /assets/eagle.png
+image: /assets/eagle.webp
 language: portuguese
 slug: /blog/pt/00-pessima-introducao
 
 ---
 
-![Pular ou não, eis a questão. (DALLE-2)](../../../../public/assets/eagle.png) *Pular ou não, eis a questão. (DALLE-2)*
+![Pular ou não, eis a questão. (DALLE-2)](../../../../public/assets/eagle.webp) *Pular ou não, eis a questão. (DALLE-2)*
 
 Raramente eu irei escrever esses posts grandes e “estúpidos”. Para ser honesto eu não gosto de escrever **tanto** assim. Entretanto, nesse caso especial, é necessário (como perder minha virgindade foi). Vai ser cheio de erros, atenção indesejada, criticas e péssima performance, mas no final, sempre nos lembraremos.
 

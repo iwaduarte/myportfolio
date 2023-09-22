@@ -13,12 +13,12 @@ author: Iwá Duarte
 layout: ../../../layouts/blog.astro
 date: "Sep 30 2022"
 duration: "4 min read"
-image: /assets/eagle.png
+image: /assets/eagle.webp
 language: english
 slug: /blog/en/00-a-bad-introduction
 ---
  
-![Jump or not to jump that is the question. (DALLE-2)](../../../../public/assets/eagle.png) *Jump or not to jump that is the question (DALLE-2)*
+![Jump or not to jump that is the question. (DALLE-2)](../../../../public/assets/eagle.webp) *Jump or not to jump that is the question (DALLE-2)*
 
 This will be a **big fluffy post** for the rare times. To be honest I do not like it writing “that much”. However, in this special case, it is mandatory ( like losing my virginity was). It is full of mistakes, a lot of undesired attention, critics, and a lot of bad performance but in the end, we always remember it.
 
