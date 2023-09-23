@@ -6,15 +6,11 @@ import style from './blog.module.css'
 
 const { blog } = style;
 const { frontmatter } = Astro.props;
-const { title, author, date, duration, subtitle } = frontmatter;
+const { title, author, date, duration, subtitle, canonical_url } = frontmatter;
 
 ---
 
-<head>
-  <meta charset='utf-8'/>
-  <title>{title}</title>
-</head>
-<Layout>
+<Layout title={title} canonicalUrl={canonical_url}>
   <Container className={blog}>
     <h1>{title}</h1>
     <h3>{subtitle}</h3>

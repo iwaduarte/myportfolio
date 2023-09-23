@@ -2,20 +2,19 @@
 import NavBar from '../app/_components/NavBar/NavBar.jsx';
 import SideBar from '../app/_common/SideBar/SideBar.jsx';
 import { ViewTransitions } from 'astro:transitions';
-
 import '../fonts.css';
 import '../index.css';
+
+const { title, canonicalUrl } = Astro.props
+const _title = title || '@iwaduarte';
+
 ---
 <head>
+  <title>{_title}</title>
   <meta charset="utf-8" />
+  {canonicalUrl && !canonicalUrl.includes("iwaduarte.dev") ? <link rel='canonical' href={canonicalUrl} /> : ""}
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163778059-1"></script>
-  <script is:inline>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-163778059-1');
-  </script>
+
   <link
     rel="preload"
     href="/fonts/TUZ3zwprpvBS1izr_vOMscGKfrUC.woff2"
@@ -37,11 +36,18 @@ import '../index.css';
     type="font/woff2"
     crossorigin=""
   />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163778059-1"></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-163778059-1');
+  </script>
   <link rel="icon" type="image/png" href="/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />
   <meta name="description" content="iwaduarte portfolio dev fullstack" />
-  <title>@iwaduarte</title>
+
   <ViewTransitions />
 </head>
 
