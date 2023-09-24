@@ -61,7 +61,7 @@ From **features** in services that were **free** and became **ugly**, **buggy**,
 
 From **features that did not have the user interest at hand but profit**. And I am talking about you [Manifest V3](https://developer.chrome.com/docs/extensions/mv3/intro/). You are a scam artist stunt that uses heavy words like **security**, **privacy**, and **performance**.
 
-![Manifest V3 when Google is claiming its security](../../../../public/assets/1_q_yR6Mn2dxwIPK6a0DPxuw.gif)*Manifest V3 when Google is claiming its security*
+![Manifest V3 when Google is claiming its security](../../../../public/assets/1_q_yR6Mn2dxwIPK6a0DPxuw.webp)*Manifest V3 when Google is claiming its security*
 
 I am not the only one claiming that. Hundreds of people are saying the same.
 
