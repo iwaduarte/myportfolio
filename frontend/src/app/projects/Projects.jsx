@@ -9,8 +9,20 @@ const { project } = style;
 
 const Projects = () => (
   <Container className={project}>
-    <Title titleName="Projects" />
+    <Title titleName="Open source projects" />
     <div>
+      <Card
+        tags={['moderate', 'crossposting', 'node', 'npm', 'cli', 'posse', 'javascript']}
+        src={'/assets/crossposting.webp'}
+        codeUrl="https://github.com/iwaduarte/cross-post"
+      >
+        <strong>Crossposting:</strong> Cross Post a blog to multiple websites. You can read more how I come up the idea
+        here the medium article:{' '}
+        <a href="/blog/en/08-creating-a-blog/" target="_blank" rel="noreferrer">
+          Creating a blog. A complete guide to move towards madness.
+        </a>
+      </Card>
+      <Separator />
       <Card
         tags={['hard', 'react.js', 'styled-components', 'indexeddb', 'chrome-extension', 'firefox-extension']}
         src={'/form-filler.png'}
@@ -63,13 +75,13 @@ const Projects = () => (
         codeUrl="https://github.com/iwaduarte/express-sire"
         demoUrl="https://www.npmjs.com/package/express-sire"
       >
-        NPM packages created to replace express-generator. You can read more about the reasoning behind at the medium
-        article:{' '}
-        <a href="https://medium.com/p/bc2cd5376ff7" target="_blank" rel="noreferrer">
+        <strong>Express-sire:</strong> NPM package created to replace express-generator. You can read more about the
+        reasoning behind at :{' '}
+        <a href="/blog/en/03-laziness-to-the-extreme" target="_blank" rel="noreferrer">
           Applying laziness to the extreme: A new code generator for Node.js{' '}
         </a>
       </Card>
-      {/*<Separator />*/}
+
       {/*<Card*/}
       {/*  tags={['moderate', 'javascript', 'node.js', 'aws', 'ses', 'react.js']}*/}
       {/*  src={'/portfolio.webp'}*/}
