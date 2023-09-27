@@ -5,36 +5,6 @@ import style from './Card.module.css';
 
 const { card, body, tag, content, actions } = style;
 
-const colorMap = {
-  moderate: '#009688',
-  'react.js': '#2196F3',
-  'styled-components': '#FF9800',
-  formik: '#673AB7',
-  hard: '#4CAF50',
-  indexeddb: '#3F51B5',
-  'chrome-extension': '#CDDC39',
-  'firefox-extension': '#9C27B0',
-  'express-sire': '#FF5722',
-  generator: '#00BCD4',
-  node: '#FFEB3B',
-  npm: '#E91E63',
-  cli: '#795548',
-  'ci/cd': '#03A9F4',
-  javascript: '#8BC34A',
-  'node.js': '#9E9E9E',
-  aws: '#FFC107',
-  ses: '#607D8B',
-  easy: '#E65100',
-  'express.js': '#3D5AFE',
-  graphQL: '#FF6F00',
-  serverless: '#283593',
-  'style-components': '#FFA000',
-  fabricjs: '#1A237E',
-  canvas: '#FFCA28',
-  html: '#0D47A1',
-  css: '#FFD54F',
-  financejs: '#1976D2'
-};
 const Card = ({ src, alt, tags = [], children, codeUrl = '', demoUrl = '' }) => {
   return (
     <div className={card}>
@@ -43,7 +13,7 @@ const Card = ({ src, alt, tags = [], children, codeUrl = '', demoUrl = '' }) => 
         <div className={tag}>
           {tags.map((tag, key) => {
             const [name] = Array.isArray(tag) ? tag : [tag];
-            return <Tag name={name} key={key} backgroundColor={colorMap[tag]} />;
+            return <Tag name={name} key={key} />;
           })}
         </div>
         <div className={content}>{children}</div>

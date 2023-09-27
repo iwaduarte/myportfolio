@@ -1,16 +1,19 @@
 .tag {
-  margin: 8px 16px;
+  margin: 4px 8px;
   font-family: 'Open Sans', serif;
-  line-height: 16px;
-  background: #d9d9d9;
-  border-radius: 10px;
+  background: #292c34;
   border-color: transparent;
-  width: 72px;
-  height: 24px;
+  padding: 5px 10px;
   overflow: hidden;
+  border-radius: 6px;
 }
 .text {
+  display: inline-block;
   text-transform: lowercase;
-  font-weight: bold;
+  margin: auto;
+  width: fit-content;
+  height: fit-content;
+  color: #ffffff;
+  font-weight: 600;
   font-size: 12px;
 }
