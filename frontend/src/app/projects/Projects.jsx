@@ -17,7 +17,7 @@ const Projects = () => (
         codeUrl="https://github.com/iwaduarte/cross-post"
       >
         <strong>Crossposting:</strong> Cross Post a blog to multiple websites. You can read more how I come up the idea
-        here the medium article:{' '}
+        here in this medium article:
         <a href="/blog/en/08-creating-a-blog/" target="_blank" rel="noreferrer">
           Creating a blog. A complete guide to move towards madness.
         </a>
@@ -76,7 +76,7 @@ const Projects = () => (
         demoUrl="https://www.npmjs.com/package/express-sire"
       >
         <strong>Express-sire:</strong> NPM package created to replace express-generator. You can read more about the
-        reasoning behind at :{' '}
+        reasoning behind at:
         <a href="/blog/en/03-laziness-to-the-extreme" target="_blank" rel="noreferrer">
           Applying laziness to the extreme: A new code generator for Node.js{' '}
         </a>
