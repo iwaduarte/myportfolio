@@ -12,6 +12,17 @@ const Projects = () => (
     <Title titleName="Open source projects" />
     <div>
       <Card
+        tags={['easy', 'plugin', 'serverless-framework', 'organizer', 'serverless-layer-organizer', 'javascript']}
+        src={'/assets/serverless-logo.jpeg'}
+        codeUrl="https://github.com/iwaduarte/serverless-layer-organizer"
+        demoUrl="https://www.npmjs.com/package/serverless-layer-organizer"
+      >
+        The Serverless Layer Organizer is a plugin for the Serverless Framework designed to enhance the organization of
+        serverless layers. This plugin allows you to set custom path prefixes, making deployment easier.
+      </Card>
+      <Separator />
+
+      <Card
         tags={['moderate', 'crossposting', 'node', 'npm', 'cli', 'posse', 'javascript']}
         src={'/assets/crossposting.webp'}
         codeUrl="https://github.com/iwaduarte/cross-post"
@@ -82,15 +93,6 @@ const Projects = () => (
         </a>
       </Card>
 
-      {/*<Card*/}
-      {/*  tags={['moderate', 'javascript', 'node.js', 'aws', 'ses', 'react.js']}*/}
-      {/*  src={'/portfolio.webp'}*/}
-      {/*  codeUrl="https://github.com/iwaduarte/myportfolio"*/}
-      {/*  demoUrl="self"*/}
-      {/*>*/}
-      {/*  This portfolio website has everything one needs to know about Iwá Duarte @developer. It was developed from*/}
-      {/*  scratch using only react, css and html. All animations, buttons and grid were designed as a proof of concept.*/}
-      {/*</Card>*/}
       {/*<Separator />*/}
       {/*<Card*/}
       {/*  tags={['easy', 'javascript', 'react.js', 'style-components']}*/}
